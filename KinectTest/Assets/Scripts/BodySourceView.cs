@@ -78,8 +78,8 @@ public class BodySourceView : MonoBehaviour
 
         foreach (JointType joint in _joints)
         {
-            GameObject newJoint = Instantiate(mJointObject);
-            Debug.Log("Instantiated Object");
+           GameObject newJoint = Instantiate(mJointObject);
+           //Debug.Log("Instantiated Object");
             newJoint.name = joint.ToString();
 
             newJoint.transform.parent = body.transform; 
