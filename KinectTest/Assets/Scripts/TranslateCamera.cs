@@ -34,11 +34,14 @@ public class TranslateCamera : MonoBehaviour {
 			userHeadPos = userHead.transform.position;	
 			translationVector = transform.position - userHeadPos;
 		}
-		updateCameraPosition();
+		UpdateCameraPosition();
 		
 	}
 
-	void updateCameraPosition(){
+	void UpdateCameraPosition(){
 		cam.transform.position=userHeadPos;
+	}
+	public Vector3 GetTranlationVector(){
+		return translationVector;
 	}
 }
