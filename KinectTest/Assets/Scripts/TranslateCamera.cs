@@ -25,10 +25,7 @@ public class TranslateCamera : MonoBehaviour {
 		trackedEyePosition = Vector3.zero;
 		GetScreenDimension(screenSizeInches, (aspectRatioA/aspectRatioB));
 	}
-	void EarlyUpdate()
-	{
 
-	}
 	void Update ()
 	{
 		if (eyes==null)
@@ -43,24 +40,22 @@ public class TranslateCamera : MonoBehaviour {
 		}
 		 else
 		{
-			trackedEyePosition	 = eyes.transform.position;
-
-			trackedEyePosition -= new Vector3(screenHeight/2,screenHeight/2,screenHeight/2);
-			Vector3 t = CalculateTranslationVector();
-			translationVector = trackedEyePosition - transform.position;
-			//Debug.Log(t.x +", "+ t.y +", "+ t.z);
+			trackedEyePosition = eyes.transform.position + new Vector3(0, screenHeight/2, 0);
+			translationVector = CalculateTranslationVector();
 		}
 	}
 	void LateUpdate()
 	{
-		FrustumDistortion(GetNearClipPlane(referenceCamera), CalculateTranslationVector());
+		FrustumDistortion(GetNearClipPlane(referenceCamera), translationVector);
 		UpdateCameraPosition();
 	}
 
 	void UpdateCameraPosition(){
 		//gameObject.transform.SetPositionAndRotation(gameObject.transform.position + translationVector, gameObject.transform.rotation);
 		//Debug.Log("Translation Vector: " + translationVector);
-		transform.position = mainCamera.transform.position + translationVector;
+		//transform.position = mainCamera.transform.position + translationVector;
+		transform.position = CalculateTranslationVector();
+		//transform.position = trackedEyePosition;
 	}
 
 	void GetScreenDimension(float inches, float aspectRatio)
@@ -68,6 +63,7 @@ public class TranslateCamera : MonoBehaviour {
 		float metres = inches * 0.0255f;
 		screenWidth = metres * Mathf.Sin(Mathf.Atan(aspectRatio));
 		screenHeight = metres * Mathf.Cos(Mathf.Atan(aspectRatio));
+		Debug.Log("Screen Height: " + screenHeight + ", Screen Width: " + screenWidth);
 	}
 
 	Vector3 ScreenEyePosition(Vector3 trackedEyePosition, float screenHeight, float screenWidth)
@@ -100,20 +96,21 @@ public class TranslateCamera : MonoBehaviour {
 		float virtualScreenWidth = fr - fl;
 		float virtualScreenHeight = ft - fb;
 		
-		Vector3 virtualEyeWorldCoordinates = new Vector3((fr+fl), (ft+fb), fn);
+		Vector3 virtualEyeWorldCoordinates = new Vector3((virtualScreenWidth+fr+fl)/2, (virtualScreenHeight+ft+fb)/2, fn);
 		Debug.Log("Vsw: " + virtualScreenWidth + "\nVsh: "+virtualScreenHeight + "\nVEwc: "+ virtualEyeWorldCoordinates + "\nVEsc: " + virtualEyeWorldCoordinates/virtualScreenWidth);
 		return virtualEyeWorldCoordinates / virtualScreenWidth;
 	}
 	Vector3 CalculateTranslationVector()
 	{
+		float x, y, z;
 		Vector3 REsc = ScreenEyePosition(trackedEyePosition, screenHeight, screenWidth);
 		Vector3 VEsc = VirtualEyePosition();
-		float x = REsc.x / VEsc.x;
-		float y = REsc.y / VEsc.y;
-		float z = REsc.y / VEsc.z;
-		Vector3 translation =  new Vector3(x, y, z);
-		string msg = string.Format("REsc: {0}\nVEsc: {1}\nTranslation: ({2}, {3}, {4})", REsc, VEsc, translation.x, translation.y, translation.z);
-		Debug.Log(msg);
+		x = REsc.x - VEsc.x;
+		y = REsc.y - VEsc.y;
+		z = REsc.y - VEsc.z;
+		Vector3 translation =  new Vector3(-x, Mathf.Clamp(y, -1, 1), z);
+		Debug.Log(string.Format("REsc: {0}\nVEsc: {1}", REsc, VEsc));
+		Debug.Log(string.Format("Translation: ({0}, {1}, {2})", translation.x, translation.y, translation.z));
 		return translation;
 	}
 
@@ -124,11 +121,10 @@ public class TranslateCamera : MonoBehaviour {
 		Vector3[] DF = new Vector3[4];
 		for (int i = 0; i < frustumCorners.Length; i++)
 		{
-			DF[i] = frustumCorners[i] - translation;
+			DF[i] = frustumCorners[i] + translation.normalized;
 		}
-		//Matrix4x4 p = mainCamera.CalculateObliqueMatrix(distortedFrustumCorners); //v4
-		Matrix4x4 p = Matrix4x4.Frustum(DF[0].x, DF[3].x, DF[0].y, DF[1].y, DF[0].z, mainCamera.farClipPlane-translation.z);
-		//Debug.Log("F:\n" + frustumCorners[0]+","+ frustumCorners[1]+","+ frustumCorners[2] + "DF:\n"+DF+ "Projeciton Matrix:\n" + p);
+		Matrix4x4 p = Matrix4x4.Frustum(DF[0].x, DF[3].x, DF[0].y, DF[1].y, DF[0].z, referenceCamera.farClipPlane-translation.z);
+		Debug.Log( "DF:\n"+DF[0]+","+DF[1]+","+DF[2]+","+DF[3]+","+ "Projeciton Matrix:\n" + p);
 		mainCamera.projectionMatrix = p;
 	}
 }
