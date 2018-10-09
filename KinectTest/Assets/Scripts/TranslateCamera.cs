@@ -25,6 +25,10 @@ public class TranslateCamera : MonoBehaviour {
 		trackedEyePosition = Vector3.zero;
 		GetScreenDimension(screenSizeInches, (aspectRatioA/aspectRatioB));
 	}
+	void EarlyUpdate()
+	{
+
+	}
 	void Update ()
 	{
 		if (eyes==null)
@@ -42,12 +46,14 @@ public class TranslateCamera : MonoBehaviour {
 			trackedEyePosition	 = eyes.transform.position;
 
 			trackedEyePosition -= new Vector3(screenHeight/2,screenHeight/2,screenHeight/2);
-			//translationVector = CalculateTranslationVector();
-			translationVector = trackedEyePosition - mainCamera.transform.position;
+			Vector3 t = CalculateTranslationVector();
+			translationVector = trackedEyePosition - transform.position;
+			//Debug.Log(t.x +", "+ t.y +", "+ t.z);
 		}
 	}
 	void LateUpdate()
 	{
+		FrustumDistortion(GetNearClipPlane(referenceCamera), CalculateTranslationVector());
 		UpdateCameraPosition();
 	}
 
@@ -55,7 +61,6 @@ public class TranslateCamera : MonoBehaviour {
 		//gameObject.transform.SetPositionAndRotation(gameObject.transform.position + translationVector, gameObject.transform.rotation);
 		//Debug.Log("Translation Vector: " + translationVector);
 		transform.position = mainCamera.transform.position + translationVector;
-		FrustumDistortion(GetNearClipPlane(), translationVector);
 	}
 
 	void GetScreenDimension(float inches, float aspectRatio)
@@ -73,18 +78,18 @@ public class TranslateCamera : MonoBehaviour {
 		return screenEyePosition;
 	}
 
-	Vector3[] GetNearClipPlane()
+	Vector3[] GetNearClipPlane(Camera cam)
 	{
 		Vector3[] corners = new Vector3[4];
 
-		referenceCamera.CalculateFrustumCorners(new Rect(0, 0, 1, 1), referenceCamera.nearClipPlane, Camera.MonoOrStereoscopicEye.Mono, corners);
+		cam.CalculateFrustumCorners(new Rect(0, 0, 1, 1), cam.nearClipPlane, Camera.MonoOrStereoscopicEye.Mono, corners);
 		//Debug.Log("corners:\n " + corners[0]+" "+ corners[1]+" "+ corners[2]+" "+ corners[3]);
 		return corners;
 	}
 
 	Vector3 VirtualEyePosition(){
 		//FIXME
-		nearCorners = GetNearClipPlane();
+		nearCorners = GetNearClipPlane(referenceCamera);
 
 		float fl = nearCorners[0].x;
 		float fr = nearCorners[2].x;
@@ -104,11 +109,11 @@ public class TranslateCamera : MonoBehaviour {
 		Vector3 REsc = ScreenEyePosition(trackedEyePosition, screenHeight, screenWidth);
 		Vector3 VEsc = VirtualEyePosition();
 		float x = REsc.x / VEsc.x;
-		float y = REsc.y / VEsc.z;
+		float y = REsc.y / VEsc.y;
 		float z = REsc.y / VEsc.z;
 		Vector3 translation =  new Vector3(x, y, z);
-		string msg = string.Format("REsc: {0}\nVEsc: {1}\nTranslation: {2}", REsc, VEsc, translation);
-		//Debug.Log(msg);
+		string msg = string.Format("REsc: {0}\nVEsc: {1}\nTranslation: ({2}, {3}, {4})", REsc, VEsc, translation.x, translation.y, translation.z);
+		Debug.Log(msg);
 		return translation;
 	}
 
@@ -122,7 +127,7 @@ public class TranslateCamera : MonoBehaviour {
 			DF[i] = frustumCorners[i] - translation;
 		}
 		//Matrix4x4 p = mainCamera.CalculateObliqueMatrix(distortedFrustumCorners); //v4
-		Matrix4x4 p = Matrix4x4.Frustum(DF[0].x, DF[3].x, DF[0].y, DF[1].y, DF[0].z, referenceCamera.farClipPlane-translation.z);
+		Matrix4x4 p = Matrix4x4.Frustum(DF[0].x, DF[3].x, DF[0].y, DF[1].y, DF[0].z, mainCamera.farClipPlane-translation.z);
 		//Debug.Log("F:\n" + frustumCorners[0]+","+ frustumCorners[1]+","+ frustumCorners[2] + "DF:\n"+DF+ "Projeciton Matrix:\n" + p);
 		mainCamera.projectionMatrix = p;
 	}
