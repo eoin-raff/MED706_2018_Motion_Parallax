@@ -55,7 +55,7 @@ public class TranslateCamera : MonoBehaviour {
 		//gameObject.transform.SetPositionAndRotation(gameObject.transform.position + translationVector, gameObject.transform.rotation);
 		//Debug.Log("Translation Vector: " + translationVector);
 		transform.position = mainCamera.transform.position + translationVector;
-		//FrustumDistortion(GetNearClipPlane(), translationVector);
+		FrustumDistortion(GetNearClipPlane(), translationVector);
 	}
 
 	void GetScreenDimension(float inches, float aspectRatio)
@@ -122,7 +122,8 @@ public class TranslateCamera : MonoBehaviour {
 			DF[i] = frustumCorners[i] - translation;
 		}
 		//Matrix4x4 p = mainCamera.CalculateObliqueMatrix(distortedFrustumCorners); //v4
-		Matrix4x4 p = Matrix4x4.Frustum(DF[0].x, DF[1].x, DF[2].y, DF[0].y, DF[0].z, referenceCamera.farClipPlane-translation.z);
+		Matrix4x4 p = Matrix4x4.Frustum(DF[0].x, DF[3].x, DF[0].y, DF[1].y, DF[0].z, referenceCamera.farClipPlane-translation.z);
+		//Debug.Log("F:\n" + frustumCorners[0]+","+ frustumCorners[1]+","+ frustumCorners[2] + "DF:\n"+DF+ "Projeciton Matrix:\n" + p);
 		mainCamera.projectionMatrix = p;
 	}
 }
