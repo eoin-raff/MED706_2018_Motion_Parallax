@@ -6,9 +6,11 @@ public class TranslateCamera : MonoBehaviour {
 
 	public Camera mainCamera;
 	public Camera referenceCamera;
-	public float screenWidth;
-	public float screenHeight;
-
+	public float screenSizeInches;
+	public float aspectRatioA;
+	public float aspectRatioB;
+	private float screenWidth;
+	private float screenHeight;
 	
 	private GameObject eyes;
 	private Vector3 trackedEyePosition;
@@ -21,6 +23,7 @@ public class TranslateCamera : MonoBehaviour {
 		eyes = null;
 		translationVector = Vector3.zero;
 		trackedEyePosition = Vector3.zero;
+		GetScreenDimension(screenSizeInches, (aspectRatioA/aspectRatioB));
 	}
 	void Update ()
 	{
@@ -37,14 +40,29 @@ public class TranslateCamera : MonoBehaviour {
 		 else
 		{
 			trackedEyePosition	 = eyes.transform.position;
-			translationVector = CalculateTranslationVector();
+
+			trackedEyePosition -= new Vector3(screenHeight/2,screenHeight/2,screenHeight/2);
+			//translationVector = CalculateTranslationVector();
+			translationVector = trackedEyePosition - mainCamera.transform.position;
 		}
+	}
+	void LateUpdate()
+	{
 		UpdateCameraPosition();
 	}
 
 	void UpdateCameraPosition(){
-		mainCamera.transform.SetPositionAndRotation(mainCamera.transform.position + translationVector, mainCamera.transform.rotation);
-		FrustumDistortion(GetNearClipPlane(), translationVector);
+		//gameObject.transform.SetPositionAndRotation(gameObject.transform.position + translationVector, gameObject.transform.rotation);
+		//Debug.Log("Translation Vector: " + translationVector);
+		transform.position = mainCamera.transform.position + translationVector;
+		//FrustumDistortion(GetNearClipPlane(), translationVector);
+	}
+
+	void GetScreenDimension(float inches, float aspectRatio)
+	{
+		float metres = inches * 0.0255f;
+		screenWidth = metres * Mathf.Sin(Mathf.Atan(aspectRatio));
+		screenHeight = metres * Mathf.Cos(Mathf.Atan(aspectRatio));
 	}
 
 	Vector3 ScreenEyePosition(Vector3 trackedEyePosition, float screenHeight, float screenWidth)
@@ -59,26 +77,26 @@ public class TranslateCamera : MonoBehaviour {
 	{
 		Vector3[] corners = new Vector3[4];
 
-		referenceCamera.CalculateFrustumCorners(new Rect(0, 0, 1, 1), mainCamera.nearClipPlane, Camera.MonoOrStereoscopicEye.Mono, corners);
-
+		referenceCamera.CalculateFrustumCorners(new Rect(0, 0, 1, 1), referenceCamera.nearClipPlane, Camera.MonoOrStereoscopicEye.Mono, corners);
+		//Debug.Log("corners:\n " + corners[0]+" "+ corners[1]+" "+ corners[2]+" "+ corners[3]);
 		return corners;
 	}
 
 	Vector3 VirtualEyePosition(){
+		//FIXME
 		nearCorners = GetNearClipPlane();
 
-		referenceCamera.CalculateFrustumCorners(new Rect(0, 0, 1, 1), mainCamera.nearClipPlane, Camera.MonoOrStereoscopicEye.Mono, nearCorners);
-
 		float fl = nearCorners[0].x;
-		float fr = nearCorners[1].x;
-		float ft = nearCorners[0].y;
-		float fb = nearCorners[2].y;
-		float fn = nearCorners[0].z;
+		float fr = nearCorners[2].x;
+		float ft = nearCorners[1].y;
+		float fb = nearCorners[0].y;
+		float fn = referenceCamera.nearClipPlane;
 
 		float virtualScreenWidth = fr - fl;
 		float virtualScreenHeight = ft - fb;
 		
-		Vector3 virtualEyeWorldCoordinates = new Vector3((fr+fl)/2, (ft+fb)/2, fn);
+		Vector3 virtualEyeWorldCoordinates = new Vector3((fr+fl), (ft+fb), fn);
+		Debug.Log("Vsw: " + virtualScreenWidth + "\nVsh: "+virtualScreenHeight + "\nVEwc: "+ virtualEyeWorldCoordinates + "\nVEsc: " + virtualEyeWorldCoordinates/virtualScreenWidth);
 		return virtualEyeWorldCoordinates / virtualScreenWidth;
 	}
 	Vector3 CalculateTranslationVector()
@@ -88,7 +106,10 @@ public class TranslateCamera : MonoBehaviour {
 		float x = REsc.x / VEsc.x;
 		float y = REsc.y / VEsc.z;
 		float z = REsc.y / VEsc.z;
-		return new Vector3(x, y, z);
+		Vector3 translation =  new Vector3(x, y, z);
+		string msg = string.Format("REsc: {0}\nVEsc: {1}\nTranslation: {2}", REsc, VEsc, translation);
+		//Debug.Log(msg);
+		return translation;
 	}
 
 	void FrustumDistortion(Vector3[] frustumCorners, Vector3 translation)
