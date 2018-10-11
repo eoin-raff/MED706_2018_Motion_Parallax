@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TranslateCamera : MonoBehaviour {
 
+	/*TODO:
+		-
+		-
+		-
+	 */
 	public Camera mainCamera;
 	public Camera referenceCamera;
 	public float screenSizeInches;
@@ -11,7 +16,9 @@ public class TranslateCamera : MonoBehaviour {
 	public float aspectRatioB;
 	private float screenWidth;
 	private float screenHeight;
-	
+	private Matrix4x4 m;
+	private float windowHeight, windowWidth;
+
 	private GameObject eyes;
 	private Vector3 trackedEyePosition;
 	private Vector3 translationVector;
@@ -24,6 +31,10 @@ public class TranslateCamera : MonoBehaviour {
 		translationVector = Vector3.zero;
 		trackedEyePosition = Vector3.zero;
 		GetScreenDimension(screenSizeInches, (aspectRatioA/aspectRatioB));
+
+		m = referenceCamera.projectionMatrix;
+		windowWidth = 2*referenceCamera.nearClipPlane/m[0, 0];
+		windowHeight = 2*referenceCamera.nearClipPlane/m[1, 1];
 	}
 
 	void Update ()
@@ -35,29 +46,26 @@ public class TranslateCamera : MonoBehaviour {
 			if (eyes!=null)
 			{
 				Debug.Log("Found user's head!");	
-				trackedEyePosition = eyes.transform.position * 0.1f; //times 0.1 to convert to metres
+				trackedEyePosition = eyes.transform.position * 0.1f;
 			}
 		}
 		 else
 		{
 			trackedEyePosition = (eyes.transform.position*0.1f) - new Vector3(0, screenHeight/2, 0); //consider the Kinect as the center of the screen;
-
-		//	Debug.Log(string.Format("Eyes: ({0}, {1}, {2})\nAdjusted Eyes: ({3}, {4}, {5})",eyes.transform.position.x,eyes.transform.position.y,eyes.transform.position.z, trackedEyePosition.x, trackedEyePosition.y, trackedEyePosition.z));
 			translationVector = CalculateTranslationVector();
 		}
 	}
+
 	void LateUpdate()
 	{
-		FrustumDistortion(GetCorners(referenceCamera, referenceCamera.nearClipPlane), translationVector);
 		UpdateCameraPosition();
-	}
 
-	void UpdateCameraPosition(){
-		//TODO: Figure out which is best for camera movement.
+		Vector3 localCamPos = transform.InverseTransformPoint(transform.position);
+		referenceCamera.nearClipPlane = -localCamPos.z;
+		Debug.Log(localCamPos);
+		FixNearClipPlane(mainCamera, localCamPos);
 
-		//transform.position = referenceCamera.transform.position + CalculateTranslationVector();
-		//transform.position = trackedEyePosition;
-		transform.position = eyes.transform.position;
+		//FixNearClipPlane(GetCorners(referenceCamera, referenceCamera.nearClipPlane), eyes.transform.position);
 	}
 
 	void GetScreenDimension(float inches, float aspectRatio)
@@ -65,13 +73,15 @@ public class TranslateCamera : MonoBehaviour {
 		float metres = inches * 0.0255f;
 		screenWidth = metres * Mathf.Sin(Mathf.Atan(aspectRatio));
 		screenHeight = metres * Mathf.Cos(Mathf.Atan(aspectRatio));
-		Debug.Log("Screen Height: " + screenHeight + ", Screen Width: " + screenWidth);
+	}
+
+	void UpdateCameraPosition(){
+		transform.position = eyes.transform.position;
 	}
 
 	Vector3 ScreenEyePosition(Vector3 trackedEyePosition, float screenHeight, float screenWidth)
 	{
-		//increment vector, presumably this means add value to all coordinates of V
-		Vector3 worldEyePosition =new Vector3( trackedEyePosition.x + (screenHeight/2), trackedEyePosition.y + (screenHeight/2), trackedEyePosition.z + (screenHeight/2));
+		Vector3 worldEyePosition =new Vector3(trackedEyePosition.x, trackedEyePosition.y - (screenHeight/2), trackedEyePosition.z);
 		Vector3 screenEyePosition = worldEyePosition / screenWidth;
 		return screenEyePosition;
 	}
@@ -79,13 +89,11 @@ public class TranslateCamera : MonoBehaviour {
 	Vector3[] GetCorners(Camera cam, float cameraClipPlane)
 	{
 		Vector3[] corners = new Vector3[4];
-
 		cam.CalculateFrustumCorners(new Rect(0, 0, 1, 1), cameraClipPlane, Camera.MonoOrStereoscopicEye.Mono, corners);
 		return corners;
 	}
 
 	Vector3 VirtualEyePosition(){
-		//FIXME
 		nearCorners = GetCorners(referenceCamera, referenceCamera.nearClipPlane);
 
 		float fl = nearCorners[0].x;
@@ -98,9 +106,9 @@ public class TranslateCamera : MonoBehaviour {
 		float virtualScreenHeight = ft - fb;
 		
 		Vector3 virtualEyeWorldCoordinates = new Vector3((virtualScreenWidth+fr+fl)/2, (virtualScreenHeight+ft+fb)/2, fn);
-		Debug.Log("Vsw: " + virtualScreenWidth + "\nVsh: "+virtualScreenHeight + "\nVEwc: "+ virtualEyeWorldCoordinates + "\nVEsc: " + virtualEyeWorldCoordinates/virtualScreenWidth);
 		return virtualEyeWorldCoordinates / virtualScreenWidth;
 	}
+
 	Vector3 CalculateTranslationVector()
 	{
 		float x, y, z;
@@ -110,37 +118,40 @@ public class TranslateCamera : MonoBehaviour {
 		y = REsc.y / VEsc.y;
 		z = REsc.y / VEsc.z;
 		Vector3 translation = new Vector3(x, y, -z);
-		//Debug.Log(string.Format("REsc: {0}\nVEsc: {1}", REsc, VEsc));
-		//Debug.Log(string.Format("Translation: ({0}, {1}, {2})", translation.x, translation.y, translation.z));
 		return translation;
 	}
-
-	void FrustumDistortion(Vector3[] frustum, Vector3 translation)
+	void FixNearClipPlane(Camera cam, Vector3 perspectiveOffset)
 	{
-		//DF = F −Tvector
-		//describe the new clip plane
+		//based on Javascript code from Unity Forum
+		float left = -windowWidth/2 - perspectiveOffset.x;
+		float right = left+windowWidth;
+		float bottom = -windowHeight/2 - perspectiveOffset.y;
+		float top = bottom+windowHeight;
+
+		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
+	}
+	void FixNearClipPlane(Vector3[] frustum, Vector3 translation)
+	{
+		mainCamera.nearClipPlane = -mainCamera.transform.position.z;
 		Vector3[] DF = new Vector3[4];
-		for (int i = 0; i < frustum.Length; i++)
-		{
-			DF[i] = frustum[i] - translation;
-		}
-	//	Matrix4x4 p = Matrix4x4.Frustum(DF[0].x, DF[3].x, DF[0].y, DF[1].y, DF[0].z, referenceCamera.farClipPlane - translation.z);
-		float l = -screenWidth/2;//frustum[0].x - translation.x;
-		float r = screenWidth/2;//frustum[2].x - translation.x;
+
+		float l = -screenWidth/2 - translation.x;
+		float r = l + screenWidth;//screenWidth/2;//frustum[2].x - translation.x;
 		float b =  -screenHeight/2;//frustum[0].y - translation.y;
-		float t = screenHeight/2;//frustum[1].y - translation.y;
-		float n = frustum[0].z - translation.z;
-		float f = referenceCamera.farClipPlane - translation.z;
-		Matrix4x4 p = GetProjectionMatrix(l, r, b, t, n, f);
-		//Debug.Log( "DF:\n"+DF[0]+","+DF[1]+","+DF[2]+","+DF[3]+","+ "Projeciton Matrix:\n" + p);
+		float t = b + screenHeight - translation.y;//screenHeight/2;//frustum[1].y - translation.y;
+		float n = Mathf.Abs(mainCamera.transform.position.z);// - translation.z;
+		float f = referenceCamera.farClipPlane - Mathf.Abs(mainCamera.transform.position.z);
+		Matrix4x4 p = GetObliqueProjectionMatrix(l, r, b, t, n, f);
 		mainCamera.projectionMatrix = p;
 	}
 
-	Matrix4x4 GetProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
+	Matrix4x4 GetObliqueProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
 	{
 		Matrix4x4 m = Matrix4x4.identity;
-		float x = 2.0f * near / (right - left);
-		float y = 2.0f * near / (top-bottom);
+		//float x = 1.0f / (screenWidth/near);
+		//float y = (aspectRatioA/aspectRatioB)/ (screenHeight/near);
+		float x = (2.0f * near)/ (right-left);
+		float y = (2.0f * near) / (top-bottom);
 		float a = (right + left) / (right - left);
 		float b = (top + bottom) / (top - bottom);
 		float c = -(far + near) / (far - near);
@@ -154,7 +165,7 @@ public class TranslateCamera : MonoBehaviour {
 		m[2, 2] = c;
 		m[2, 3] = d;
 		m[3, 2] = e;
-		m[3, 3] = 0;
+		m[3, 3] = 0.0f;
 
 		return m;
 	}
