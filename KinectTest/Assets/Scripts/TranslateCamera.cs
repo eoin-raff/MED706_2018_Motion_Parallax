@@ -35,27 +35,29 @@ public class TranslateCamera : MonoBehaviour {
 			if (eyes!=null)
 			{
 				Debug.Log("Found user's head!");	
-				trackedEyePosition = eyes.transform.position;	
+				trackedEyePosition = eyes.transform.position * 0.1f; //times 0.1 to convert to metres
 			}
 		}
 		 else
 		{
-			trackedEyePosition = eyes.transform.position + new Vector3(0, screenHeight/2, 0);
+			trackedEyePosition = (eyes.transform.position*0.1f) - new Vector3(0, screenHeight/2, 0); //consider the Kinect as the center of the screen;
+
+		//	Debug.Log(string.Format("Eyes: ({0}, {1}, {2})\nAdjusted Eyes: ({3}, {4}, {5})",eyes.transform.position.x,eyes.transform.position.y,eyes.transform.position.z, trackedEyePosition.x, trackedEyePosition.y, trackedEyePosition.z));
 			translationVector = CalculateTranslationVector();
 		}
 	}
 	void LateUpdate()
 	{
-		FrustumDistortion(GetNearClipPlane(referenceCamera), translationVector);
+		FrustumDistortion(GetCorners(referenceCamera, referenceCamera.nearClipPlane), translationVector);
 		UpdateCameraPosition();
 	}
 
 	void UpdateCameraPosition(){
-		//gameObject.transform.SetPositionAndRotation(gameObject.transform.position + translationVector, gameObject.transform.rotation);
-		//Debug.Log("Translation Vector: " + translationVector);
-		//transform.position = mainCamera.transform.position + translationVector;
-		transform.position = CalculateTranslationVector();
+		//TODO: Figure out which is best for camera movement.
+
+		//transform.position = referenceCamera.transform.position + CalculateTranslationVector();
 		//transform.position = trackedEyePosition;
+		transform.position = eyes.transform.position;
 	}
 
 	void GetScreenDimension(float inches, float aspectRatio)
@@ -74,18 +76,17 @@ public class TranslateCamera : MonoBehaviour {
 		return screenEyePosition;
 	}
 
-	Vector3[] GetNearClipPlane(Camera cam)
+	Vector3[] GetCorners(Camera cam, float cameraClipPlane)
 	{
 		Vector3[] corners = new Vector3[4];
 
-		cam.CalculateFrustumCorners(new Rect(0, 0, 1, 1), cam.nearClipPlane, Camera.MonoOrStereoscopicEye.Mono, corners);
-		//Debug.Log("corners:\n " + corners[0]+" "+ corners[1]+" "+ corners[2]+" "+ corners[3]);
+		cam.CalculateFrustumCorners(new Rect(0, 0, 1, 1), cameraClipPlane, Camera.MonoOrStereoscopicEye.Mono, corners);
 		return corners;
 	}
 
 	Vector3 VirtualEyePosition(){
 		//FIXME
-		nearCorners = GetNearClipPlane(referenceCamera);
+		nearCorners = GetCorners(referenceCamera, referenceCamera.nearClipPlane);
 
 		float fl = nearCorners[0].x;
 		float fr = nearCorners[2].x;
@@ -105,26 +106,56 @@ public class TranslateCamera : MonoBehaviour {
 		float x, y, z;
 		Vector3 REsc = ScreenEyePosition(trackedEyePosition, screenHeight, screenWidth);
 		Vector3 VEsc = VirtualEyePosition();
-		x = REsc.x - VEsc.x;
-		y = REsc.y - VEsc.y;
-		z = REsc.y - VEsc.z;
-		Vector3 translation =  new Vector3(-x, Mathf.Clamp(y, -1, 1), z);
-		Debug.Log(string.Format("REsc: {0}\nVEsc: {1}", REsc, VEsc));
-		Debug.Log(string.Format("Translation: ({0}, {1}, {2})", translation.x, translation.y, translation.z));
+		x = REsc.x / VEsc.x;
+		y = REsc.y / VEsc.y;
+		z = REsc.y / VEsc.z;
+		Vector3 translation = new Vector3(x, y, -z);
+		//Debug.Log(string.Format("REsc: {0}\nVEsc: {1}", REsc, VEsc));
+		//Debug.Log(string.Format("Translation: ({0}, {1}, {2})", translation.x, translation.y, translation.z));
 		return translation;
 	}
 
-	void FrustumDistortion(Vector3[] frustumCorners, Vector3 translation)
+	void FrustumDistortion(Vector3[] frustum, Vector3 translation)
 	{
 		//DF = F −Tvector
 		//describe the new clip plane
 		Vector3[] DF = new Vector3[4];
-		for (int i = 0; i < frustumCorners.Length; i++)
+		for (int i = 0; i < frustum.Length; i++)
 		{
-			DF[i] = frustumCorners[i] + translation.normalized;
+			DF[i] = frustum[i] - translation;
 		}
-		Matrix4x4 p = Matrix4x4.Frustum(DF[0].x, DF[3].x, DF[0].y, DF[1].y, DF[0].z, referenceCamera.farClipPlane-translation.z);
-		Debug.Log( "DF:\n"+DF[0]+","+DF[1]+","+DF[2]+","+DF[3]+","+ "Projeciton Matrix:\n" + p);
+	//	Matrix4x4 p = Matrix4x4.Frustum(DF[0].x, DF[3].x, DF[0].y, DF[1].y, DF[0].z, referenceCamera.farClipPlane - translation.z);
+		float l = -screenWidth/2;//frustum[0].x - translation.x;
+		float r = screenWidth/2;//frustum[2].x - translation.x;
+		float b =  -screenHeight/2;//frustum[0].y - translation.y;
+		float t = screenHeight/2;//frustum[1].y - translation.y;
+		float n = frustum[0].z - translation.z;
+		float f = referenceCamera.farClipPlane - translation.z;
+		Matrix4x4 p = GetProjectionMatrix(l, r, b, t, n, f);
+		//Debug.Log( "DF:\n"+DF[0]+","+DF[1]+","+DF[2]+","+DF[3]+","+ "Projeciton Matrix:\n" + p);
 		mainCamera.projectionMatrix = p;
+	}
+
+	Matrix4x4 GetProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
+	{
+		Matrix4x4 m = Matrix4x4.identity;
+		float x = 2.0f * near / (right - left);
+		float y = 2.0f * near / (top-bottom);
+		float a = (right + left) / (right - left);
+		float b = (top + bottom) / (top - bottom);
+		float c = -(far + near) / (far - near);
+		float d = -(2.0f * far * near) / (far - near);
+		float e = -1.0f;
+
+		m[0, 0] = x;
+		m[0, 2] = a;
+		m[1, 1] = y;
+		m[1, 2] = b;
+		m[2, 2] = c;
+		m[2, 3] = d;
+		m[3, 2] = e;
+		m[3, 3] = 0;
+
+		return m;
 	}
 }
