@@ -60,7 +60,14 @@ public class TranslateCamera : MonoBehaviour {
 
 		Vector3 localCamPos = transform.InverseTransformPoint(transform.position);
 		referenceCamera.nearClipPlane = -localCamPos.z;
-		//Debug.Log(localCamPos);
+		//Debug.Log(localCamPos); 
+		/*FIXME:
+		worked nicely using trackedEyeposition, but had too strong of a dolly-zoom when moving on z axis.
+		also worked with eyes.transform.position, but was a very small frustum.
+		NOT WORKING:
+			localCamPos
+			translationVector
+		 */
 		FixNearClipPlane(mainCamera, trackedEyePosition);
 
 		//FixNearClipPlane(GetCorners(referenceCamera, referenceCamera.nearClipPlane), eyes.transform.position);
@@ -75,7 +82,10 @@ public class TranslateCamera : MonoBehaviour {
 
 	void UpdateCameraPosition(){
 		mainCamera.transform.position = eyes.transform.position;
-		mainCamera.nearClipPlane = -mainCamera.transform.position.z;
+		//mainCamera.transform.position = trackedEyePosition;
+		//DONT USE THIS CODE
+		//mainCamera.nearClipPlane = -mainCamera.transform.position.z;
+		//mainCamera.farClipPlane = referenceCamera.farClipPlane - mainCamera.transform.position.z ;
 	}
 
 	Vector3 ScreenEyePosition(Vector3 trackedEyePosition, float screenHeight, float screenWidth)
@@ -130,8 +140,8 @@ public class TranslateCamera : MonoBehaviour {
 		float top = bottom+windowHeight;
 		Debug.Log(string.Format("l: {0}, r:{1}, b:{2}, t: {3}\nww: {4}, wh: {5}", left, right, bottom, top, windowWidth, windowHeight));
 		*/
-		float left = (((-0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
-		float right = (((0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
+		float left = (((0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
+		float right = (((-0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
 		float top = ((0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
 		float bottom = ((-0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
 		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
