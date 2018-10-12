@@ -5,15 +5,12 @@ using UnityEngine;
 public class TranslateCamera : MonoBehaviour {
 
 	/*TODO:
-		-
-		-
-		-
+		lock near clip plane on X and Y axes
 	 */
 	public Camera mainCamera;
 	public Camera referenceCamera;
 	public float screenSizeInches;
-	public float aspectRatioA;
-	public float aspectRatioB;
+	public float aspectRatio, aspectRatioA, aspectRatioB;
 	private float screenWidth;
 	private float screenHeight;
 	private Matrix4x4 m;
@@ -30,7 +27,8 @@ public class TranslateCamera : MonoBehaviour {
 		eyes = null;
 		translationVector = Vector3.zero;
 		trackedEyePosition = Vector3.zero;
-		GetScreenDimension(screenSizeInches, (aspectRatioA/aspectRatioB));
+		aspectRatio = aspectRatioA/aspectRatioB;
+		GetScreenDimension(screenSizeInches,aspectRatio);
 
 		m = referenceCamera.projectionMatrix;
 		windowWidth = 2*referenceCamera.nearClipPlane/m[0, 0];
@@ -62,8 +60,8 @@ public class TranslateCamera : MonoBehaviour {
 
 		Vector3 localCamPos = transform.InverseTransformPoint(transform.position);
 		referenceCamera.nearClipPlane = -localCamPos.z;
-		Debug.Log(localCamPos);
-		FixNearClipPlane(mainCamera, localCamPos);
+		//Debug.Log(localCamPos);
+		FixNearClipPlane(mainCamera, trackedEyePosition);
 
 		//FixNearClipPlane(GetCorners(referenceCamera, referenceCamera.nearClipPlane), eyes.transform.position);
 	}
@@ -76,7 +74,7 @@ public class TranslateCamera : MonoBehaviour {
 	}
 
 	void UpdateCameraPosition(){
-		transform.position = eyes.transform.position;
+		mainCamera.transform.position = eyes.transform.position;
 	}
 
 	Vector3 ScreenEyePosition(Vector3 trackedEyePosition, float screenHeight, float screenWidth)
@@ -117,17 +115,24 @@ public class TranslateCamera : MonoBehaviour {
 		x = REsc.x / VEsc.x;
 		y = REsc.y / VEsc.y;
 		z = REsc.y / VEsc.z;
-		Vector3 translation = new Vector3(x, y, -z);
+		Vector3 translation = new Vector3(x, y, z);
 		return translation;
 	}
 	void FixNearClipPlane(Camera cam, Vector3 perspectiveOffset)
 	{
+		//TODO: lock x y values of
 		//based on Javascript code from Unity Forum
+		/*/
 		float left = -windowWidth/2 - perspectiveOffset.x;
 		float right = left+windowWidth;
 		float bottom = -windowHeight/2 - perspectiveOffset.y;
 		float top = bottom+windowHeight;
-
+		Debug.Log(string.Format("l: {0}, r:{1}, b:{2}, t: {3}\nww: {4}, wh: {5}", left, right, bottom, top, windowWidth, windowHeight));
+		*/
+		float left = (((-0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
+		float right = (((0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
+		float top = ((0.5f + perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
+		float bottom = ((-0.5f + perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
 		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
 	}
 	void FixNearClipPlane(Vector3[] frustum, Vector3 translation)
