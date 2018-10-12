@@ -75,6 +75,7 @@ public class TranslateCamera : MonoBehaviour {
 
 	void UpdateCameraPosition(){
 		mainCamera.transform.position = eyes.transform.position;
+		mainCamera.nearClipPlane = -mainCamera.transform.position.z;
 	}
 
 	Vector3 ScreenEyePosition(Vector3 trackedEyePosition, float screenHeight, float screenWidth)
@@ -131,8 +132,8 @@ public class TranslateCamera : MonoBehaviour {
 		*/
 		float left = (((-0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
 		float right = (((0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
-		float top = ((0.5f + perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
-		float bottom = ((-0.5f + perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
+		float top = ((0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
+		float bottom = ((-0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
 		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
 	}
 	void FixNearClipPlane(Vector3[] frustum, Vector3 translation)
