@@ -6,8 +6,8 @@ using Joint = Windows.Kinect.Joint;
 
 public class BodySourceView : MonoBehaviour 
 {
-    public BodySourceManager mBodySourceManager;
-    public GameObject mJointObject;
+    public BodySourceManager mBodySourceManager; //sciript which accesses Kinect
+    public GameObject mJointObject; //object to be instantiated at location of joint
     
     private Dictionary<ulong, GameObject> mBodies = new Dictionary<ulong, GameObject>();
     private List<JointType> _joints = new List<JointType>
@@ -40,6 +40,10 @@ public class BodySourceView : MonoBehaviour
         }
         #endregion
         
+        #region Sort Kinect Bodies by Proximity
+    //try sort here?
+        #endregion
+        
         #region Delete Kinect Bodies
         List<ulong> knownIds = new List<ulong>(mBodies.Keys);
         foreach (ulong trackingId in knownIds)
@@ -49,6 +53,7 @@ public class BodySourceView : MonoBehaviour
                 Destroy(mBodies[trackingId]);
                 mBodies.Remove(trackingId);
             }
+            //remove all but the nearest body
         }
         #endregion
 
@@ -78,8 +83,8 @@ public class BodySourceView : MonoBehaviour
 
         foreach (JointType joint in _joints)
         {
+            //only instantite if nearest body
            GameObject newJoint = Instantiate(mJointObject);
-           //Debug.Log("Instantiated Object");
             newJoint.name = joint.ToString();
 
             newJoint.transform.parent = body.transform; 
@@ -90,10 +95,17 @@ public class BodySourceView : MonoBehaviour
     
     private void UpdateBodyObject(Body body, GameObject bodyObject)
     {
+        Joint nearestJoint;
+        float smallestDistance = 99999f;
         foreach (JointType _joint in _joints)
         {
             Joint sourceJoint = body.Joints[_joint];
             Vector3 targetPosition = GetVector3FromJoint(sourceJoint);
+            if (targetPosition.z < smallestDistance)
+            {
+                smallestDistance = targetPosition.z;
+                nearestJoint = body.Joints[_joint];
+            }
             targetPosition.z *= -1;
 
             Transform jointObject = bodyObject.transform.Find(_joint.ToString());
