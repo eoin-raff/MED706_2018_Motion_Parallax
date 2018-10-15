@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - HeadPosition
+  - SecondaryCamera
   layers:
   - Default
   - TransparentFX
