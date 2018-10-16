@@ -15,8 +15,11 @@ public class TranslateCamera : MonoBehaviour {
     private float screenWidth; //= 720cm
 	private float screenHeight; // = 80.9
 
+    private int index = 0;
     private GameObject eyes;
-	private Vector3 trackedEyePosition;
+    //    private List<GameObject> allEyes;
+    private GameObject[] allEyes;
+    private Vector3 trackedEyePosition;
 
 	void Start()
 	{
@@ -24,6 +27,8 @@ public class TranslateCamera : MonoBehaviour {
         mainCamera.layerCullSpherical = true;
 		Debug.Log("Starting camera translation script.");
 		eyes = null;
+        //allEyes = new List<GameObject>();
+        allEyes = null;
 		trackedEyePosition = Vector3.zero;
 		aspectRatio = aspectRatioA/aspectRatioB;
 
@@ -47,10 +52,17 @@ public class TranslateCamera : MonoBehaviour {
 		if (eyes==null)
 		{
 			Debug.Log("Waiting for head position...");
-            eyes = GameObject.FindGameObjectWithTag("HeadPosition");
-		}
-		else
+            //eyes = GameObject.FindGameObjectWithTag("HeadPosition");
+            allEyes = GameObject.FindGameObjectsWithTag("HeadPosition");
+            eyes = allEyes[0];
+        }
+        else
 		{
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                index++;
+                eyes = allEyes[index%allEyes.Length];
+            }
             if (kinectOnTop)
             {
                 trackedEyePosition = (eyes.transform.position * 0.1f) - new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
@@ -72,19 +84,23 @@ public class TranslateCamera : MonoBehaviour {
 
     void LateUpdate()
 	{
-		GetCameraPosition();
+        if (eyes != null)
+        {
+            GetCameraPosition();
 
-		Vector3 localCamPos = transform.InverseTransformPoint(transform.position);
-		referenceCamera.nearClipPlane = -localCamPos.z;
-		//Debug.Log(localCamPos); 
-		/*FIXME:
-		worked nicely using trackedEyeposition, but had too strong of a dolly-zoom when moving on z axis.
-		also worked with eyes.transform.position, but was a very small frustum.
-		NOT WORKING:
-			localCamPos
-			translationVector
-		 */
-		FixNearClipPlane(mainCamera, trackedEyePosition);
+            Vector3 localCamPos = transform.InverseTransformPoint(transform.position);
+            referenceCamera.nearClipPlane = -localCamPos.z;
+            //Debug.Log(localCamPos); 
+            /*FIXME:
+            worked nicely using trackedEyeposition, but had too strong of a dolly-zoom when moving on z axis.
+            also worked with eyes.transform.position, but was a very small frustum.
+            NOT WORKING:
+                localCamPos
+                translationVector
+             */
+            FixNearClipPlane(mainCamera, trackedEyePosition);
+        }
+
 	}
 
 	void GetScreenDimension(float inches, float aspectRatio)
@@ -95,10 +111,12 @@ public class TranslateCamera : MonoBehaviour {
 	}
 
 	void GetCameraPosition(){
-		//mainCamera.transform.position = trackedEyePosition;
-		mainCamera.transform.position = eyes.transform.position;
-        
+        //mainCamera.transform.position = trackedEyePosition;
         //FixNearClipPlane(mainCamera, trackedEyePosition);
+
+        mainCamera.transform.position = eyes.transform.position;
+        //FixNearClipPlane(mainCamera, eyes.transform.position);
+        
     }
 
     void FixNearClipPlane(Camera cam, Vector3 perspectiveOffset)
