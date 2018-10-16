@@ -12,8 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Kinect_Test.unity
     guid: 7345ca538cbd44c46bd3a7e03e872056
   - enabled: 0
-    path: Assets/Scenes/new.unity
+    path: Assets/Scenes/Window_straight.unity
     guid: e8cee451783ce47e79dc519c631949e1
-  - enabled: 1
-    path: Assets/Scenes/Main.unity
+  - enabled: 0
+    path: Assets/Scenes/Window_Curved.unity
     guid: 53982ca5ade31416fbfff8951ac8af13
+  - enabled: 0
+    path: Assets/Scenes/multipleDisplays_0.unity
+    guid: df64df36db546304d85210c5c224759e
+  - enabled: 1
+    path: Assets/Scenes/multipleDisplays_2.unity
+    guid: aa117a6227e33e94cbfe56a03c976dd8
