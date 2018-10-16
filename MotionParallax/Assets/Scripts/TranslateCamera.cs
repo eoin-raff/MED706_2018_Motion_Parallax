@@ -72,14 +72,6 @@ public class TranslateCamera : MonoBehaviour {
                 trackedEyePosition = (eyes.transform.position * 0.1f) + new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
             }
 		}
-/*
- * //code from LateUpdate()
-        GetCameraPosition();
-        //TODO: figure out if localCamPos is required
-        Vector3 localCamPos = transform.InverseTransformPoint(transform.position);
-        referenceCamera.nearClipPlane = -localCamPos.z;
-        FixNearClipPlane(mainCamera, trackedEyePosition);
-*/
     }
 
     void LateUpdate()
@@ -88,8 +80,8 @@ public class TranslateCamera : MonoBehaviour {
         {
             GetCameraPosition();
 
-            Vector3 localCamPos = transform.InverseTransformPoint(transform.position);
-            referenceCamera.nearClipPlane = -localCamPos.z;
+//            Vector3 localCamPos = transform.InverseTransformPoint(transform.position);
+  //          referenceCamera.nearClipPlane = -localCamPos.z;
             //Debug.Log(localCamPos); 
             /*FIXME:
             worked nicely using trackedEyeposition, but had too strong of a dolly-zoom when moving on z axis.
@@ -112,10 +104,10 @@ public class TranslateCamera : MonoBehaviour {
 
 	void GetCameraPosition(){
         //mainCamera.transform.position = trackedEyePosition;
-        //FixNearClipPlane(mainCamera, trackedEyePosition);
+//        FixNearClipPlane(mainCamera, trackedEyePosition);
 
-        mainCamera.transform.position = eyes.transform.position;
-        //FixNearClipPlane(mainCamera, eyes.transform.position);
+  mainCamera.transform.position = eyes.transform.position;
+  //FixNearClipPlane(mainCamera, eyes.transform.position);
         
     }
 
