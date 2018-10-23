@@ -5,7 +5,7 @@ using UnityEngine;
 public class TranslateCamera : MonoBehaviour {
 
 	public Camera mainCamera;
-	public Camera referenceCamera;
+	public Camera referenceCamera; //remove? reimplement?
 	public float screenSizeInches;
 	public float aspectRatioA, aspectRatioB;
     public bool kinectOnTop, sizeInInches;
@@ -85,6 +85,7 @@ public class TranslateCamera : MonoBehaviour {
              * That means that this doesn't work at all. 
              * 
              * When using kinect again, try with the outcommented code (i.e., scale the vector after applying screen height modifiers)
+             * 
              */
             if (kinectOnTop)
             {
@@ -110,6 +111,7 @@ public class TranslateCamera : MonoBehaviour {
          * It also worked with eyes.transform.position, but was a very small frustum.
          * 
          * Camera pos should be at tracked eye position, as it is adjusted to Virtual Space.
+         * 
          */
 
         mainCamera.transform.position = trackedEyePosition;
@@ -119,6 +121,12 @@ public class TranslateCamera : MonoBehaviour {
 
     void GetParallaxValues(Camera cam, Vector3 perspectiveOffset)
 	{
+        /* TODO:
+         * 
+         * Try different values for perspectiveOffset
+         * Try different values for near and far instead of cam.nearClipPlane and cam.FarClipPlane
+         * 
+         */
 		float left = (((0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
 		float right = (((-0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
 		float top = ((0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
