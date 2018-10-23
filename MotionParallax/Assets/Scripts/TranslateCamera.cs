@@ -82,15 +82,23 @@ public class TranslateCamera : MonoBehaviour {
             /* FIXME:
              * 
              * The Kinect needed to be placed about 1.5m below the screen, even when kinectOnTop was true.
-             * That means that this doesn't work at all.
+             * That means that this doesn't work at all. 
+             * 
+             * When using kinect again, try with the outcommented code (i.e., scale the vector after applying screen height modifiers)
              */
             if (kinectOnTop)
             {
                 trackedEyePosition = (eyes.transform.position * 0.1f) - new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
+
+                //trackedEyePosition = (eyes.transform.position) - new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
+                //trackedEyePosition *= 0.1f;
             }
             else
             {
                 trackedEyePosition = (eyes.transform.position * 0.1f) + new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
+
+                //trackedEyePosition = (eyes.transform.position) - new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
+                //trackedEyePosition *= 0.1f;
             }
         }
     }
