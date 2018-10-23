@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TranslateCamera_left : MonoBehaviour {
+public class TranslateCamera_right : MonoBehaviour {
 
 	public Camera mainCamera;
 	public Camera referenceCamera;
@@ -117,8 +117,8 @@ public class TranslateCamera_left : MonoBehaviour {
 		//TODO: lock x y values of
 		//based on Javascript code from Unity Forum and code from old MED7 project
 
-		float left = (((1.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
-		float right = (((0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
+		float left = (((-0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
+		float right = (((-1.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
 		float top = ((0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
 		float bottom = ((-0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
 		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);

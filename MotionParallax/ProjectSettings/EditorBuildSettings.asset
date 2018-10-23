@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/multipleDisplays_0.unity
     guid: df64df36db546304d85210c5c224759e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/multipleDisplays_2.unity
     guid: aa117a6227e33e94cbfe56a03c976dd8
+  - enabled: 1
+    path: Assets/Scenes/multipleDisplays_3.unity
+    guid: 16ed658d55bf68e49bb87c730853a23b

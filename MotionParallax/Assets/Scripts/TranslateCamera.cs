@@ -105,7 +105,7 @@ public class TranslateCamera : MonoBehaviour {
 
 	void UpdateCameraPosition(){
 		//mainCamera.transform.position = eyes.transform.position;
-		mainCamera.transform.position = eyes.transform.position;
+		mainCamera.transform.position = trackedEyePosition;
 
 		//DONT USE THIS CODE
 		//mainCamera.nearClipPlane = -mainCamera.transform.position.z;
