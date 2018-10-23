@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TranslateCamera : MonoBehaviour {
+public class TranslateCamera_left : MonoBehaviour {
 
 	public Camera mainCamera;
 	public Camera referenceCamera;
