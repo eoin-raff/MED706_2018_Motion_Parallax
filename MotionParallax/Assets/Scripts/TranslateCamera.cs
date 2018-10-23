@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading;
 
 public class TranslateCamera : MonoBehaviour {
 
@@ -17,17 +16,15 @@ public class TranslateCamera : MonoBehaviour {
 
     private int index = 0;
     private GameObject eyes;
-    //    private List<GameObject> allEyes;
     private GameObject[] allEyes;
     private Vector3 trackedEyePosition;
 
+
 	void Start()
 	{
-		mainCamera = Camera.main;
         mainCamera.layerCullSpherical = true;
 		Debug.Log("Starting camera translation script.");
 		eyes = null;
-        //allEyes = new List<GameObject>();
         allEyes = null;
 		trackedEyePosition = Vector3.zero;
 		aspectRatio = aspectRatioA/aspectRatioB;
@@ -43,35 +40,12 @@ public class TranslateCamera : MonoBehaviour {
             screenHeight = 0.89f;
             screenWidth = 7.195f;
         }
-        Thread findCamPos = new Thread(GetCameraPosition);
-        //Thread projectionMatrix = new Thread(FixNearClipPlane(mainCamera, trackedEyePosition));
 	}
 
+
 	void Update ()
-	{
-		if (eyes==null)
-		{
-			Debug.Log("Waiting for head position...");
-            //eyes = GameObject.FindGameObjectWithTag("HeadPosition");
-            allEyes = GameObject.FindGameObjectsWithTag("HeadPosition");
-            eyes = allEyes[0];
-        }
-        else
-		{
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                index++;
-                eyes = allEyes[index%allEyes.Length];
-            }
-            if (kinectOnTop)
-            {
-                trackedEyePosition = (eyes.transform.position * 0.1f) - new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
-            }
-            else
-            {
-                trackedEyePosition = (eyes.transform.position * 0.1f) + new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
-            }
-		}
+    {
+        GetEyePosition();
     }
 
     void LateUpdate()
@@ -79,21 +53,9 @@ public class TranslateCamera : MonoBehaviour {
         if (eyes != null)
         {
             GetCameraPosition();
-
-//            Vector3 localCamPos = transform.InverseTransformPoint(transform.position);
-  //          referenceCamera.nearClipPlane = -localCamPos.z;
-            //Debug.Log(localCamPos); 
-            /*FIXME:
-            worked nicely using trackedEyeposition, but had too strong of a dolly-zoom when moving on z axis.
-            also worked with eyes.transform.position, but was a very small frustum.
-            NOT WORKING:
-                localCamPos
-                translationVector
-             */
-            FixNearClipPlane(mainCamera, trackedEyePosition);
         }
-
 	}
+
 
 	void GetScreenDimension(float inches, float aspectRatio)
 	{
@@ -102,16 +64,52 @@ public class TranslateCamera : MonoBehaviour {
 		screenHeight = metres * Mathf.Cos(Mathf.Atan(aspectRatio));
 	}
 
-	void GetCameraPosition(){
-        //mainCamera.transform.position = trackedEyePosition;
-//        FixNearClipPlane(mainCamera, trackedEyePosition);
-
-  mainCamera.transform.position = eyes.transform.position;
-  //FixNearClipPlane(mainCamera, eyes.transform.position);
-        
+    private void GetEyePosition()
+    {
+        if (eyes == null)
+        {
+            Debug.Log("Waiting for head position...");
+            allEyes = GameObject.FindGameObjectsWithTag("HeadPosition");
+            eyes = allEyes[0];
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                index++;
+                eyes = allEyes[index % allEyes.Length];
+            }
+            /* FIXME:
+             * 
+             * The Kinect needed to be placed about 1.5m below the screen, even when kinectOnTop was true.
+             * That means that this doesn't work at all.
+             */
+            if (kinectOnTop)
+            {
+                trackedEyePosition = (eyes.transform.position * 0.1f) - new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
+            }
+            else
+            {
+                trackedEyePosition = (eyes.transform.position * 0.1f) + new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
+            }
+        }
     }
 
-    void FixNearClipPlane(Camera cam, Vector3 perspectiveOffset)
+    void GetCameraPosition(){
+        /* FIXME:
+         * 
+         * This worked nicely using trackedEyeposition, but had too strong of a dolly-zoom when moving on z axis.
+         * It also worked with eyes.transform.position, but was a very small frustum.
+         * 
+         * Camera pos should be at tracked eye position, as it is adjusted to Virtual Space.
+         */
+
+        mainCamera.transform.position = trackedEyePosition;
+        GetParallaxValues(mainCamera, trackedEyePosition);
+    }
+
+
+    void GetParallaxValues(Camera cam, Vector3 perspectiveOffset)
 	{
 		float left = (((0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
 		float right = (((-0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
@@ -121,8 +119,14 @@ public class TranslateCamera : MonoBehaviour {
 		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
 	}
 
+
 	Matrix4x4 GetObliqueProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
 	{
+        /* TODO:
+         * 
+         * Check values for a, b, c (left right, depth)
+         * Perhaps a better way to compute these?
+         */
 		Matrix4x4 m = Matrix4x4.identity;
 
 		float x = (2.0f * near)/ (right-left);
