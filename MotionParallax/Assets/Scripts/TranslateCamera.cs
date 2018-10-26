@@ -11,6 +11,8 @@ public class TranslateCamera : MonoBehaviour {
 	public float aspectRatioA, aspectRatioB;
     public bool kinectOnTop, sizeInInches;
 
+    //private float screenSizeInches;           // For use with startscreen
+    //private int aspectRatioA, aspectRatioB;   // For use with startscreen
     private float aspectRatio;
     private float screenWidth; //= 720cm
 	private float screenHeight; // = 80.9
@@ -32,7 +34,11 @@ public class TranslateCamera : MonoBehaviour {
 		trackedEyePosition = Vector3.zero;
 		aspectRatio = aspectRatioA/aspectRatioB;
 
-        if(sizeInInches)
+        //aspectRatioA = ApplicationModel.aspectA;      // For use with startscreen
+        //aspectRatioB = ApplicationModel.aspectB;      // For use with startscreen
+        //screenSizeInches = ApplicationModel.diagonal; // For use with startscreen
+
+        if (sizeInInches)
         {
             GetScreenDimension(screenSizeInches, aspectRatio);
         }
