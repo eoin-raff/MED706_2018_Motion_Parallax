@@ -1001,6 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 121b20b261a794a4e81d96024c7feb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadLevelIndex: 1
   inputA: {fileID: 484514663}
   inputB: {fileID: 1641789787}
   inputD: {fileID: 1210228328}

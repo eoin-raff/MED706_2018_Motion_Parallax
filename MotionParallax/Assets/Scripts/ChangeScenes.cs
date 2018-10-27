@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class ChangeScenes : MonoBehaviour
 {
+	public int loadLevelIndex;
     public GameObject inputA;
     public GameObject inputB;
     public GameObject inputD;
 
     public void Change()
     {
-        SceneManager.LoadScene("SampleScene");     // Change for when implemented!  
+		SceneManager.LoadScene(loadLevelIndex);     // Change for when implemented!  
     }
 
     public void ChangeSmile()
@@ -21,7 +22,7 @@ public class ChangeScenes : MonoBehaviour
         ApplicationModel.aspectB = 9;
         ApplicationModel.diagonal = 285.0f;
 
-        SceneManager.LoadScene("SampleScene");      // Change for when implemented!
+		SceneManager.LoadScene(loadLevelIndex);      // Change for when implemented!
     }
 
     public void ChangeAspectA()
