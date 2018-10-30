@@ -23,7 +23,6 @@ public class TranslateCamera : MonoBehaviour {
 
 	void Start()
 	{
-		mainCamera = Camera.main;
         mainCamera.layerCullSpherical = true;
 		Debug.Log("Starting camera translation script.");
 		eyes = null;
@@ -100,13 +99,14 @@ public class TranslateCamera : MonoBehaviour {
 		float metres = inches * 0.0255f;
 		screenWidth = metres * Mathf.Sin(Mathf.Atan(aspectRatio));
 		screenHeight = metres * Mathf.Cos(Mathf.Atan(aspectRatio));
+        Debug.Log("width: " + screenWidth + "\nheight: " + screenHeight);
 	}
 
 	void GetCameraPosition(){
-        //mainCamera.transform.position = trackedEyePosition;
+        mainCamera.transform.position = trackedEyePosition;
 //        FixNearClipPlane(mainCamera, trackedEyePosition);
 
-  mainCamera.transform.position = eyes.transform.position;
+  //mainCamera.transform.position = eyes.transform.position;
   //FixNearClipPlane(mainCamera, eyes.transform.position);
         
     }
