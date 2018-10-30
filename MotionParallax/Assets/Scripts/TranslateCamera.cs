@@ -5,7 +5,7 @@ using UnityEngine;
 public class TranslateCamera : MonoBehaviour {
 
 	public Camera mainCamera;
-	public float screenSizeInches;
+    public float screenSizeInches;
 	public float aspectRatioA, aspectRatioB;
     public bool kinectOnTop, sizeInInches;
 
@@ -22,7 +22,7 @@ public class TranslateCamera : MonoBehaviour {
 
 	void Start()
 	{
-        //mainCamera.layerCullSpherical = true;
+        mainCamera.layerCullSpherical = true;
 		Debug.Log("Starting camera translation script.");
 		eyes = null;
         allEyes = null;
@@ -31,23 +31,23 @@ public class TranslateCamera : MonoBehaviour {
 
 		aspectRatio = aspectRatioA/aspectRatioB;
 
-        if(sizeInInches)
-        {
-            GetScreenDimension(screenSizeInches, aspectRatio);
-        }
-        else
-        {
-            //assuming using panoramic screen in SMILE lab.
-            //285 inches?
-            screenHeight = 0.89f;
-            screenWidth = 7.195f;
-        }
+        GetScreenDimension(screenSizeInches, aspectRatio);
+        
+        /*
+        //assuming using panoramic screen in SMILE lab.
+        //285 inches diagonal?
+        //
+        screenHeight = 0.89f;
+        screenWidth = 7.195f;
+        */
 	}
+
 
 	void Update ()
     {
         GetEyePosition();
     }
+
 
     void LateUpdate()
 	{
@@ -55,6 +55,7 @@ public class TranslateCamera : MonoBehaviour {
         {
             GetCameraPosition();
         }
+        Debug.Log(mainCamera.fieldOfView);
 	}
 
 
@@ -88,7 +89,6 @@ public class TranslateCamera : MonoBehaviour {
                 index++;
                 eyes = allEyes[index % allEyes.Length];
             }
-
             trackedEyePosition = verticalAdjustment + eyes.transform.position * 0.1f;
         }
     }
@@ -101,36 +101,25 @@ public class TranslateCamera : MonoBehaviour {
 
     void GetParallaxValues(Camera cam, Vector3 perspectiveOffset)
 	{
-        /* TODO:
-         * 
-         * Try different values for perspectiveOffset
-         * Try different values for near and far instead of cam.nearClipPlane and cam.FarClipPlane
-         * 
-         */
-		float left = (((0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
-		float right = (((-0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
-		float top = ((0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
-		float bottom = ((-0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
+		float left = (((0.5f * aspectRatio) + perspectiveOffset.x) / perspectiveOffset.z) * cam.nearClipPlane;
+		float right = (((-0.5f * aspectRatio) + perspectiveOffset.x) / perspectiveOffset.z) * cam.nearClipPlane;
+		float top = ((0.5f + -perspectiveOffset.y) / -perspectiveOffset.z) * cam.nearClipPlane;
+		float bottom = ((-0.5f + -perspectiveOffset.y) / -perspectiveOffset.z) * cam.nearClipPlane;
 
-		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane + cam.nearClipPlane);
+		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
 	}
 
 
 	Matrix4x4 GetObliqueProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
 	{
-        /* TODO:
-         * 
-         * Check values for a, b, c (left right, depth)
-         * Perhaps a better way to compute these?
-         */
 		Matrix4x4 m = Matrix4x4.identity;
 
 		float x = (2.0f * near)/ (right-left);
 		float y = (2.0f * near) / (top-bottom);
 		float a = (right + left) / (right - left);
 		float b = (top + bottom) / (top - bottom);
-		float c = -(far + near) / (far - near);
-		float d = ((2.0f * near)-far) / (far - near);
+		float c = (near + far)/(near - far);
+		float d = (2.0f * near * far) / (near - far);
 		float e = -1.0f;
 
 		m[0, 0] = x;
