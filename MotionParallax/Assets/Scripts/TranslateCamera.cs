@@ -20,6 +20,7 @@ public class TranslateCamera : MonoBehaviour {
     //    private List<GameObject> allEyes;
     private GameObject[] allEyes;
     private Vector3 trackedEyePosition;
+    private Vector3 verticalAdjustment;
 
 	void Start()
 	{
@@ -29,6 +30,7 @@ public class TranslateCamera : MonoBehaviour {
         //allEyes = new List<GameObject>();
         allEyes = null;
 		trackedEyePosition = Vector3.zero;
+        verticalAdjustment = Vector3.zero;
 		aspectRatio = aspectRatioA/aspectRatioB;
 
         if(sizeInInches)
@@ -42,6 +44,8 @@ public class TranslateCamera : MonoBehaviour {
             screenHeight = 0.89f;
             screenWidth = 7.195f;
         }
+
+
         Thread findCamPos = new Thread(GetCameraPosition);
         //Thread projectionMatrix = new Thread(FixNearClipPlane(mainCamera, trackedEyePosition));
 	}
@@ -62,15 +66,19 @@ public class TranslateCamera : MonoBehaviour {
                 index++;
                 eyes = allEyes[index%allEyes.Length];
             }
+
+            trackedEyePosition = (eyes.transform.position * 0.1f);
+
+            verticalAdjustment.y = trackedEyePosition.y + (screenHeight / 2);
+
             if (kinectOnTop)
             {
-                trackedEyePosition = (eyes.transform.position * 0.1f) - new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
+                verticalAdjustment.y *= -1;
             }
-            else
-            {
-                trackedEyePosition = (eyes.transform.position * 0.1f) + new Vector3(0, screenHeight / 2, 0); //consider the Kinect as the center of the screen;
-            }
-		}
+
+            trackedEyePosition -= verticalAdjustment;
+
+        }
     }
 
     void LateUpdate()
