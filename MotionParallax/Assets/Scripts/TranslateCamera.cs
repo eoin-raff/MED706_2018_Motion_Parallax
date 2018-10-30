@@ -28,6 +28,7 @@ public class TranslateCamera : MonoBehaviour {
         allEyes = null;
 		trackedEyePosition = Vector3.zero;
         verticalAdjustment = Vector3.zero;
+
 		aspectRatio = aspectRatioA/aspectRatioB;
 
         if(sizeInInches)
@@ -71,6 +72,13 @@ public class TranslateCamera : MonoBehaviour {
             Debug.Log("Waiting for head position...");
             allEyes = GameObject.FindGameObjectsWithTag("HeadPosition");
             eyes = allEyes[0];
+
+            verticalAdjustment.y = -(eyes.transform.position.y * 0.1f) - (screenHeight / 2);
+
+            if (kinectOnTop)
+            {
+                verticalAdjustment.y *= -1;
+            }
         }
         else
         {
@@ -80,16 +88,7 @@ public class TranslateCamera : MonoBehaviour {
                 eyes = allEyes[index % allEyes.Length];
             }
 
-            trackedEyePosition = (eyes.transform.position * 0.1f);
-
-            verticalAdjustment.y = trackedEyePosition.y + (screenHeight / 2);
-
-            if (kinectOnTop)
-            {
-                verticalAdjustment.y *= -1;
-            }
-
-            trackedEyePosition -= verticalAdjustment;
+            trackedEyePosition = verticalAdjustment + eyes.transform.position * 0.1f;
         }
     }
 
