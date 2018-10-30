@@ -84,6 +84,7 @@ public class TranslateCamera : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.I))
             {
+                print("changing perspective");
                 index++;
                 eyes = allEyes[index % allEyes.Length];
             }
@@ -111,7 +112,7 @@ public class TranslateCamera : MonoBehaviour {
 		float top = ((0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
 		float bottom = ((-0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
 
-		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
+		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane + cam.nearClipPlane);
 	}
 
 
@@ -129,7 +130,7 @@ public class TranslateCamera : MonoBehaviour {
 		float a = (right + left) / (right - left);
 		float b = (top + bottom) / (top - bottom);
 		float c = -(far + near) / (far - near);
-		float d = -(2.0f * far * near) / (far - near);
+		float d = ((2.0f * near)-far) / (far - near);
 		float e = -1.0f;
 
 		m[0, 0] = x;
