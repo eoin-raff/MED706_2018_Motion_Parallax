@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading;
 
 public class TranslateCamera : MonoBehaviour {
 
 	public Camera mainCamera;
-	public Camera referenceCamera;
 	public float screenSizeInches;
 	public float aspectRatioA, aspectRatioB;
     public bool kinectOnTop, sizeInInches;
@@ -17,17 +15,16 @@ public class TranslateCamera : MonoBehaviour {
 
     private int index = 0;
     private GameObject eyes;
-    //    private List<GameObject> allEyes;
     private GameObject[] allEyes;
     private Vector3 trackedEyePosition;
     private Vector3 verticalAdjustment;
 
+
 	void Start()
 	{
-        mainCamera.layerCullSpherical = true;
+        //mainCamera.layerCullSpherical = true;
 		Debug.Log("Starting camera translation script.");
 		eyes = null;
-        //allEyes = new List<GameObject>();
         allEyes = null;
 		trackedEyePosition = Vector3.zero;
         verticalAdjustment = Vector3.zero;
@@ -44,27 +41,43 @@ public class TranslateCamera : MonoBehaviour {
             screenHeight = 0.89f;
             screenWidth = 7.195f;
         }
-
-
-        Thread findCamPos = new Thread(GetCameraPosition);
-        //Thread projectionMatrix = new Thread(FixNearClipPlane(mainCamera, trackedEyePosition));
 	}
 
 	void Update ()
+    {
+        GetEyePosition();
+    }
+
+    void LateUpdate()
 	{
-		if (eyes==null)
-		{
-			Debug.Log("Waiting for head position...");
-            //eyes = GameObject.FindGameObjectWithTag("HeadPosition");
+        if (eyes != null)
+        {
+            GetCameraPosition();
+        }
+	}
+
+
+	void GetScreenDimension(float inches, float aspectRatio)
+	{
+		float metres = inches * 0.0255f;
+		screenWidth = metres * Mathf.Sin(Mathf.Atan(aspectRatio));
+		screenHeight = metres * Mathf.Cos(Mathf.Atan(aspectRatio));
+	}
+
+    private void GetEyePosition()
+    {
+        if (eyes == null)
+        {
+            Debug.Log("Waiting for head position...");
             allEyes = GameObject.FindGameObjectsWithTag("HeadPosition");
             eyes = allEyes[0];
         }
         else
-		{
+        {
             if (Input.GetKeyDown(KeyCode.I))
             {
                 index++;
-                eyes = allEyes[index%allEyes.Length];
+                eyes = allEyes[index % allEyes.Length];
             }
 
             trackedEyePosition = (eyes.transform.position * 0.1f);
@@ -77,50 +90,23 @@ public class TranslateCamera : MonoBehaviour {
             }
 
             trackedEyePosition -= verticalAdjustment;
-
         }
     }
 
-    void LateUpdate()
-	{
-        if (eyes != null)
-        {
-            GetCameraPosition();
-
-//            Vector3 localCamPos = transform.InverseTransformPoint(transform.position);
-  //          referenceCamera.nearClipPlane = -localCamPos.z;
-            //Debug.Log(localCamPos); 
-            /*FIXME:
-            worked nicely using trackedEyeposition, but had too strong of a dolly-zoom when moving on z axis.
-            also worked with eyes.transform.position, but was a very small frustum.
-            NOT WORKING:
-                localCamPos
-                translationVector
-             */
-            FixNearClipPlane(mainCamera, trackedEyePosition);
-        }
-
-	}
-
-	void GetScreenDimension(float inches, float aspectRatio)
-	{
-		float metres = inches * 0.0255f;
-		screenWidth = metres * Mathf.Sin(Mathf.Atan(aspectRatio));
-		screenHeight = metres * Mathf.Cos(Mathf.Atan(aspectRatio));
-        Debug.Log("width: " + screenWidth + "\nheight: " + screenHeight);
-	}
-
-	void GetCameraPosition(){
+    void GetCameraPosition(){
         mainCamera.transform.position = trackedEyePosition;
-//        FixNearClipPlane(mainCamera, trackedEyePosition);
-
-  //mainCamera.transform.position = eyes.transform.position;
-  //FixNearClipPlane(mainCamera, eyes.transform.position);
-        
+        GetParallaxValues(mainCamera, trackedEyePosition);
     }
 
-    void FixNearClipPlane(Camera cam, Vector3 perspectiveOffset)
+
+    void GetParallaxValues(Camera cam, Vector3 perspectiveOffset)
 	{
+        /* TODO:
+         * 
+         * Try different values for perspectiveOffset
+         * Try different values for near and far instead of cam.nearClipPlane and cam.FarClipPlane
+         * 
+         */
 		float left = (((0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
 		float right = (((-0.5f * aspectRatio)+perspectiveOffset.x)/perspectiveOffset.z) * cam.nearClipPlane;
 		float top = ((0.5f + -perspectiveOffset.y)/-perspectiveOffset.z)* cam.nearClipPlane;
@@ -129,8 +115,14 @@ public class TranslateCamera : MonoBehaviour {
 		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
 	}
 
+
 	Matrix4x4 GetObliqueProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
 	{
+        /* TODO:
+         * 
+         * Check values for a, b, c (left right, depth)
+         * Perhaps a better way to compute these?
+         */
 		Matrix4x4 m = Matrix4x4.identity;
 
 		float x = (2.0f * near)/ (right-left);
