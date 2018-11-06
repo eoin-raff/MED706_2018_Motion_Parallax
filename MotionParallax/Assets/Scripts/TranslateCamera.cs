@@ -55,7 +55,6 @@ public class TranslateCamera : MonoBehaviour {
         {
             GetCameraPosition();
         }
-        Debug.Log(mainCamera.fieldOfView);
 	}
 
 
@@ -95,26 +94,27 @@ public class TranslateCamera : MonoBehaviour {
 
     void GetCameraPosition(){
         mainCamera.transform.position = trackedEyePosition;
+        mainCamera.ResetProjectionMatrix();
         GetParallaxValues(mainCamera, trackedEyePosition);
     }
 
 
     void GetParallaxValues(Camera cam, Vector3 perspectiveOffset)
 	{
-		float left = (((0.5f * aspectRatio) + perspectiveOffset.x) / perspectiveOffset.z) * cam.nearClipPlane;
-		float right = (((-0.5f * aspectRatio) + perspectiveOffset.x) / perspectiveOffset.z) * cam.nearClipPlane;
-		float top = ((0.5f + -perspectiveOffset.y) / -perspectiveOffset.z) * cam.nearClipPlane;
-		float bottom = ((-0.5f + -perspectiveOffset.y) / -perspectiveOffset.z) * cam.nearClipPlane;
+		float left = (((-0.5f * aspectRatio) - perspectiveOffset.x) / -perspectiveOffset.z) * cam.nearClipPlane;
+		float right = (((0.5f * aspectRatio) - perspectiveOffset.x) / -perspectiveOffset.z) * cam.nearClipPlane;
+		float top = ((0.5f - perspectiveOffset.y) / -perspectiveOffset.z) * cam.nearClipPlane;
+		float bottom = ((-0.5f  - perspectiveOffset.y) / -perspectiveOffset.z) * cam.nearClipPlane;
 
-		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
+		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane + perspectiveOffset.z);
 	}
 
 
 	Matrix4x4 GetObliqueProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
 	{
 		Matrix4x4 m = Matrix4x4.identity;
-
-		float x = (2.0f * near)/ (right-left);
+// print(top - bottom);
+        float x = (2.0f * near)/ (right-left);
 		float y = (2.0f * near) / (top-bottom);
 		float a = (right + left) / (right - left);
 		float b = (top + bottom) / (top - bottom);
@@ -130,7 +130,8 @@ public class TranslateCamera : MonoBehaviour {
 		m[2, 3] = d;
 		m[3, 2] = e;
 		m[3, 3] = 0.0f;
-
+        string log = string.Format("x: {0:0.##}, y: {1:0.##}, a: {2:0.##}, b: {3:0.##}, c: {4:0.##}, d: {5:0.##}", x, y, a, b, c, d);
+        print(log);
 		return m;
 	}
 }
