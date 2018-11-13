@@ -21,9 +21,11 @@ public class TranslateCamera : MonoBehaviour {
     private GameObject[] allEyes;
     private Vector3 trackedEyePosition;
     private Vector3 verticalAdjustment;
+    private float yOffset = 0;
 
 
-	void Start()
+
+    void Start()
 	{
         mainCamera.layerCullSpherical = true;
 		Debug.Log("Starting camera translation script.");
@@ -36,46 +38,60 @@ public class TranslateCamera : MonoBehaviour {
 
         GetScreenDimension(screenSizeInches, aspectRatio);
         
-        
+        /*
         //assuming using panoramic screen in SMILE lab.
         //285 inches diagonal?
         //
         screenHeight = 0.89f;
         screenWidth = 7.195f;
-        
+        */
 	}
 
 
 	void Update ()
     {
         GetEyePosition();
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            yOffset+=0.01f;
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            yOffset-=0.01f;
+        }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            lockZPosition = !lockZPosition;
-            if (lockZPosition)
-            {
-                Debug.Log("switching Z-lock");
-                fixedZPosition = trackedEyePosition.z;
-            }
+            LockZPos();
         }
-    }
 
+    }
 
     void LateUpdate()
 	{
         if (eyes != null)
         {
-            GetCameraPosition();
+            MotionParallax();
         }
-	}
+    }
 
 
-	void GetScreenDimension(float inches, float aspectRatio)
+    void GetScreenDimension(float inches, float aspectRatio)
 	{
 		float metres = inches * 0.0255f;
 		screenWidth = metres * Mathf.Sin(Mathf.Atan(aspectRatio));
 		screenHeight = metres * Mathf.Cos(Mathf.Atan(aspectRatio));
 	}
+
+    private void LockZPos()
+    {
+        lockZPosition = !lockZPosition;
+        if (lockZPosition)
+        {
+            Debug.Log("switching Z-lock");
+            fixedZPosition = trackedEyePosition.z;
+        }
+    }
 
     private void GetEyePosition()
     {
@@ -83,8 +99,7 @@ public class TranslateCamera : MonoBehaviour {
         {
             Debug.Log("Waiting for head position...");
             allEyes = GameObject.FindGameObjectsWithTag("HeadPosition");
-            eyes = allEyes[0];
-
+            eyes = allEyes[0];    
             verticalAdjustment.y = -(eyes.transform.position.y * 0.1f) - (screenHeight / 2);
 
             if (kinectOnTop)
@@ -100,6 +115,7 @@ public class TranslateCamera : MonoBehaviour {
                 index++;
                 eyes = allEyes[index % allEyes.Length];
             }
+            verticalAdjustment.y += yOffset;
             trackedEyePosition = verticalAdjustment + eyes.transform.position * 0.1f;
             if (lockZPosition)
             {
@@ -108,62 +124,34 @@ public class TranslateCamera : MonoBehaviour {
         }
     }
 
+    private void MotionParallax()
+    {
+        GetCameraPosition();
+        GetWindowPosition(mainCamera, trackedEyePosition);
+    }
+
     void GetCameraPosition(){
         mainCamera.transform.position = trackedEyePosition;
+        //mainCamera.transform.LookAt(new Vector3(0, 0, 0));
         mainCamera.ResetProjectionMatrix();
-        GetParallaxValues(mainCamera, trackedEyePosition);
     }
 
 
-    void GetParallaxValues(Camera cam, Vector3 perspectiveOffset)
-	{
-       
-        /*
-		float left = (((-0.5f * aspectRatio) + perspectiveOffset.x) * cam.nearClipPlane / perspectiveOffset.z);
-		float right = (((0.5f * aspectRatio) + perspectiveOffset.x) * cam.nearClipPlane / perspectiveOffset.z);
-		float top = ((0.5f - perspectiveOffset.y) * cam.nearClipPlane / perspectiveOffset.z);
-		float bottom = ((-0.5f  - perspectiveOffset.y)) * cam.nearClipPlane / perspectiveOffset.z;
-        */
-        
+    void GetWindowPosition(Camera cam, Vector3 perspectiveOffset)
+	{      
         float left = cam.nearClipPlane * (-.5f * aspectRatio - perspectiveOffset.x) / Mathf.Abs(perspectiveOffset.z);
         float right = cam.nearClipPlane * (.5f * aspectRatio - perspectiveOffset.x) / Mathf.Abs(perspectiveOffset.z);
         float bottom = cam.nearClipPlane * (-.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
         float top = cam.nearClipPlane * (.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
-        
-        //cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane + perspectiveOffset.z);
-        //cam.worldToCameraMatrix = SetViewMatrix(trackedEyePosition, Quaternion.identity, Vector3.one);
-        cam.projectionMatrix = PerspectiveOffCenter(left, right, bottom, top, cam.nearClipPlane, 100);
+         /*
+         * NOTE: Changing the worldToCamera matrix (i.e. the view Matrix) is unnecessary in this program. 
+         * The same effect is acheived simply by moving the camera position
+         * This is only done in Johnny Lee's code via matrices since there is no way to simply change it as there is in unity
+         */
+        cam.projectionMatrix = CustomProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, 100);
     }
 
-    private Matrix4x4 SetViewMatrix(Vector3 position, Quaternion rotation, Vector3 scale)
-    {
-        Matrix4x4 m = Matrix4x4.TRS(new Vector3(position.x, position.y, -1*Mathf.Abs(position.z)), mainCamera.transform.rotation    , scale);
-        return m;
-    }
-
-    Matrix4x4 GetObliqueProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
-	{
-		Matrix4x4 m = Matrix4x4.identity;
-        float x = (2.0f * near)/ (right-left);
-		float y = (2.0f * near) / (top-bottom);
-		float a = (right + left) / (right - left);
-		float b = (top + bottom) / (top - bottom);
-		float c = -(far+near)/(far-near);
-		float d = (-2.0f * near * far) / (far - near);
-		float e = -1.0f;
-
-		m[0, 0] = x;
-		m[0, 2] = a;
-		m[1, 1] = y;
-		m[1, 2] = b;
-		m[2, 2] = c;
-		m[2, 3] = d;
-		m[3, 2] = e;
-		m[3, 3] = 0.0f;
-		return m;
-	}
-
-    static Matrix4x4 PerspectiveOffCenter(float left, float right, float bottom, float top, float near, float far)
+    static Matrix4x4 CustomProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
     {
         float x = (2.0f * near) / (right - left);
         float y = (2.0f * near) / (top - bottom);

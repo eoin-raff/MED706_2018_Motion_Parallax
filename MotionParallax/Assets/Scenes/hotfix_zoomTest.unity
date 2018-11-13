@@ -958,7 +958,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1041984496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41433764, y: -0.23322204, z: 12.09}
+  m_LocalPosition: {x: 0, y: 0, z: 13.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1066,8 +1066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1163085473}
-  screenSizeInches: 650
-  aspectRatioA: 16
+  screenSizeInches: 65
+  aspectRatioA: 80
   aspectRatioB: 9
   kinectOnTop: 0
   sizeInInches: 1
