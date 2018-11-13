@@ -1065,9 +1065,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587472f3bbbb6344da02bc0d2775d3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Z_MapFactor: 0.25
   mainCamera: {fileID: 1163085473}
   screenSizeInches: 65
-  aspectRatioA: 80
+  aspectRatioA: 16
   aspectRatioB: 9
   kinectOnTop: 0
   sizeInInches: 1
