@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TranslateCamera : MonoBehaviour {
-
-	public Camera mainCamera;
+    public float Z_MapFactor;
+    public Camera mainCamera;
     public float screenSizeInches;
 	public float aspectRatioA, aspectRatioB;
     public bool kinectOnTop, sizeInInches;
@@ -14,7 +14,9 @@ public class TranslateCamera : MonoBehaviour {
     private float screenWidth; //= 720cm
 	private float screenHeight; // = 80.9
     private bool lockZPosition = false;
+    private bool mapZPosition = false;
     private float fixedZPosition;
+    private float mappedZPosition;
 
     private int index = 0;
     private GameObject eyes;
@@ -22,6 +24,7 @@ public class TranslateCamera : MonoBehaviour {
     private Vector3 trackedEyePosition;
     private Vector3 verticalAdjustment;
     private float yOffset = 0;
+    private Vector3 initialPosition = Vector3.zero;
 
 
 
@@ -60,12 +63,18 @@ public class TranslateCamera : MonoBehaviour {
         {
             yOffset-=0.01f;
         }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            MapZPos();
+        }
         if (Input.GetKeyDown(KeyCode.Z))
         {
             LockZPos();
         }
 
     }
+
+
 
     void LateUpdate()
 	{
@@ -82,9 +91,16 @@ public class TranslateCamera : MonoBehaviour {
 		screenWidth = metres * Mathf.Sin(Mathf.Atan(aspectRatio));
 		screenHeight = metres * Mathf.Cos(Mathf.Atan(aspectRatio));
 	}
+    private void MapZPos()
+    {
+        lockZPosition = false;
+        mapZPosition = !mapZPosition;
+        Debug.Log("switching to mapped Zpos");
+    }
 
     private void LockZPos()
     {
+        mapZPosition = false;
         lockZPosition = !lockZPosition;
         if (lockZPosition)
         {
@@ -109,17 +125,29 @@ public class TranslateCamera : MonoBehaviour {
         }
         else
         {
+            if (initialPosition == Vector3.zero)
+            {
+                initialPosition = eyes.transform.position * .1f;
+            }
             if (Input.GetKeyDown(KeyCode.I))
             {
                 print("changing perspective");
                 index++;
                 eyes = allEyes[index % allEyes.Length];
+                initialPosition = eyes.transform.position * .1f;
             }
             verticalAdjustment.y += yOffset;
             trackedEyePosition = verticalAdjustment + eyes.transform.position * 0.1f;
             if (lockZPosition)
             {
                 trackedEyePosition.z = fixedZPosition;
+            }
+            if (mapZPosition)
+            {
+                float diff = trackedEyePosition.z - initialPosition.z;
+                mappedZPosition = initialPosition.z + diff * Z_MapFactor;
+                print("tracked: " + trackedEyePosition.z + " inital: " + initialPosition.z + ", diff: " + diff);
+                trackedEyePosition.z = mappedZPosition;
             }
         }
     }
