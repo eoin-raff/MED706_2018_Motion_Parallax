@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Kinect_Test.unity
     guid: 7345ca538cbd44c46bd3a7e03e872056
   - enabled: 0
@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Window_Curved.unity
     guid: 53982ca5ade31416fbfff8951ac8af13
+  - enabled: 1
+    path: Assets/Scenes/hotfix_zoomTest.unity
+    guid: 466c02cef98e57049b40ffb5a55ccd8d
