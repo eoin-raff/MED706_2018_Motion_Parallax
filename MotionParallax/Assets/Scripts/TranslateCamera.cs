@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,13 +36,13 @@ public class TranslateCamera : MonoBehaviour {
 
         GetScreenDimension(screenSizeInches, aspectRatio);
         
-        /*
+        
         //assuming using panoramic screen in SMILE lab.
         //285 inches diagonal?
         //
         screenHeight = 0.89f;
         screenWidth = 7.195f;
-        */
+        
 	}
 
 
@@ -116,15 +117,29 @@ public class TranslateCamera : MonoBehaviour {
 
     void GetParallaxValues(Camera cam, Vector3 perspectiveOffset)
 	{
-		float left = (((-0.5f * aspectRatio) - perspectiveOffset.x) / -perspectiveOffset.z) * cam.nearClipPlane;
-		float right = (((0.5f * aspectRatio) - perspectiveOffset.x) / -perspectiveOffset.z) * cam.nearClipPlane;
-		float top = ((0.5f - perspectiveOffset.y) / -perspectiveOffset.z) * cam.nearClipPlane;
-		float bottom = ((-0.5f  - perspectiveOffset.y) / -perspectiveOffset.z) * cam.nearClipPlane;
-
+       
+        /*
+		float left = (((-0.5f * aspectRatio) + perspectiveOffset.x) * cam.nearClipPlane / perspectiveOffset.z);
+		float right = (((0.5f * aspectRatio) + perspectiveOffset.x) * cam.nearClipPlane / perspectiveOffset.z);
+		float top = ((0.5f - perspectiveOffset.y) * cam.nearClipPlane / perspectiveOffset.z);
+		float bottom = ((-0.5f  - perspectiveOffset.y)) * cam.nearClipPlane / perspectiveOffset.z;
+        */
+        
+        float left = cam.nearClipPlane * (-.5f * aspectRatio - perspectiveOffset.x) / Mathf.Abs(perspectiveOffset.z);
+        float right = cam.nearClipPlane * (.5f * aspectRatio - perspectiveOffset.x) / Mathf.Abs(perspectiveOffset.z);
+        float bottom = cam.nearClipPlane * (-.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
+        float top = cam.nearClipPlane * (.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
+        
         //cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane + perspectiveOffset.z);
-        cam.projectionMatrix = PerspectiveOffCenter(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane, perspectiveOffset.z);
+        //cam.worldToCameraMatrix = SetViewMatrix(trackedEyePosition, Quaternion.identity, Vector3.one);
+        cam.projectionMatrix = PerspectiveOffCenter(left, right, bottom, top, cam.nearClipPlane, 100);
     }
 
+    private Matrix4x4 SetViewMatrix(Vector3 position, Quaternion rotation, Vector3 scale)
+    {
+        Matrix4x4 m = Matrix4x4.TRS(new Vector3(position.x, position.y, -1*Mathf.Abs(position.z)), mainCamera.transform.rotation    , scale);
+        return m;
+    }
 
     Matrix4x4 GetObliqueProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
 	{
@@ -148,7 +163,7 @@ public class TranslateCamera : MonoBehaviour {
 		return m;
 	}
 
-    static Matrix4x4 PerspectiveOffCenter(float left, float right, float bottom, float top, float near, float far, float z)
+    static Matrix4x4 PerspectiveOffCenter(float left, float right, float bottom, float top, float near, float far)
     {
         float x = (2.0f * near) / (right - left);
         float y = (2.0f * near) / (top - bottom);
