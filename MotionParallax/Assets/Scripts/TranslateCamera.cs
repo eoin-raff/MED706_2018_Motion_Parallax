@@ -12,6 +12,8 @@ public class TranslateCamera : MonoBehaviour {
     private float aspectRatio;
     private float screenWidth; //= 720cm
 	private float screenHeight; // = 80.9
+    private bool lockZPosition = false;
+    private float fixedZPosition;
 
     private int index = 0;
     private GameObject eyes;
@@ -46,6 +48,15 @@ public class TranslateCamera : MonoBehaviour {
 	void Update ()
     {
         GetEyePosition();
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            lockZPosition = !lockZPosition;
+            if (lockZPosition)
+            {
+                Debug.Log("switching Z-lock");
+                fixedZPosition = trackedEyePosition.z;
+            }
+        }
     }
 
 
@@ -89,6 +100,10 @@ public class TranslateCamera : MonoBehaviour {
                 eyes = allEyes[index % allEyes.Length];
             }
             trackedEyePosition = verticalAdjustment + eyes.transform.position * 0.1f;
+            if (lockZPosition)
+            {
+                trackedEyePosition.z = fixedZPosition;
+            }
         }
     }
 
@@ -106,20 +121,20 @@ public class TranslateCamera : MonoBehaviour {
 		float top = ((0.5f - perspectiveOffset.y) / -perspectiveOffset.z) * cam.nearClipPlane;
 		float bottom = ((-0.5f  - perspectiveOffset.y) / -perspectiveOffset.z) * cam.nearClipPlane;
 
-		cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane + perspectiveOffset.z);
-	}
+        //cam.projectionMatrix = GetObliqueProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane + perspectiveOffset.z);
+        cam.projectionMatrix = PerspectiveOffCenter(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane, perspectiveOffset.z);
+    }
 
 
-	Matrix4x4 GetObliqueProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
+    Matrix4x4 GetObliqueProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
 	{
 		Matrix4x4 m = Matrix4x4.identity;
-// print(top - bottom);
         float x = (2.0f * near)/ (right-left);
 		float y = (2.0f * near) / (top-bottom);
 		float a = (right + left) / (right - left);
 		float b = (top + bottom) / (top - bottom);
-		float c = (near + far)/(near - far);
-		float d = (2.0f * near * far) / (near - far);
+		float c = -(far+near)/(far-near);
+		float d = (-2.0f * near * far) / (far - near);
 		float e = -1.0f;
 
 		m[0, 0] = x;
@@ -130,8 +145,24 @@ public class TranslateCamera : MonoBehaviour {
 		m[2, 3] = d;
 		m[3, 2] = e;
 		m[3, 3] = 0.0f;
-        string log = string.Format("x: {0:0.##}, y: {1:0.##}, a: {2:0.##}, b: {3:0.##}, c: {4:0.##}, d: {5:0.##}", x, y, a, b, c, d);
-        print(log);
 		return m;
 	}
+
+    static Matrix4x4 PerspectiveOffCenter(float left, float right, float bottom, float top, float near, float far, float z)
+    {
+        float x = (2.0f * near) / (right - left);
+        float y = (2.0f * near) / (top - bottom);
+        float a = (right + left) / (right - left);
+        float b = (top + bottom) / (top - bottom);
+        float c = -(far + near) / (far - near);
+        float d = -(2.0f * far * near) / (far - near);
+        float e = -1.0f;
+
+        Matrix4x4 m = new Matrix4x4();
+        m[0, 0] = x;    m[0, 1] = 0.0f;     m[0, 2] = a;    m[0, 3] = 0.0f;
+        m[1, 0] = 0.0f; m[1, 1] = y;        m[1, 2] = b;    m[1, 3] = 0.0f;
+        m[2, 0] = 0.0f; m[2, 1] = 0.0f;     m[2, 2] = c;    m[2, 3] = d;
+        m[3, 0] = 0.0f; m[3, 1] = 0.0f;     m[3, 2] = e;    m[3, 3] = 0.0f;
+        return m;
+    }
 }
