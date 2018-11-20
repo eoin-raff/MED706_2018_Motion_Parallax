@@ -28,11 +28,11 @@ public class MotionParallax : MonoBehaviour {
     private float yOffset = 0;
     private Vector3 initialPosition = Vector3.zero;
 
-
+    //FIXME: Objects in background clip weirdly and are extremely zoomed in
 
     void Start()
 	{
-        mainCamera.layerCullSpherical = true;
+        //mainCamera.layerCullSpherical = true;
 		Debug.Log("Starting camera translation script.");
 		eyes = null;
         allEyes = null;
@@ -125,7 +125,7 @@ public class MotionParallax : MonoBehaviour {
 
             MapEyePosition();
 
-            mainCamera.transform.position = trackedEyePosition;
+            mainCamera.transform.localPosition = trackedEyePosition;
 
         }
     }
