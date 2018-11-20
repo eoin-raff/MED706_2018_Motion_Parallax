@@ -1,14 +1,9 @@
-﻿/*
- * 
- * DEPRECIATED: Please use "MotionParallax" script from version 0.2.1
- * 
- * 
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TranslateCamera : MonoBehaviour {
+public class MotionParallax : MonoBehaviour {
     public float Z_MapFactor;
     public Camera mainCamera;
     public float screenSizeInches;
@@ -48,13 +43,13 @@ public class TranslateCamera : MonoBehaviour {
 
         GetScreenDimension(screenSizeInches, aspectRatio);
         
-        
+        /*
         //assuming using panoramic screen in SMILE lab.
         //285 inches diagonal?
         //
         screenHeight = 0.89f;
         screenWidth = 7.195f;
-        
+        */
 	}
 
 
@@ -201,4 +196,3 @@ public class TranslateCamera : MonoBehaviour {
         return m;
     }
 }
-*/
