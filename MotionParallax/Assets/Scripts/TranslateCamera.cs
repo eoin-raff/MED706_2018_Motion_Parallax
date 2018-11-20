@@ -55,8 +55,7 @@ public class TranslateCamera : MonoBehaviour {
 
 	void Update ()
     {
-        GetEyePosition();
-
+        #region Input
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             yOffset+=0.01f;
@@ -73,7 +72,9 @@ public class TranslateCamera : MonoBehaviour {
         {
             LockZPos();
         }
+        #endregion
 
+        ChangeCameraView();
     }
 
 
@@ -82,7 +83,8 @@ public class TranslateCamera : MonoBehaviour {
 	{
         if (eyes != null)
         {
-            MotionParallax();
+            mainCamera.ResetProjectionMatrix();
+            GetWindowPosition(mainCamera, trackedEyePosition);
         }
     }
 
@@ -111,61 +113,61 @@ public class TranslateCamera : MonoBehaviour {
         }
     }
 
-    private void GetEyePosition()
+    private void ChangeCameraView()
     {
         if (eyes == null)
         {
-            Debug.Log("Waiting for head position...");
-            allEyes = GameObject.FindGameObjectsWithTag("HeadPosition");
-            eyes = allEyes[0];    
-            verticalAdjustment.y = -(eyes.transform.position.y * 0.1f) - (screenHeight / 2);
-
-            if (kinectOnTop)
-            {
-                verticalAdjustment.y *= -1;
-            }
+            InitalizeEyeObject();
         }
         else
         {
-            if (initialPosition == Vector3.zero)
-            {
-                initialPosition = eyes.transform.position * .1f;
-            }
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                print("changing perspective");
-                index++;
-                eyes = allEyes[index % allEyes.Length];
-                initialPosition = eyes.transform.position * .1f;
-            }
-            verticalAdjustment.y += yOffset;
-            trackedEyePosition = verticalAdjustment + eyes.transform.position * 0.1f;
-            if (lockZPosition)
-            {
-                trackedEyePosition.z = fixedZPosition;
-            }
-            if (mapZPosition)
-            {
-                float diff = trackedEyePosition.z - initialPosition.z;
-                mappedZPosition = initialPosition.z + diff * Z_MapFactor;
-                print("tracked: " + trackedEyePosition.z + " inital: " + initialPosition.z + ", diff: " + diff);
-                trackedEyePosition.z = mappedZPosition;
-            }
+            GetUserEyePosition();
+
+            MapEyePosition();
+
+            mainCamera.transform.position = trackedEyePosition;
+
         }
     }
 
-    private void MotionParallax()
+    private void MapEyePosition()
     {
-        GetCameraPosition();
-        GetWindowPosition(mainCamera, trackedEyePosition);
+        trackedEyePosition = verticalAdjustment + (eyes.transform.position * 0.1f);
+
+        float diff = trackedEyePosition.z - initialPosition.z;
+        mappedZPosition = initialPosition.z + diff * Z_MapFactor;
+        print("tracked: " + trackedEyePosition.z + " inital: " + initialPosition.z + ", diff: " + diff);
+        trackedEyePosition.z = mappedZPosition;
     }
 
-    void GetCameraPosition(){
-        mainCamera.transform.position = trackedEyePosition;
-        //mainCamera.transform.LookAt(new Vector3(0, 0, 0));
-        mainCamera.ResetProjectionMatrix();
+    private void GetUserEyePosition()
+    {
+        if (initialPosition == Vector3.zero)
+        {
+            initialPosition = eyes.transform.position * .1f;
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            print("changing perspective");
+            index++;
+            eyes = allEyes[index % allEyes.Length];
+            initialPosition = eyes.transform.position * .1f;
+        }
+        verticalAdjustment.y += yOffset;
     }
 
+    private void InitalizeEyeObject()
+    {
+        Debug.Log("Waiting for head position...");
+        allEyes = GameObject.FindGameObjectsWithTag("HeadPosition");
+        eyes = allEyes[0];
+        verticalAdjustment.y = -(eyes.transform.position.y * 0.1f) - (screenHeight / 2);
+
+        if (kinectOnTop)
+        {
+            verticalAdjustment.y *= -1;
+        }
+    }
 
     void GetWindowPosition(Camera cam, Vector3 perspectiveOffset)
 	{      
@@ -173,11 +175,6 @@ public class TranslateCamera : MonoBehaviour {
         float right = cam.nearClipPlane * (.5f * aspectRatio - perspectiveOffset.x) / Mathf.Abs(perspectiveOffset.z);
         float bottom = cam.nearClipPlane * (-.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
         float top = cam.nearClipPlane * (.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
-         /*
-         * NOTE: Changing the worldToCamera matrix (i.e. the view Matrix) is unnecessary in this program. 
-         * The same effect is acheived simply by moving the camera position
-         * This is only done in Johnny Lee's code via matrices since there is no way to simply change it as there is in unity
-         */
         cam.projectionMatrix = CustomProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, 100);
     }
 
