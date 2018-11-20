@@ -16,7 +16,7 @@ public class TranslateCamera : MonoBehaviour {
     private float screenWidth; //= 720cm
 	private float screenHeight; // = 80.9
     private bool lockZPosition = false;
-    private bool mapZPosition = false;
+    private bool mapZPosition = true;
     private float fixedZPosition;
     private float mappedZPosition;
 
