@@ -3,7 +3,7 @@
 Git Repository for semester project for MED7: Sensing Media
 
 
-##How to make and run a scene with a Motion Parallax
+## How to make and run a scene with a Motion Parallax
 1. Ensure that the Main Camera has the `Body Source Manager`, `Body Source View`, and `Translate Camera` script components
 2. In `BodySourceView` should take the `Body Source Manager`component in the `M Body Source Manager` field, and the `HeadPosition` prefab in the `M Joint Object` field
 3. The `Translate Camera`script should be set up as follows:
