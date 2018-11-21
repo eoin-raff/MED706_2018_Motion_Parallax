@@ -592,6 +592,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4583777989143422, guid: 3a41dc252c490a04aba800facdf166ec,
     type: 2}
   m_PrefabInternal: {fileID: 142422034}
+--- !u!1 &167680926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1824375424924598, guid: 730bf3a6a1cbca244aa49fb61d3f9df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1518654467}
 --- !u!1001 &189525133
 Prefab:
   m_ObjectHideFlags: 0
@@ -3174,6 +3179,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4583777989143422, guid: 3a41dc252c490a04aba800facdf166ec,
     type: 2}
   m_PrefabInternal: {fileID: 645657036}
+--- !u!1 &646069425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1714746553468582, guid: 730bf3a6a1cbca244aa49fb61d3f9df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1518654467}
 --- !u!1001 &663013510
 Prefab:
   m_ObjectHideFlags: 0
@@ -5298,6 +5308,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9b3e30614e37147b2ccae6e2900cdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _calibrationReference:
+  - {fileID: 2051457670}
+  - {fileID: 646069425}
+  - {fileID: 1960798797}
+  - {fileID: 167680926}
+  _zMapStep: 0.05
+  _zMapFactor: 0.5
 --- !u!4 &1176797761
 Transform:
   m_ObjectHideFlags: 0
@@ -7733,6 +7750,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a41dc252c490a04aba800facdf166ec, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1960798797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1656227269255972, guid: 730bf3a6a1cbca244aa49fb61d3f9df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1518654467}
 --- !u!1001 &1982136886
 Prefab:
   m_ObjectHideFlags: 0
@@ -8025,6 +8047,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4583777989143422, guid: 3a41dc252c490a04aba800facdf166ec,
     type: 2}
   m_PrefabInternal: {fileID: 663013510}
+--- !u!1 &2051457670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1825133751513364, guid: 730bf3a6a1cbca244aa49fb61d3f9df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1518654467}
 --- !u!1001 &2085789601
 Prefab:
   m_ObjectHideFlags: 0
