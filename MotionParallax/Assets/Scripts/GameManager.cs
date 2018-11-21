@@ -48,8 +48,15 @@ public class GameManager : MonoBehaviour {
             Debug.Log("Can Change Zmap");
             CalibrateZMapFactor();
         }
-		
-	}
+
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) &&
+            (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))&&
+            Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextScene();
+        }
+
+    }
 
     private void SetObjectsActive(GameObject[] a, bool b)
     {
@@ -94,6 +101,8 @@ public class GameManager : MonoBehaviour {
 
     private void LoadNextScene()
     {
+        _scene++;
+        SceneManager.LoadScene(_scene);
         throw new NotImplementedException();
     }
 
