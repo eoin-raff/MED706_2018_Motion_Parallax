@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
-    private bool _calibrating;
-    private bool _accessZMapFActor;
     private int _scene;
     private float _yOffset;
     private Vector3 _verticalOffset;
+    [SerializeField]
+    private GameObject[] _calibrationReference;
     [SerializeField]
     private float _zMapStep = 0.05f;
     [SerializeField][Range(0, 1)]
@@ -32,22 +32,15 @@ public class GameManager : MonoBehaviour {
 
         //initalize variables
         _scene = 0;
-        _calibrating = true;
-        _accessZMapFActor = false;
         _verticalOffset = Vector3.zero;
     }
 
     void Update () {
-
-        if (_calibrating)
+        SetObjectsActive(_calibrationReference, false);
+        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
         {
+            SetObjectsActive(_calibrationReference, true);
             CalibrateVerticalPosition();
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _calibrating = false;
-                Debug.Log("Done Calibrating, load next scene");
-                LoadNextScene();
-            }
         }
 
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
@@ -57,6 +50,14 @@ public class GameManager : MonoBehaviour {
         }
 		
 	}
+
+    private void SetObjectsActive(GameObject[] a, bool b)
+    {
+        for (int i = 0; i < a.Length; i++)
+        {
+            a[i].SetActive(b);
+        }
+    }
 
     private void CalibrateZMapFactor()
     {
