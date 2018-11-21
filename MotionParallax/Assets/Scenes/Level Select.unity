@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: e6648da0703d42148a5bbd1c6e7b71f9
-  m_OcclusionCullingData: {fileID: 36300000, guid: 66dca0fdaa32f3444ba71800a74200b6,
+  m_SceneGUID: 16c87993f9f6d3d4d878ad75a6b844b2
+  m_OcclusionCullingData: {fileID: 36300000, guid: debe9525db501924eb49fd48811880a9,
     type: 2}
 --- !u!104 &2
 RenderSettings:
@@ -3700,7 +3700,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4344014480864178, guid: 3cbd3aae38291a04280fa95407d078e4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.87
+      value: -1.865
       objectReference: {fileID: 0}
     - target: {fileID: 4344014480864178, guid: 3cbd3aae38291a04280fa95407d078e4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3724,7 +3724,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4344014480864178, guid: 3cbd3aae38291a04280fa95407d078e4, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1332374548165516, guid: 3cbd3aae38291a04280fa95407d078e4, type: 2}
       propertyPath: m_StaticEditorFlags
