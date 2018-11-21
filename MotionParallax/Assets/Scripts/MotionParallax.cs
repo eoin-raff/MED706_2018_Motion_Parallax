@@ -58,26 +58,6 @@ public class MotionParallax : MonoBehaviour {
 
 	void Update ()
     {
-        /*
-        #region Input
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            yOffset+=0.01f;
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            yOffset-=0.01f;
-        }
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            MapZPos();
-        }
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            LockZPos();
-        }
-        #endregion
-        */
         ChangeCameraView();
     }
 
@@ -137,7 +117,7 @@ public class MotionParallax : MonoBehaviour {
     private void MapEyePosition()
     {
         trackedEyePosition = verticalOffset + (eyes.transform.position * 0.1f);
-
+        Z_MapFactor = GM.z_MapFactor;
         float diff = trackedEyePosition.z - initialPosition.z;
         mappedZPosition = initialPosition.z + diff * Z_MapFactor;
         //print("tracked: " + trackedEyePosition.z + " inital: " + initialPosition.z + ", diff: " + diff);

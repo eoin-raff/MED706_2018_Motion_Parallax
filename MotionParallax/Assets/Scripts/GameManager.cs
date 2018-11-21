@@ -128,4 +128,10 @@ public class GameManager : MonoBehaviour {
         get { return _isRunning; }
         set { _isRunning = value; }
     }
+
+    public float z_MapFactor
+    {
+        get { return _zMapFactor; }
+        set { _zMapFactor = value; }
+    }
 }
