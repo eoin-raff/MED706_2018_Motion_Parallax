@@ -95,6 +95,7 @@ public class BodySourceView : MonoBehaviour
     
     private void UpdateBodyObject(Body body, GameObject bodyObject)
     {
+        DontDestroyOnLoad(bodyObject);
         Joint nearestJoint;
         float smallestDistance = 99999f;
         foreach (JointType _joint in _joints)
