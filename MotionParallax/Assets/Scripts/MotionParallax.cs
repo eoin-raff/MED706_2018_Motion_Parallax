@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MotionParallax : MonoBehaviour {
-    public float Z_MapFactor;
+    //public float Z_MapFactor;
     public Camera mainCamera;
     public float screenSizeInches;
 	public float aspectRatioA, aspectRatioB;
@@ -135,7 +135,7 @@ public class MotionParallax : MonoBehaviour {
         trackedEyePosition = verticalOffset + (eyes.transform.position * 0.1f);
 
         float diff = trackedEyePosition.z - initialPosition.z;
-        mappedZPosition = initialPosition.z + diff * Z_MapFactor;
+        mappedZPosition = initialPosition.z + (diff * GameManager.instance.ZMapFactor);
         //print("tracked: " + trackedEyePosition.z + " inital: " + initialPosition.z + ", diff: " + diff);
         trackedEyePosition.z = mappedZPosition;
     }
