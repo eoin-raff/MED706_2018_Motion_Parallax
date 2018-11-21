@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MotionParallax : MonoBehaviour {
+
+    public GameManager GM;
+
     public float Z_MapFactor;
     public Camera mainCamera;
     public float screenSizeInches;
@@ -24,7 +27,7 @@ public class MotionParallax : MonoBehaviour {
     private GameObject eyes;
     private GameObject[] allEyes;
     private Vector3 trackedEyePosition;
-    private Vector3 verticalAdjustment;
+    private Vector3 verticalOffset;
     private float yOffset = 0;
     private Vector3 initialPosition = Vector3.zero;
 
@@ -37,12 +40,12 @@ public class MotionParallax : MonoBehaviour {
 		eyes = null;
         allEyes = null;
 		trackedEyePosition = Vector3.zero;
-        verticalAdjustment = Vector3.zero;
+        verticalOffset = Vector3.zero;
 
 		aspectRatio = aspectRatioA/aspectRatioB;
 
         GetScreenDimension(screenSizeInches, aspectRatio);
-        
+        Application.targetFrameRate = 30;
         /*
         //assuming using panoramic screen in SMILE lab.
         //285 inches diagonal?
@@ -55,6 +58,7 @@ public class MotionParallax : MonoBehaviour {
 
 	void Update ()
     {
+        /*
         #region Input
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -73,7 +77,7 @@ public class MotionParallax : MonoBehaviour {
             LockZPos();
         }
         #endregion
-
+        */
         ChangeCameraView();
     }
 
@@ -132,11 +136,11 @@ public class MotionParallax : MonoBehaviour {
 
     private void MapEyePosition()
     {
-        trackedEyePosition = verticalAdjustment + (eyes.transform.position * 0.1f);
+        trackedEyePosition = verticalOffset + (eyes.transform.position * 0.1f);
 
         float diff = trackedEyePosition.z - initialPosition.z;
         mappedZPosition = initialPosition.z + diff * Z_MapFactor;
-        print("tracked: " + trackedEyePosition.z + " inital: " + initialPosition.z + ", diff: " + diff);
+        //print("tracked: " + trackedEyePosition.z + " inital: " + initialPosition.z + ", diff: " + diff);
         trackedEyePosition.z = mappedZPosition;
     }
 
@@ -153,7 +157,7 @@ public class MotionParallax : MonoBehaviour {
             eyes = allEyes[index % allEyes.Length];
             initialPosition = eyes.transform.position * .1f;
         }
-        verticalAdjustment.y += yOffset;
+        verticalOffset = GM.verticalOffset;
     }
 
     private void InitalizeEyeObject()
@@ -161,12 +165,12 @@ public class MotionParallax : MonoBehaviour {
         Debug.Log("Waiting for head position...");
         allEyes = GameObject.FindGameObjectsWithTag("HeadPosition");
         eyes = allEyes[0];
-        verticalAdjustment.y = -(eyes.transform.position.y * 0.1f) - (screenHeight / 2);
+        /*verticalOffset.y = -(eyes.transform.position.y * 0.1f) - (screenHeight / 2);
 
         if (kinectOnTop)
         {
-            verticalAdjustment.y *= -1;
-        }
+            verticalOffset.y *= -1;
+        }*/
     }
 
     void GetWindowPosition(Camera cam, Vector3 perspectiveOffset)

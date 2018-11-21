@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                Debug.Log("Calibration Done");
                 ToggleObjects(calibrationObjects, true);
                 _calibrating = false;
             }
@@ -87,16 +88,15 @@ public class GameManager : MonoBehaviour {
 
     private void CalibrateVerticalPosition()
     {
+        Debug.Log("Calibrating");
         _yOffset = 0;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            //increase Offset
-            _yOffset = 1;
+            _yOffset = 0.1f;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            //decrease Offset
-            _yOffset = -1;
+            _yOffset = -0.1f;
         }
         _verticalOffset.y += _yOffset;
     }
