@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/LightingFX.unity
-    guid: e6648da0703d42148a5bbd1c6e7b71f9
   - enabled: 1
-    path: Assets/Scenes/ParallaxSplineTest.unity
-    guid: f39eb6a10cb01fe43bfa04776c7cb1ff
+    path: Assets/Scenes/calibration.unity
+    guid: 85d2106efa54eaf4b917f719db899ac5
+  - enabled: 1
+    path: Assets/Scenes/Level Select.unity
+    guid: 16c87993f9f6d3d4d878ad75a6b844b2
   m_configObjects: {}

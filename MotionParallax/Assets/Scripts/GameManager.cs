@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -27,6 +28,10 @@ public class GameManager : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
             GM = this;
         }
+        else if (GM != this)
+        {
+            Destroy(gameObject);
+        }
     }
 	
 	
@@ -40,17 +45,19 @@ public class GameManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("Calibration Done");
-                ToggleObjects(calibrationObjects, true);
+                ToggleObjects(calibrationObjects, false);
                 _calibrating = false;
+                _isRunning = true;
+                SceneManager.LoadScene("Level Select");
             }
         }
         if (_isRunning)
         {
-            //run the game as normal
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Pause();
             }
+
             CalibrateZMapFactor(_zMapStep);
         }
 	}
@@ -71,6 +78,7 @@ public class GameManager : MonoBehaviour {
             _zMapFactor -= _zMapStep;
             _zMapData.Add(_zMapFactor);
         }
+        Debug.Log(_zMapFactor);
     }
 
     private void Pause()
@@ -103,7 +111,7 @@ public class GameManager : MonoBehaviour {
 
     private void ToggleObjects(GameObject[] a, bool b)
     {
-        for (int i = 0; i < a.Length-1; i++)
+        for (int i = 0; i < a.Length; i++)
         {
             a[i].SetActive(b);
         }

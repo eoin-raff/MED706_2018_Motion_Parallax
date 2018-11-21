@@ -6,7 +6,7 @@ using Joint = Windows.Kinect.Joint;
 
 public class BodySourceView : MonoBehaviour 
 {
-    public BodySourceManager mBodySourceManager; //sciript which accesses Kinect
+    public BodySourceManager mBodySourceManager; //script which accesses Kinect
     public GameObject mJointObject; //object to be instantiated at location of joint
     
     private Dictionary<ulong, GameObject> mBodies = new Dictionary<ulong, GameObject>();
@@ -95,6 +95,7 @@ public class BodySourceView : MonoBehaviour
     
     private void UpdateBodyObject(Body body, GameObject bodyObject)
     {
+        DontDestroyOnLoad(bodyObject); //Let the body object carry over from one scene to another
         Joint nearestJoint;
         float smallestDistance = 99999f;
         foreach (JointType _joint in _joints)

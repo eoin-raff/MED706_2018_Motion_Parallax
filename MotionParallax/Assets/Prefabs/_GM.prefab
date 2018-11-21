@@ -27,7 +27,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 19
   m_IsActive: 1
 --- !u!1 &1216491911607626
 GameObject:
@@ -45,7 +45,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 19
   m_IsActive: 1
 --- !u!1 &1450860895351968
 GameObject:
@@ -63,7 +63,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 19
   m_IsActive: 1
 --- !u!1 &1621710308699082
 GameObject:
@@ -73,6 +73,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4902832579610638}
+  - component: {fileID: 114094595638897680}
+  - component: {fileID: 114978831122853314}
   - component: {fileID: 114633341665314490}
   m_Layer: 0
   m_Name: _GM
@@ -112,7 +114,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 19
   m_IsActive: 1
 --- !u!1 &1806295135003758
 GameObject:
@@ -143,8 +145,6 @@ GameObject:
   - component: {fileID: 20291836476554426}
   - component: {fileID: 124726930320177120}
   - component: {fileID: 81869762118560666}
-  - component: {fileID: 114572628745280858}
-  - component: {fileID: 114113862795120932}
   - component: {fileID: 114410934130952294}
   - component: {fileID: 114264748542570066}
   m_Layer: 0
@@ -256,7 +256,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1621710308699082}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -1.32, y: 2.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4185137225309930}
@@ -575,20 +575,17 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1906560247306804}
   m_Enabled: 1
---- !u!114 &114113862795120932
+--- !u!114 &114094595638897680
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1906560247306804}
+  m_GameObject: {fileID: 1621710308699082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8821130411451d343a1488e2a9db134e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e74aed0503c9d24290a1ae5438fddc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mBodySourceManager: {fileID: 114572628745280858}
-  mJointObject: {fileID: 1182711563564700, guid: e0c3770329bbbcd43b663cfbcaea7fc1,
-    type: 2}
 --- !u!114 &114264748542570066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -612,6 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587472f3bbbb6344da02bc0d2775d3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 114633341665314490}
   Z_MapFactor: 0.5
   mainCamera: {fileID: 20291836476554426}
   screenSizeInches: 65
@@ -619,17 +617,6 @@ MonoBehaviour:
   aspectRatioB: 9
   kinectOnTop: 0
   sizeInInches: 1
---- !u!114 &114572628745280858
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1906560247306804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e74aed0503c9d24290a1ae5438fddc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114633341665314490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -661,6 +648,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: e337b475db493814c963b467f55dc482, type: 2}
+--- !u!114 &114978831122853314
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1621710308699082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8821130411451d343a1488e2a9db134e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mBodySourceManager: {fileID: 114094595638897680}
+  mJointObject: {fileID: 1182711563564700, guid: e0c3770329bbbcd43b663cfbcaea7fc1,
+    type: 2}
 --- !u!124 &124726930320177120
 Behaviour:
   m_ObjectHideFlags: 1
