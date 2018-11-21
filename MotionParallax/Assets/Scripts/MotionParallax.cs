@@ -68,7 +68,8 @@ public class MotionParallax : MonoBehaviour {
         if (eyes != null)
         {
             mainCamera.ResetProjectionMatrix();
-            GetWindowPosition(mainCamera, trackedEyePosition);
+            //GetWindowPosition(mainCamera, trackedEyePosition);
+            GetWindowPosition(mainCamera, mainCamera.transform.parent.transform.position + trackedEyePosition);
         }
     }
 
@@ -117,7 +118,7 @@ public class MotionParallax : MonoBehaviour {
     private void MapEyePosition()
     {
         trackedEyePosition = verticalOffset + (eyes.transform.position * 0.1f);
-        Z_MapFactor = GM.z_MapFactor;
+        Z_MapFactor = GM.Z_MapFactor;
         float diff = trackedEyePosition.z - initialPosition.z;
         mappedZPosition = initialPosition.z + diff * Z_MapFactor;
         //print("tracked: " + trackedEyePosition.z + " inital: " + initialPosition.z + ", diff: " + diff);
@@ -137,7 +138,7 @@ public class MotionParallax : MonoBehaviour {
             eyes = allEyes[index % allEyes.Length];
             initialPosition = eyes.transform.position * .1f;
         }
-        verticalOffset = GM.verticalOffset;
+        verticalOffset = GM.VerticalOffset;
     }
 
     private void InitalizeEyeObject()
@@ -159,7 +160,8 @@ public class MotionParallax : MonoBehaviour {
         float right = cam.nearClipPlane * (.5f * aspectRatio - perspectiveOffset.x) / Mathf.Abs(perspectiveOffset.z);
         float bottom = cam.nearClipPlane * (-.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
         float top = cam.nearClipPlane * (.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
-        cam.projectionMatrix = CustomProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, 100);
+
+        cam.projectionMatrix = CustomProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
     }
 
     static Matrix4x4 CustomProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
@@ -177,6 +179,7 @@ public class MotionParallax : MonoBehaviour {
         m[1, 0] = 0.0f; m[1, 1] = y;        m[1, 2] = b;    m[1, 3] = 0.0f;
         m[2, 0] = 0.0f; m[2, 1] = 0.0f;     m[2, 2] = c;    m[2, 3] = d;
         m[3, 0] = 0.0f; m[3, 1] = 0.0f;     m[3, 2] = e;    m[3, 3] = 0.0f;
+        Debug.Log(m);
         return m;
     }
 }

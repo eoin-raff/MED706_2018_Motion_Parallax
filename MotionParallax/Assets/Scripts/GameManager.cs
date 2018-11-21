@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour {
                 SceneManager.LoadScene("Level Select");
             }
         }
+
         if (_isRunning)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -96,7 +97,6 @@ public class GameManager : MonoBehaviour {
 
     private void CalibrateVerticalPosition()
     {
-        Debug.Log("Calibrating");
         _yOffset = 0;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -117,19 +117,19 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public Vector3 verticalOffset
+    public Vector3 VerticalOffset
     {
         get { return _verticalOffset; }
         set { _verticalOffset = value; }
     }
 
-    public bool isRunning
+    public bool IsRunning
     {
         get { return _isRunning; }
         set { _isRunning = value; }
     }
 
-    public float z_MapFactor
+    public float Z_MapFactor
     {
         get { return _zMapFactor; }
         set { _zMapFactor = value; }
