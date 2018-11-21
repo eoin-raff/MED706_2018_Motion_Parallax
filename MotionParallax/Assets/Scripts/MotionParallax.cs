@@ -145,13 +145,10 @@ public class MotionParallax : MonoBehaviour {
     {
         Debug.Log("Waiting for head position...");
         allEyes = GameObject.FindGameObjectsWithTag("HeadPosition");
-        eyes = allEyes[0];
-        /*verticalOffset.y = -(eyes.transform.position.y * 0.1f) - (screenHeight / 2);
-
-        if (kinectOnTop)
+        if (allEyes.Length > 0)
         {
-            verticalOffset.y *= -1;
-        }*/
+            eyes = allEyes[0];
+        }
     }
 
     void GetWindowPosition(Camera cam, Vector3 perspectiveOffset)
