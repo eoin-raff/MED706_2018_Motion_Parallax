@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LightingFX.unity
     guid: e6648da0703d42148a5bbd1c6e7b71f9
+  - enabled: 1
+    path: Assets/Scenes/StaticPositionScene.unity
+    guid: d19d4495928b6d444bcd99e860234295
+  - enabled: 1
+    path: Assets/Scenes/ParallaxSplineTest.unity
+    guid: f39eb6a10cb01fe43bfa04776c7cb1ff
   m_configObjects: {}
