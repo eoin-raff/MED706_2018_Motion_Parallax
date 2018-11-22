@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     private bool _finishedB;
     private bool[] _checkChangesA;
     private bool[] _checkChangesB;
+    private string _aDir, _aDirDelta;
+    private string _bDir, _bDirDelta;
 
     #endregion
 
@@ -70,6 +72,12 @@ public class GameManager : MonoBehaviour
         _finishedB = false;
         _checkChangesA = new bool[_checkedIterations * 2];
         _checkChangesB = new bool[_checkedIterations * 2];
+
+        for (int i = 0; i < _checkedIterations * 2; i++)
+        {
+            _checkChangesA[i] = false;
+            _checkChangesB[i] = false;
+        }
     }
 
     void Update()
@@ -92,6 +100,8 @@ public class GameManager : MonoBehaviour
          * Automatically detect if direction was changed
          * Test script
          */
+        _aDirDelta = _aDir;
+        _bDirDelta = _bDir;
 
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -136,17 +146,24 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Debug.Log("Zmap Up");
+            if (_staircaseTestA)
+                _aDir = "up";
+            else
+                _bDir = "up";
+            
             _zTemp += _zMapStep;
-            Mathf.Clamp(_zTemp, 0, 1);
+            Mathf.Clamp(_zTemp, 0.0f, 1.0f);
             SwitchStaircase();
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("Zmap Down");
+            if (_staircaseTestA)
+                _aDir = "down";
+            else
+                _bDir = "down";
 
             _zTemp -= _zMapStep;
-            Mathf.Clamp(_zTemp, 0, 1);
+            _zTemp = Mathf.Clamp(_zTemp, 0, 1);
 
             SwitchStaircase();
         }
@@ -159,17 +176,35 @@ public class GameManager : MonoBehaviour
             Debug.Log("add val to A");
             _zA = _zTemp;
             _aValues.Add(_zA);
+            if (_aDir == _aDirDelta)
+                _changedDirection = false;
+            else
+                _changedDirection = true; Debug.Log("B changed Dir");
+            UpdateArray(_checkChangesA, _changedDirection);
         }
         else
         {
             Debug.Log("add val to B");
             _zB = _zTemp;
             _bValues.Add(_zB);
+            if (_bDir == _bDirDelta)
+                _changedDirection = false;
+            else
+                _changedDirection = true; Debug.Log("B changed Dir");
+            UpdateArray(_checkChangesB, _changedDirection);
         }
         Debug.Log("Changing Staircase");
         _staircaseTestA = !_staircaseTestA;
     }
 
+    private void UpdateArray(bool[] a, bool b)
+    {
+        for (int i = 0; i < a.Length-2; i++)
+        {
+            a[i] = a[i+1];
+        }
+        a[a.Length-1] = b;
+    }
 
     private void StartTest()
     {
@@ -215,6 +250,8 @@ public class GameManager : MonoBehaviour
 
     private void CheckForEndCondition()
     {
+        Debug.Log(_checkChangesA.ToString());
+        Debug.Log(_checkChangesB.ToString());
         SearchForFalse(_finishedA, _checkChangesA);
         SearchForFalse(_finishedB, _checkChangesB);
         if (_finishedA && _finishedB)
@@ -227,6 +264,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < array.Length; i++)
         {
+            Debug.Log(array + " " + i  + array[i]);
             if (array[i] == false)
                 return;
         }
