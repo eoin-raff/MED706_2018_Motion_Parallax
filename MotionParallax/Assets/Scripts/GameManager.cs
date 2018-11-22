@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
+            Debug.Log("T");
             if (!_testing)
             {
                 StartTest();
@@ -137,6 +138,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Zmap Up");
             _zTemp += _zMapStep;
+            Mathf.Clamp(_zTemp, 0, 1);
             SwitchStaircase();
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -144,41 +146,49 @@ public class GameManager : MonoBehaviour
             Debug.Log("Zmap Down");
 
             _zTemp -= _zMapStep;
+            Mathf.Clamp(_zTemp, 0, 1);
+
             SwitchStaircase();
         }
-        Mathf.Clamp(_zMapStep, 0, 1);
     }
 
     private void SwitchStaircase()
     {
         if (_staircaseTestA)
         {
+            Debug.Log("add val to A");
             _zA = _zTemp;
             _aValues.Add(_zA);
         }
         else
         {
+            Debug.Log("add val to B");
             _zB = _zTemp;
             _bValues.Add(_zB);
         }
+        Debug.Log("Changing Staircase");
         _staircaseTestA = !_staircaseTestA;
     }
 
 
     private void StartTest()
     {
+        Debug.Log("Start Test");
         _participant++;
         DateTime dt = DateTime.Now;
-        String _date = dt.ToString("MM-DD");
-        _filename = "Z_Factor_" + _date + "_Participant_" + _participant;
+        String _date = dt.ToString("dd-MM");
+        _filename = "Z_Factor_" + _date + "_Participant_" + _participant + ".csv";
         _zA = 1.0f;
         _zB = 0.0f;
         _staircaseTestA = true;
+        _testing = true;
     }
 
     private void StopTest()
     {
+        Debug.Log("End Test, printing .csv");
         PrintTestData();
+        _testing = false;
         //load Post-Test-level
     }
 
@@ -188,11 +198,11 @@ public class GameManager : MonoBehaviour
         String _dataB = "";
         for (int i = 0; i < _aValues.Count; i++)
         {
-            _dataA += _aValues[i] + ",";
+            _dataA += _aValues[i].ToString("F2") + ",";
         }
         for (int i = 0; i < _bValues.Count; i++)
         {
-            _dataB += _bValues[i] + ",";
+            _dataB += _bValues[i].ToString("F2") + ",";
         }
         StreamWriter csvWriter = File.CreateText(_path + "/" + _filename);
         csvWriter.WriteLine(_dataA);
@@ -206,7 +216,6 @@ public class GameManager : MonoBehaviour
         SearchForFalse(_finishedB, _checkChangesB);
         if (_finishedA && _finishedB)
         {
-            _testing = false;
             StopTest();
         }
     }
@@ -218,6 +227,7 @@ public class GameManager : MonoBehaviour
             if (array[i] == false)
                 return;
         }
+        Debug.Log("no false values found");
         a = true;
     }
     #endregion
@@ -232,16 +242,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     private void CalibrateVerticalPosition()
     {
         _yOffset = 0;
         if (Input.GetKey(KeyCode.UpArrow))
         {
+            Debug.Log("Y up");
             _yOffset = 0.01f;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
+            Debug.Log("Y down");
             _yOffset = -0.01f;
         }
         _verticalOffset.y += _yOffset;

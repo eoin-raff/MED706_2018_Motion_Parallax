@@ -53214,6 +53214,7 @@ MonoBehaviour:
   - {fileID: 167680926}
   _zMapStep: 0.05
   _zMapFactor: 0.5
+  _checkedIterations: 3
 --- !u!4 &1176797761
 Transform:
   m_ObjectHideFlags: 0
@@ -66982,7 +66983,7 @@ GameObject:
   - component: {fileID: 1465775647}
   - component: {fileID: 1465775646}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: WORK LIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
