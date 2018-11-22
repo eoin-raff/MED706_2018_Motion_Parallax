@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
 
     #endregion
 
+
     private void Awake()
     {
         //Singleton
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour {
 
         //initalize variables
         _scene = 0;
+        _verticalOffset = Vector3.zero;
         _participant = 0;
         _verticalOffset = Vector3.zero;
         _aValues = new List<float>();
@@ -71,12 +73,14 @@ public class GameManager : MonoBehaviour {
     void Update () {
 
         #region Calibration
+
         SetObjectsActive(_calibrationReference, false);
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
         {
             SetObjectsActive(_calibrationReference, true);
             CalibrateVerticalPosition();
         }
+
         #endregion
 
         #region Staircase Test
@@ -107,12 +111,14 @@ public class GameManager : MonoBehaviour {
         #endregion
 
         #region Level Select
+
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) &&
             (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))&&
             Input.GetKeyDown(KeyCode.L))
         {
             LoadNextScene();
         }
+
         #endregion
     }
 
@@ -223,6 +229,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+
     private void CalibrateVerticalPosition()
     {
         _yOffset = 0;
@@ -236,9 +243,11 @@ public class GameManager : MonoBehaviour {
         }
         _verticalOffset.y += _yOffset;
     }
+
     #endregion
     
     #region Scene Management Methods
+
     private void LoadNextScene()
     {
         _scene++;
@@ -248,6 +257,7 @@ public class GameManager : MonoBehaviour {
     #endregion
 
     #region Set/Get
+
     public Vector3 VerticalOffset
     {
         get { return _verticalOffset; }

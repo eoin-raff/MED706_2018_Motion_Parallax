@@ -1,3 +1,51 @@
+<<<<<<< HEAD
 version https://git-lfs.github.com/spec/v1
 oid sha256:fd8dbf72d56fbd494de9299d56e258a12ef716ff039113b99ed5dd02d1495af9
 size 463
+=======
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - HeadPosition
+  - aspecta
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+>>>>>>> 584f89cc882558cc9fd17a63a505e257aba47f9a
