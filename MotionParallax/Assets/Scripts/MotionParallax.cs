@@ -33,7 +33,6 @@ public class MotionParallax : MonoBehaviour {
     void Start()
 	{
         //mainCamera.layerCullSpherical = true;
-		Debug.Log("Starting camera translation script.");
 		eyes = null;
         allEyes = null;
 		trackedEyePosition = Vector3.zero;
@@ -95,6 +94,7 @@ public class MotionParallax : MonoBehaviour {
 		screenWidth = metres * Mathf.Sin(Mathf.Atan(aspectRatio));
 		screenHeight = metres * Mathf.Cos(Mathf.Atan(aspectRatio));
 	}
+    /*
     private void MapZPos()
     {
         lockZPosition = false;
@@ -111,7 +111,7 @@ public class MotionParallax : MonoBehaviour {
             Debug.Log("switching Z-lock");
             fixedZPosition = trackedEyePosition.z;
         }
-    }
+    }*/
 
     private void ChangeCameraView()
     {
@@ -158,7 +158,6 @@ public class MotionParallax : MonoBehaviour {
 
     private void InitalizeEyeObject()
     {
-        Debug.Log("Waiting for head position...");
         allEyes = GameObject.FindGameObjectsWithTag("HeadPosition");
         if (allEyes.Length > 0)
             eyes = allEyes[0];

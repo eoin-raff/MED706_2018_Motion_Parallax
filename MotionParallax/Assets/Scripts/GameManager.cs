@@ -173,20 +173,23 @@ public class GameManager : MonoBehaviour
 
     private void StartTest()
     {
-        Debug.Log("Start Test");
+        
         _participant++;
         DateTime dt = DateTime.Now;
         String _date = dt.ToString("dd-MM");
         _filename = "Z_Factor_" + _date + "_Participant_" + _participant + ".csv";
+
         _zA = 1.0f;
         _zB = 0.0f;
         _staircaseTestA = true;
         _testing = true;
+
+        Debug.Log("Start Test, open writer for " + _filename);
     }
 
     private void StopTest()
     {
-        Debug.Log("End Test, printing .csv");
+        Debug.Log("End Test, printing " + _filename);
         PrintTestData();
         _testing = false;
         //load Post-Test-level
@@ -194,15 +197,15 @@ public class GameManager : MonoBehaviour
 
     private void PrintTestData()
     {
-        String _dataA = "";
-        String _dataB = "";
+        String _dataA = "1.0";
+        String _dataB = "0.0";
         for (int i = 0; i < _aValues.Count; i++)
         {
-            _dataA += _aValues[i].ToString("F2") + ",";
+            _dataA += "," + _aValues[i].ToString("F2");
         }
         for (int i = 0; i < _bValues.Count; i++)
         {
-            _dataB += _bValues[i].ToString("F2") + ",";
+            _dataB += "," + _bValues[i].ToString("F2");
         }
         StreamWriter csvWriter = File.CreateText(_path + "/" + _filename);
         csvWriter.WriteLine(_dataA);
