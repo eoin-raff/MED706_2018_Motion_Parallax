@@ -90,7 +90,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112030460, guid: 2054be3a08119834fb4e0c2d0039bb50,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -53214,6 +53215,7 @@ MonoBehaviour:
   - {fileID: 167680926}
   _zMapStep: 0.05
   _zMapFactor: 0.5
+  _checkedIterations: 3
 --- !u!4 &1176797761
 Transform:
   m_ObjectHideFlags: 0
