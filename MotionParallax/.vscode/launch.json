@@ -7,10 +7,14 @@
 			"request":"attach",
 			"address":"localhost",
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"port":7400
 =======
 			"port":6220
 >>>>>>> hotfix-0.1.1
+=======
+			"port":3036
+>>>>>>> environmentBuilding
 		}
 	]
 }
