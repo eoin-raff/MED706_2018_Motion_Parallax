@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ParallaxSplineTest.unity
     guid: f39eb6a10cb01fe43bfa04776c7cb1ff
+  - enabled: 0
+    path: Assets/Scenes/Final Environment v.1.unity
+    guid: 7038ddda3ab550046ae27ab4f5bb1645
   m_configObjects: {}
