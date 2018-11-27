@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: b9b3c6d8415e94440a45a6d1afed9410
+timeCreated: 1522030612
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BackLeftWindow
+    100002: BackRightWindow
+    100004: BackThruster
+    100006: FlyingCar1
+    100008: //RootNode
+    100010: FrontThrusters
+    100012: Glass
+    100014: Interior1
+    100016: LeftBackDoor
+    100018: LeftBackWheel
+    100020: LeftFrontDoor
+    100022: LeftFrontWheel
+    100024: LeftFrontWindow
+    100026: RightBackDoor
+    100028: RightBackWheel
+    100030: RightDoor
+    100032: RightFrontWheel
+    100034: RightFrontWindow
+    100036: SteeringWheel
+    100038: TopCover
+    400000: BackLeftWindow
+    400002: BackRightWindow
+    400004: BackThruster
+    400006: FlyingCar1
+    400008: //RootNode
+    400010: FrontThrusters
+    400012: Glass
+    400014: Interior1
+    400016: LeftBackDoor
+    400018: LeftBackWheel
+    400020: LeftFrontDoor
+    400022: LeftFrontWheel
+    400024: LeftFrontWindow
+    400026: RightBackDoor
+    400028: RightBackWheel
+    400030: RightDoor
+    400032: RightFrontWheel
+    400034: RightFrontWindow
+    400036: SteeringWheel
+    400038: TopCover
+    2300000: BackLeftWindow
+    2300002: BackRightWindow
+    2300004: BackThruster
+    2300006: FlyingCar1
+    2300008: FrontThrusters
+    2300010: Glass
+    2300012: Interior1
+    2300014: LeftBackDoor
+    2300016: LeftBackWheel
+    2300018: LeftFrontDoor
+    2300020: LeftFrontWheel
+    2300022: LeftFrontWindow
+    2300024: RightBackDoor
+    2300026: RightBackWheel
+    2300028: RightDoor
+    2300030: RightFrontWheel
+    2300032: RightFrontWindow
+    2300034: SteeringWheel
+    2300036: TopCover
+    3300000: BackLeftWindow
+    3300002: BackRightWindow
+    3300004: BackThruster
+    3300006: FlyingCar1
+    3300008: FrontThrusters
+    3300010: Glass
+    3300012: Interior1
+    3300014: LeftBackDoor
+    3300016: LeftBackWheel
+    3300018: LeftFrontDoor
+    3300020: LeftFrontWheel
+    3300022: LeftFrontWindow
+    3300024: RightBackDoor
+    3300026: RightBackWheel
+    3300028: RightDoor
+    3300030: RightFrontWheel
+    3300032: RightFrontWindow
+    3300034: SteeringWheel
+    3300036: TopCover
+    4300000: FlyingCar1
+    4300002: Glass
+    4300004: LeftFrontDoor
+    4300006: LeftBackDoor
+    4300008: RightDoor
+    4300010: RightBackDoor
+    4300012: Interior1
+    4300014: FrontThrusters
+    4300016: BackThruster
+    4300018: LeftFrontWheel
+    4300020: RightBackWheel
+    4300022: LeftBackWheel
+    4300024: SteeringWheel
+    4300026: RightFrontWheel
+    4300028: LeftFrontWindow
+    4300030: RightFrontWindow
+    4300032: BackRightWindow
+    4300034: BackLeftWindow
+    4300036: TopCover
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
