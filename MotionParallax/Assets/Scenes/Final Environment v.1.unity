@@ -1126,7 +1126,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -1136,7 +1136,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -1588,7 +1588,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -1598,7 +1598,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -1998,6 +1998,36 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17f53eb6a7f52f4fa422ac4066bc2fe, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &58991146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 691651611}
+--- !u!114 &58991149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 58991146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &61078375
 Prefab:
   m_ObjectHideFlags: 0
@@ -2078,7 +2108,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -2088,7 +2118,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -2165,6 +2195,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4558451961660794, guid: ddb7283df6d1ee846a013d684b251cbf,
     type: 2}
   m_PrefabInternal: {fileID: 61149169}
+--- !u!1 &63672887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 735044875}
+--- !u!114 &63672890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63672887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &63698950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,6 +2583,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4517187471717460, guid: 1babcc5aa0c105d4ab02491fdf872150,
     type: 2}
   m_PrefabInternal: {fileID: 70482811}
+--- !u!1 &72312536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1229078399}
+--- !u!114 &72312539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 72312536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &74520429
 GameObject:
   m_ObjectHideFlags: 0
@@ -3230,6 +3320,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4344014480864178, guid: 3cbd3aae38291a04280fa95407d078e4,
     type: 2}
   m_PrefabInternal: {fileID: 88918526}
+--- !u!1 &89199177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 61078375}
+--- !u!114 &89199180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 89199177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &92916392
 Prefab:
   m_ObjectHideFlags: 0
@@ -3410,7 +3530,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -3420,7 +3540,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -3435,6 +3555,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4427142398690246, guid: af57a072d18e0744bb29838dc0c0d884,
     type: 2}
   m_PrefabInternal: {fileID: 3016545}
+--- !u!1 &99141014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 603484443}
+--- !u!114 &99141017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 99141014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &101552770
 GameObject:
   m_ObjectHideFlags: 0
@@ -4433,7 +4583,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -4443,7 +4593,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -4700,6 +4850,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4417046736579590, guid: 637b68f22eee52f4e8373380aef03ccb,
     type: 2}
   m_PrefabInternal: {fileID: 124953699}
+--- !u!1 &125069803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1119394079}
+--- !u!114 &125069806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 125069803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
+--- !u!1 &125410835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1114149003}
+--- !u!114 &125410838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 125410835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &125870475
 Prefab:
   m_ObjectHideFlags: 0
@@ -5389,6 +5599,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4575378547221324, guid: 59ce2fa817da5ef45822f2d2fa522a1d,
     type: 2}
   m_PrefabInternal: {fileID: 148931743}
+--- !u!1 &152654995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1779089436}
+--- !u!114 &152654998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 152654995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &155694654
 GameObject:
   m_ObjectHideFlags: 0
@@ -6248,7 +6488,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -6258,7 +6498,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -7895,7 +8135,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4788803899374088, guid: b0174f969e69cff47b0484398f8f4c7c, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4788803899374088, guid: b0174f969e69cff47b0484398f8f4c7c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -8173,6 +8413,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4558451961660794, guid: ddb7283df6d1ee846a013d684b251cbf,
     type: 2}
   m_PrefabInternal: {fileID: 217105385}
+--- !u!1 &217468673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 560518346}
+--- !u!114 &217468676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 217468673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &219992494
 Prefab:
   m_ObjectHideFlags: 0
@@ -8415,7 +8685,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4953156904571584, guid: bd0e69a68bd9d13439fb11bc7e75de95, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4953156904571584, guid: bd0e69a68bd9d13439fb11bc7e75de95, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8940,6 +9210,36 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f91f7b4d569739d4c92f09ce922a7ce3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &241023063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 808449024}
+--- !u!114 &241023066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 241023063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &243704111
 Prefab:
   m_ObjectHideFlags: 0
@@ -9095,7 +9395,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -9105,7 +9405,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -9115,6 +9415,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851912927412642, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
     type: 2}
   m_PrefabInternal: {fileID: 254067861}
+--- !u!1 &255121514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 165283220}
+--- !u!114 &255121517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255121514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &258556666
 GameObject:
   m_ObjectHideFlags: 0
@@ -9191,6 +9521,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 258556666}
   m_Mesh: {fileID: 4300000, guid: 4872f9a6e4388744d8d9d8e57e73cf7f, type: 3}
+--- !u!1 &260612063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 603628818}
+--- !u!114 &260612066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 260612063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &260628941
 Prefab:
   m_ObjectHideFlags: 0
@@ -9262,6 +9622,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4948746236964424, guid: ce0053e30eed19849ba83c7a8950a29e,
     type: 2}
   m_PrefabInternal: {fileID: 260628941}
+--- !u!1 &260835015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1298770920}
+--- !u!114 &260835018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 260835015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &262916018
 Prefab:
   m_ObjectHideFlags: 0
@@ -9342,7 +9732,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -9352,7 +9742,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -9362,6 +9752,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851912927412642, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
     type: 2}
   m_PrefabInternal: {fileID: 262916018}
+--- !u!1 &267745834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 418337448}
+--- !u!114 &267745837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 267745834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &270989360
 GameObject:
   m_ObjectHideFlags: 0
@@ -9574,7 +9994,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4770695544194318, guid: 5ec86907ae81c594aa1fb259d92b71be, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ec86907ae81c594aa1fb259d92b71be, type: 2}
@@ -9655,6 +10075,66 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 279013195}
   m_Mesh: {fileID: 4300000, guid: de3cdb5e882230c4db732d4a15c1c1e0, type: 3}
+--- !u!1 &284380055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1506820548}
+--- !u!114 &284380058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 284380055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
+--- !u!1 &285381436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 581975146}
+--- !u!114 &285381439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 285381436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &290814127
 Prefab:
   m_ObjectHideFlags: 0
@@ -9735,7 +10215,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -9745,7 +10225,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -9835,7 +10315,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -9845,7 +10325,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -10799,7 +11279,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -10809,7 +11289,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -10819,6 +11299,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851912927412642, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
     type: 2}
   m_PrefabInternal: {fileID: 321289728}
+--- !u!1 &322019038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 424451933}
+--- !u!114 &322019041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322019038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &322403940
 GameObject:
   m_ObjectHideFlags: 0
@@ -11152,7 +11662,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -11162,7 +11672,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -11354,7 +11864,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4017934221886448, guid: a4a6832fdb6c0b34987c37ae2f870b1f, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4017934221886448, guid: a4a6832fdb6c0b34987c37ae2f870b1f, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13733,7 +14243,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -13743,7 +14253,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -13895,7 +14405,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -13905,7 +14415,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -14000,7 +14510,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -14010,7 +14520,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -14897,7 +15407,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -14907,7 +15417,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -15657,7 +16167,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -15667,7 +16177,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -15804,6 +16314,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4645213664428860, guid: 62297c36a7c52344591a8f3491f0e188,
     type: 2}
   m_PrefabInternal: {fileID: 480805994}
+--- !u!1 &484152685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1593640515}
+--- !u!114 &484152688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 484152685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &484881500
 Prefab:
   m_ObjectHideFlags: 0
@@ -15841,7 +16381,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4929381764851290, guid: f7d2c74b83de8de49b3d1125f9aebb9c, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4929381764851290, guid: f7d2c74b83de8de49b3d1125f9aebb9c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16366,7 +16906,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -16376,7 +16916,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -17437,7 +17977,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -17447,7 +17987,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -17625,6 +18165,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4558451961660794, guid: ddb7283df6d1ee846a013d684b251cbf,
     type: 2}
   m_PrefabInternal: {fileID: 542545934}
+--- !u!1 &542571591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1144316562}
+--- !u!114 &542571594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 542571591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &544383180
 Prefab:
   m_ObjectHideFlags: 0
@@ -18282,7 +18852,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -18292,7 +18862,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -18699,7 +19269,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -18709,7 +19279,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -19514,7 +20084,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -19524,7 +20094,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -19938,6 +20508,36 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!1 &590618881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 330546234}
+--- !u!114 &590618884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 590618881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &591413652
 GameObject:
   m_ObjectHideFlags: 0
@@ -20049,6 +20649,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4344014480864178, guid: 3cbd3aae38291a04280fa95407d078e4,
     type: 2}
   m_PrefabInternal: {fileID: 595338578}
+--- !u!1 &595602540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 496667780}
+--- !u!114 &595602543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 595602540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &596648970
 Prefab:
   m_ObjectHideFlags: 0
@@ -20479,7 +21109,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -20489,7 +21119,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -20995,6 +21625,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4253513585072784, guid: ba49faf0626fa8544af6ad6240b775aa,
     type: 2}
   m_PrefabInternal: {fileID: 618119541}
+--- !u!1 &623500530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 293542182}
+--- !u!114 &623500533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623500530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &623571641
 Prefab:
   m_ObjectHideFlags: 0
@@ -21527,6 +22187,7 @@ GameObject:
   - component: {fileID: 632219103}
   - component: {fileID: 632219107}
   - component: {fileID: 632219108}
+  - component: {fileID: 632219109}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -21654,6 +22315,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: e337b475db493814c963b467f55dc482, type: 2}
+--- !u!114 &632219109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 632219102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eed1d9cbe64423499f1fefc0ce50417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Resolution: 0
+  DefaultSpotCookie: {fileID: 2800000, guid: 5157bf6d690b6df458f6c0ce0c06d329, type: 3}
+--- !u!1 &634506051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1511987742}
+--- !u!114 &634506054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634506051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &636271774
 Prefab:
   m_ObjectHideFlags: 0
@@ -21973,7 +22677,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -21983,7 +22687,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -22131,7 +22835,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -22141,7 +22845,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 1691487793846294, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
       propertyPath: m_IsActive
@@ -22235,7 +22939,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -22245,7 +22949,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -23126,6 +23830,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 666276668}
   m_Mesh: {fileID: 4300004, guid: de3cdb5e882230c4db732d4a15c1c1e0, type: 3}
+--- !u!1 &670060527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1913166709}
+--- !u!114 &670060530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670060527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &678113545
 Prefab:
   m_ObjectHideFlags: 0
@@ -23281,7 +24015,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -23291,7 +24025,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -23832,7 +24566,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -23842,7 +24576,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -24050,6 +24784,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4414498069007786, guid: 32160489f71f9e74eafa1157151cac51,
     type: 2}
   m_PrefabInternal: {fileID: 696032082}
+--- !u!1 &698497483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 262916018}
+--- !u!114 &698497486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 698497483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &699212201
 Prefab:
   m_ObjectHideFlags: 0
@@ -24521,7 +25285,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -24531,7 +25295,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 1691487793846294, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
       propertyPath: m_IsActive
@@ -24784,6 +25548,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4077043339849230, guid: b09e48b953bc49046814800732b72747,
     type: 2}
   m_PrefabInternal: {fileID: 722474316}
+--- !u!1 &722676278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 2112817388}
+--- !u!114 &722676281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 722676278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &724408650
 GameObject:
   m_ObjectHideFlags: 0
@@ -25508,6 +26302,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4770695544194318, guid: 5ec86907ae81c594aa1fb259d92b71be,
     type: 2}
   m_PrefabInternal: {fileID: 742235875}
+--- !u!1 &743467782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 964685488}
+--- !u!114 &743467785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 743467782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &746945858
 GameObject:
   m_ObjectHideFlags: 0
@@ -25584,6 +26408,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 746945858}
   m_Mesh: {fileID: 4300004, guid: de3cdb5e882230c4db732d4a15c1c1e0, type: 3}
+--- !u!1 &750946810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1471658827}
+--- !u!114 &750946813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 750946810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &753278864
 GameObject:
   m_ObjectHideFlags: 0
@@ -26164,6 +27018,36 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec93afa123d09ff43b9a5d3abb5ce959, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &766263953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1507396710}
+--- !u!114 &766263956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766263953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &766551795
 Prefab:
   m_ObjectHideFlags: 0
@@ -26244,7 +27128,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -26254,7 +27138,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -26264,6 +27148,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851912927412642, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
     type: 2}
   m_PrefabInternal: {fileID: 766551795}
+--- !u!1 &770312600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1887532929}
+--- !u!114 &770312603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 770312600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &771817509
 GameObject:
   m_ObjectHideFlags: 0
@@ -26677,7 +27591,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4198194203217106, guid: e811844a81a6ed141a925b4bd2848c1f, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4198194203217106, guid: e811844a81a6ed141a925b4bd2848c1f, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -27440,7 +28354,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -27450,7 +28364,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -27508,6 +28422,36 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!1 &809888725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 480299817}
+--- !u!114 &809888728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 809888725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &813531554
 Prefab:
   m_ObjectHideFlags: 0
@@ -27709,7 +28653,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4116710651507820, guid: a7e89f4a1cbbb47f7ba5180c06640a0d, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1766581400328740, guid: a7e89f4a1cbbb47f7ba5180c06640a0d, type: 2}
       propertyPath: m_IsActive
@@ -28837,6 +29781,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4530647619240784, guid: 99b90e113a3774a4595d6e53a71e9fe8,
     type: 2}
   m_PrefabInternal: {fileID: 857127718}
+--- !u!1 &857288294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 416426073}
+--- !u!114 &857288297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 857288294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
+--- !u!1 &862442822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 645305979}
+--- !u!114 &862442825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 862442822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &864162471
 GameObject:
   m_ObjectHideFlags: 0
@@ -29719,7 +30723,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -29729,7 +30733,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -30053,6 +31057,36 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abb164f48075c454b915679bc631f263, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &908303297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1101462689}
+--- !u!114 &908303300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 908303297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &909692149
 GameObject:
   m_ObjectHideFlags: 0
@@ -30479,6 +31513,36 @@ Transform:
   m_Father: {fileID: 538363959}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &921866898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 290814127}
+--- !u!114 &921866901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 921866898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &922068359
 Prefab:
   m_ObjectHideFlags: 0
@@ -30614,7 +31678,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -30624,7 +31688,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -30963,6 +32027,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4575378547221324, guid: 59ce2fa817da5ef45822f2d2fa522a1d,
     type: 2}
   m_PrefabInternal: {fileID: 940487033}
+--- !u!1 &941047741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1570734797}
+--- !u!114 &941047744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 941047741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &944942104
 Prefab:
   m_ObjectHideFlags: 0
@@ -31819,7 +32913,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -31829,7 +32923,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -32077,7 +33171,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -32087,7 +33181,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -32659,6 +33753,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 981918909}
   m_Mesh: {fileID: 4300004, guid: de3cdb5e882230c4db732d4a15c1c1e0, type: 3}
+--- !u!1 &982598550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1046717456}
+--- !u!114 &982598553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982598550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &984311233
 Prefab:
   m_ObjectHideFlags: 0
@@ -32920,7 +34044,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -32930,7 +34054,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -33071,7 +34195,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -33081,7 +34205,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -33128,7 +34252,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4198194203217106, guid: e811844a81a6ed141a925b4bd2848c1f, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1757493390525220, guid: e811844a81a6ed141a925b4bd2848c1f, type: 2}
       propertyPath: m_Name
@@ -33241,7 +34365,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -33251,7 +34375,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -33637,6 +34761,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 996659774}
   m_Mesh: {fileID: 4300000, guid: 90d68f789cad6e44d8ef3d6d8d9a8dbb, type: 3}
+--- !u!1 &997312566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1610995911}
+--- !u!114 &997312569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 997312566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &997343062
 Prefab:
   m_ObjectHideFlags: 0
@@ -33890,7 +35044,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -33900,7 +35054,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -34036,6 +35190,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4575378547221324, guid: 59ce2fa817da5ef45822f2d2fa522a1d,
     type: 2}
   m_PrefabInternal: {fileID: 1004467930}
+--- !u!1 &1005481413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1894418966}
+--- !u!114 &1005481416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005481413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1007458093
 GameObject:
   m_ObjectHideFlags: 0
@@ -34360,7 +35544,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -34370,7 +35554,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 1691487793846294, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
       propertyPath: m_IsActive
@@ -35588,6 +36772,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4190539853692042, guid: d17f53eb6a7f52f4fa422ac4066bc2fe,
     type: 2}
   m_PrefabInternal: {fileID: 1060469218}
+--- !u!1 &1060497915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 209546531}
+--- !u!114 &1060497918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060497915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1062844958
 GameObject:
   m_ObjectHideFlags: 0
@@ -36279,6 +37493,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4009072239229098, guid: 09465a3bfb2dd1446beed9f1b503d0a5,
     type: 2}
   m_PrefabInternal: {fileID: 1094442462}
+--- !u!1 &1094833966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 13150668}
+--- !u!114 &1094833969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094833966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1096374586
 GameObject:
   m_ObjectHideFlags: 0
@@ -36464,7 +37708,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -36474,7 +37718,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 1691487793846294, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
       propertyPath: m_IsActive
@@ -36615,6 +37859,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4253513585072784, guid: ba49faf0626fa8544af6ad6240b775aa,
     type: 2}
   m_PrefabInternal: {fileID: 1105284928}
+--- !u!1 &1108409394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 321289728}
+--- !u!114 &1108409397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1108409394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1112466180
 Prefab:
   m_ObjectHideFlags: 0
@@ -36677,6 +37951,36 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f91f7b4d569739d4c92f09ce922a7ce3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1113010560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1717362121}
+--- !u!114 &1113010563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1113010560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1113236639
 GameObject:
   m_ObjectHideFlags: 0
@@ -37030,7 +38334,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -37040,7 +38344,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -37050,6 +38354,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851912927412642, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
     type: 2}
   m_PrefabInternal: {fileID: 1119394079}
+--- !u!1 &1119496815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 988039382}
+--- !u!114 &1119496818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1119496815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1119736242
 GameObject:
   m_ObjectHideFlags: 0
@@ -37626,7 +38960,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -37636,7 +38970,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -38116,7 +39450,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4269601573922566, guid: 93b79edfdf3c8e142abff39da17f6279, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4269601573922566, guid: 93b79edfdf3c8e142abff39da17f6279, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -38515,6 +39849,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1164933007}
   m_Mesh: {fileID: 4300000, guid: de3cdb5e882230c4db732d4a15c1c1e0, type: 3}
+--- !u!1 &1167185691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 582507827}
+--- !u!114 &1167185694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1167185691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1169606279
 GameObject:
   m_ObjectHideFlags: 0
@@ -39438,6 +40802,36 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ec86907ae81c594aa1fb259d92b71be, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1201638271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1249078204}
+--- !u!114 &1201638274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201638271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1201957300
 GameObject:
   m_ObjectHideFlags: 0
@@ -39554,7 +40948,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -39564,7 +40958,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -39574,6 +40968,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851912927412642, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
     type: 2}
   m_PrefabInternal: {fileID: 1203473258}
+--- !u!1 &1204770249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1785261297}
+--- !u!114 &1204770252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1204770249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1205905564
 Prefab:
   m_ObjectHideFlags: 0
@@ -39768,7 +41192,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -39778,7 +41202,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -40048,6 +41472,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1213169405}
   m_Mesh: {fileID: 4300000, guid: de3cdb5e882230c4db732d4a15c1c1e0, type: 3}
+--- !u!1 &1213489321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1411378478}
+--- !u!114 &1213489324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1213489321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1215084079
 Prefab:
   m_ObjectHideFlags: 0
@@ -40119,6 +41573,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4558451961660794, guid: ddb7283df6d1ee846a013d684b251cbf,
     type: 2}
   m_PrefabInternal: {fileID: 1215084079}
+--- !u!1 &1216203955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 11575330}
+--- !u!114 &1216203958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1216203955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1227646150
 Prefab:
   m_ObjectHideFlags: 0
@@ -40262,7 +41746,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -40272,7 +41756,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -41042,6 +42526,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4414498069007786, guid: 32160489f71f9e74eafa1157151cac51,
     type: 2}
   m_PrefabInternal: {fileID: 1249393183}
+--- !u!1 &1249671595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 77865120}
+--- !u!114 &1249671598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1249671595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1251497190
 GameObject:
   m_ObjectHideFlags: 0
@@ -41811,6 +43325,36 @@ Transform:
   m_Father: {fileID: 608452144}
   m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 143.639, z: 0}
+--- !u!1 &1277406141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1392265079}
+--- !u!114 &1277406144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1277406141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1279070873
 Prefab:
   m_ObjectHideFlags: 0
@@ -42547,7 +44091,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -42557,7 +44101,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -42862,6 +44406,36 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1311439762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1573083061}
+--- !u!114 &1311439765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1311439762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!4 &1314574138 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4770695544194318, guid: 5ec86907ae81c594aa1fb259d92b71be,
@@ -43075,6 +44649,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1319603132}
   m_Mesh: {fileID: 4300000, guid: 90d68f789cad6e44d8ef3d6d8d9a8dbb, type: 3}
+--- !u!1 &1322376327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1954359818}
+--- !u!114 &1322376330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322376327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1322979911
 Prefab:
   m_ObjectHideFlags: 0
@@ -43265,6 +44869,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4390849817935528, guid: 021aaa49d0b6b3748bfa65d3ca7b06b8,
     type: 2}
   m_PrefabInternal: {fileID: 221280872}
+--- !u!1 &1333836178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1738710098}
+--- !u!114 &1333836181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1333836178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1334927093
 Prefab:
   m_ObjectHideFlags: 0
@@ -43907,7 +45541,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4885963372127368, guid: ec93afa123d09ff43b9a5d3abb5ce959, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4885963372127368, guid: ec93afa123d09ff43b9a5d3abb5ce959, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -43967,6 +45601,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4414498069007786, guid: 32160489f71f9e74eafa1157151cac51,
     type: 2}
   m_PrefabInternal: {fileID: 1358031664}
+--- !u!1 &1361840694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 399920885}
+--- !u!114 &1361840697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1361840694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1364640203
 GameObject:
   m_ObjectHideFlags: 0
@@ -44094,6 +45758,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4414498069007786, guid: 32160489f71f9e74eafa1157151cac51,
     type: 2}
   m_PrefabInternal: {fileID: 1364764769}
+--- !u!1 &1366431765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 2044191608}
+--- !u!114 &1366431768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1366431765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1366431946
 Prefab:
   m_ObjectHideFlags: 0
@@ -44131,7 +45825,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4596128807921524, guid: 9b48a77e9537d7a428df3ba9f865629a, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4596128807921524, guid: 9b48a77e9537d7a428df3ba9f865629a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -45293,7 +46987,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -45303,7 +46997,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -45862,7 +47556,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -45872,7 +47566,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -46643,6 +48337,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4517187471717460, guid: 1babcc5aa0c105d4ab02491fdf872150,
     type: 2}
   m_PrefabInternal: {fileID: 1457764328}
+--- !u!1 &1459538458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475091909}
+--- !u!114 &1459538461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1459538458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1464092357
 GameObject:
   m_ObjectHideFlags: 0
@@ -46809,7 +48533,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -46819,7 +48543,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -46985,7 +48709,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -46995,7 +48719,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -47371,7 +49095,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4287677837009610, guid: eee80188018023140bf48260bf2becbd, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1238396506199452, guid: eee80188018023140bf48260bf2becbd, type: 2}
       propertyPath: m_Name
@@ -47731,6 +49455,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4770434554699840, guid: d47e8a2094709994ca5a1a1e8d877c57,
     type: 2}
   m_PrefabInternal: {fileID: 1496524727}
+--- !u!1 &1498748344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1001986612}
+--- !u!114 &1498748347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1498748344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1500539487
 Prefab:
   m_ObjectHideFlags: 0
@@ -48151,7 +49905,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -48161,7 +49915,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -48389,7 +50143,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -48399,7 +50153,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -48708,7 +50462,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4558451961660794, guid: ddb7283df6d1ee846a013d684b251cbf, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4558451961660794, guid: ddb7283df6d1ee846a013d684b251cbf, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -49581,6 +51335,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1549773176}
   m_Mesh: {fileID: 4300002, guid: ff1b9ae9a72ab674c999d6270c062673, type: 3}
+--- !u!1 &1550426469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1936328597}
+--- !u!114 &1550426472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1550426469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1550615600
 GameObject:
   m_ObjectHideFlags: 0
@@ -49590,13 +51374,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1550615601}
   - component: {fileID: 1550615602}
+  - component: {fileID: 1550615603}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1550615601
 Transform:
   m_ObjectHideFlags: 0
@@ -49647,6 +51432,31 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1550615603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1550615600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.5
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1551690935
 Prefab:
   m_ObjectHideFlags: 0
@@ -50081,7 +51891,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4881812476249756, guid: 7b6bd01957be0034baf83254b5761017, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4881812476249756, guid: 7b6bd01957be0034baf83254b5761017, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -50407,7 +52217,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -50417,7 +52227,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -50427,6 +52237,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851912927412642, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
     type: 2}
   m_PrefabInternal: {fileID: 1570734797}
+--- !u!1 &1572133451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 535810685}
+--- !u!114 &1572133454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572133451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1573083061
 Prefab:
   m_ObjectHideFlags: 0
@@ -50507,7 +52347,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -50517,7 +52357,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -50527,6 +52367,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851912927412642, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
     type: 2}
   m_PrefabInternal: {fileID: 1573083061}
+--- !u!1 &1573134387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1594300889}
+--- !u!114 &1573134390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1573134387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1574002286
 Prefab:
   m_ObjectHideFlags: 0
@@ -51019,7 +52889,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -51029,7 +52899,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -51421,7 +53291,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -51431,7 +53301,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 1691487793846294, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
       propertyPath: m_IsActive
@@ -51521,7 +53391,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -51531,7 +53401,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -52161,7 +54031,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -52171,7 +54041,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -53243,6 +55113,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4800420684240226, guid: 3407dafe5808488459b58bdcbbc53755,
     type: 2}
   m_PrefabInternal: {fileID: 1645465052}
+--- !u!1 &1647544984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 50944117}
+--- !u!114 &1647544987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647544984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1651176840
 Prefab:
   m_ObjectHideFlags: 0
@@ -53303,13 +55203,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1652275517}
   - component: {fileID: 1652275518}
+  - component: {fileID: 1652275519}
   m_Layer: 0
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1652275517
 Transform:
   m_ObjectHideFlags: 0
@@ -53360,6 +55261,31 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1652275519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1652275516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.5
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1655429995
 Prefab:
   m_ObjectHideFlags: 0
@@ -53436,7 +55362,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -53446,7 +55372,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -53456,6 +55382,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851912927412642, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
     type: 2}
   m_PrefabInternal: {fileID: 1655429995}
+--- !u!1 &1658765823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 714825271}
+--- !u!114 &1658765826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1658765823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1658953656
 Prefab:
   m_ObjectHideFlags: 0
@@ -54000,7 +55956,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4253513585072784, guid: ba49faf0626fa8544af6ad6240b775aa, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4253513585072784, guid: ba49faf0626fa8544af6ad6240b775aa, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54734,7 +56690,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -54744,7 +56700,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -55057,6 +57013,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4417046736579590, guid: 637b68f22eee52f4e8373380aef03ccb,
     type: 2}
   m_PrefabInternal: {fileID: 1700059113}
+--- !u!1 &1700999629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1557350918}
+--- !u!114 &1700999632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1700999629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1703083092
 Prefab:
   m_ObjectHideFlags: 0
@@ -55543,7 +57529,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -55553,7 +57539,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -56598,6 +58584,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4507632236786908, guid: 3af7c68950c19c841afae475aa8dd4f9,
     type: 2}
   m_PrefabInternal: {fileID: 1736721417}
+--- !u!1 &1737405490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1949359330}
+--- !u!114 &1737405493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737405490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1738710098
 Prefab:
   m_ObjectHideFlags: 0
@@ -56674,7 +58690,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -56684,7 +58700,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -56867,6 +58883,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4575378547221324, guid: 59ce2fa817da5ef45822f2d2fa522a1d,
     type: 2}
   m_PrefabInternal: {fileID: 1739120278}
+--- !u!1 &1740217319 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 645985326}
+--- !u!114 &1740217322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1740217319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1744055471
 Prefab:
   m_ObjectHideFlags: 0
@@ -56922,6 +58968,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4575378547221324, guid: 59ce2fa817da5ef45822f2d2fa522a1d,
     type: 2}
   m_PrefabInternal: {fileID: 1744055471}
+--- !u!1 &1747563670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 42545010}
+--- !u!114 &1747563673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1747563670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1749998813
 GameObject:
   m_ObjectHideFlags: 0
@@ -57027,6 +59103,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4517187471717460, guid: 1babcc5aa0c105d4ab02491fdf872150,
     type: 2}
   m_PrefabInternal: {fileID: 1752125289}
+--- !u!1 &1753484526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1932581370}
+--- !u!114 &1753484529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1753484526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1758415349
 Prefab:
   m_ObjectHideFlags: 0
@@ -57209,7 +59315,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -57219,7 +59325,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -57372,6 +59478,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4507632236786908, guid: 3af7c68950c19c841afae475aa8dd4f9,
     type: 2}
   m_PrefabInternal: {fileID: 1766871642}
+--- !u!1 &1769560931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 448925956}
+--- !u!114 &1769560934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1769560931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1769602909
 GameObject:
   m_ObjectHideFlags: 0
@@ -57510,6 +59646,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1777958208}
   m_Mesh: {fileID: 4300000, guid: 90d68f789cad6e44d8ef3d6d8d9a8dbb, type: 3}
+--- !u!1 &1778480391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1203473258}
+--- !u!114 &1778480394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1778480391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1779089436
 Prefab:
   m_ObjectHideFlags: 0
@@ -57586,7 +59752,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -57596,7 +59762,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -58186,7 +60352,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -58196,7 +60362,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -58413,6 +60579,36 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!1 &1804515556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 766551795}
+--- !u!114 &1804515559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1804515556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1805074278
 GameObject:
   m_ObjectHideFlags: 0
@@ -58606,6 +60802,36 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ec86907ae81c594aa1fb259d92b71be, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1812016076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1013787142}
+--- !u!114 &1812016079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1812016076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1814276585
 GameObject:
   m_ObjectHideFlags: 0
@@ -58641,8 +60867,8 @@ Transform:
   - {fileID: 2108621160}
   - {fileID: 1392372689}
   - {fileID: 2014942666}
-  - {fileID: 1407547681}
   - {fileID: 124953700}
+  - {fileID: 1407547681}
   - {fileID: 504018194}
   - {fileID: 1558304655}
   - {fileID: 1700059114}
@@ -58749,7 +60975,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -58759,7 +60985,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -59286,7 +61512,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4335280241103620, guid: 571be9550eb23e9468882f6f392bce34, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1333341874474296, guid: 571be9550eb23e9468882f6f392bce34, type: 2}
       propertyPath: m_IsActive
@@ -59907,7 +62133,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4287677837009610, guid: eee80188018023140bf48260bf2becbd, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4287677837009610, guid: eee80188018023140bf48260bf2becbd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -60004,6 +62230,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1853557593}
   m_Mesh: {fileID: 4300004, guid: de3cdb5e882230c4db732d4a15c1c1e0, type: 3}
+--- !u!1 &1853577903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 96637423}
+--- !u!114 &1853577906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853577903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1854211525
 Prefab:
   m_ObjectHideFlags: 0
@@ -60071,6 +62327,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4563127209909876, guid: d7b63720a5f50634e9c14a26c4ecc30c,
     type: 2}
   m_PrefabInternal: {fileID: 1854211525}
+--- !u!1 &1856054400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 569591299}
+--- !u!114 &1856054403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1856054400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1857900518
 GameObject:
   m_ObjectHideFlags: 0
@@ -60174,6 +62460,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4575378547221324, guid: 59ce2fa817da5ef45822f2d2fa522a1d,
     type: 2}
   m_PrefabInternal: {fileID: 1859308489}
+--- !u!1 &1862198544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1815277368}
+--- !u!114 &1862198547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862198544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1864785007
 GameObject:
   m_ObjectHideFlags: 0
@@ -60869,6 +63185,66 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1875125473}
   m_Mesh: {fileID: 4300000, guid: 90d68f789cad6e44d8ef3d6d8d9a8dbb, type: 3}
+--- !u!1 &1880895352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 642395385}
+--- !u!114 &1880895355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1880895352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
+--- !u!1 &1887466286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1589238864}
+--- !u!114 &1887466289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1887466286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1887532929
 Prefab:
   m_ObjectHideFlags: 0
@@ -60949,7 +63325,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -60959,7 +63335,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -61289,7 +63665,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -61299,7 +63675,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -61880,6 +64256,36 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e811844a81a6ed141a925b4bd2848c1f, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1923699084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1207560671}
+--- !u!114 &1923699087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1923699084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1924713056
 GameObject:
   m_ObjectHideFlags: 0
@@ -62079,6 +64485,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4038621972376166, guid: 3169d8e08a021514ca86e9681b0760a1,
     type: 2}
   m_PrefabInternal: {fileID: 1925211820}
+--- !u!1 &1931931138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 987585488}
+--- !u!114 &1931931141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1931931138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1932581370
 Prefab:
   m_ObjectHideFlags: 0
@@ -62277,6 +64713,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4417046736579590, guid: 637b68f22eee52f4e8373380aef03ccb,
     type: 2}
   m_PrefabInternal: {fileID: 1934755909}
+--- !u!1 &1935629940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1792296384}
+--- !u!114 &1935629943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935629940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1936328597
 Prefab:
   m_ObjectHideFlags: 0
@@ -62357,7 +64823,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -62367,7 +64833,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -63052,7 +65518,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -63062,7 +65528,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -63223,7 +65689,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -63233,7 +65699,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -63839,6 +66305,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1974848435}
   m_Mesh: {fileID: 4300002, guid: ff1b9ae9a72ab674c999d6270c062673, type: 3}
+--- !u!1 &1977828859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 970103497}
+--- !u!114 &1977828862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1977828859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &1981390028
 Prefab:
   m_ObjectHideFlags: 0
@@ -64410,6 +66906,36 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!1 &1994773754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 988416678}
+--- !u!114 &1994773757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1994773754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &1998678596
 GameObject:
   m_ObjectHideFlags: 0
@@ -64608,6 +67134,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4647084747240458, guid: 2a9fc098e5689d748973b475bda00773,
     type: 2}
   m_PrefabInternal: {fileID: 2001713422}
+--- !u!1 &2002455958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1762284484}
+--- !u!114 &2002455961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2002455958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &2007886180
 GameObject:
   m_ObjectHideFlags: 0
@@ -65159,7 +67715,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -65169,7 +67725,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -65768,6 +68324,36 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4a6832fdb6c0b34987c37ae2f870b1f, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &2042909986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 118775945}
+--- !u!114 &2042909989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2042909986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &2044191608
 Prefab:
   m_ObjectHideFlags: 0
@@ -65932,6 +68518,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2044415783}
   m_Mesh: {fileID: 4300000, guid: de3cdb5e882230c4db732d4a15c1c1e0, type: 3}
+--- !u!1 &2048330891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 679675900}
+--- !u!114 &2048330894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2048330891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &2050612971
 Prefab:
   m_ObjectHideFlags: 0
@@ -66043,6 +68659,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4171299984984020, guid: 0174df6d8a13a26468e1d558844c37ad,
     type: 2}
   m_PrefabInternal: {fileID: 2050612971}
+--- !u!1 &2052152334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 2125420966}
+--- !u!114 &2052152337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052152334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &2053113076
 GameObject:
   m_ObjectHideFlags: 0
@@ -66971,6 +69617,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4507632236786908, guid: 3af7c68950c19c841afae475aa8dd4f9,
     type: 2}
   m_PrefabInternal: {fileID: 2075077734}
+--- !u!1 &2077879219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1692893425}
+--- !u!114 &2077879222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2077879219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &2079956526
 Prefab:
   m_ObjectHideFlags: 0
@@ -67601,7 +70277,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4530647619240784, guid: 99b90e113a3774a4595d6e53a71e9fe8, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4530647619240784, guid: 99b90e113a3774a4595d6e53a71e9fe8, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -67792,6 +70468,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4417046736579590, guid: 637b68f22eee52f4e8373380aef03ccb,
     type: 2}
   m_PrefabInternal: {fileID: 2106665131}
+--- !u!1 &2107183184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 2015604448}
+--- !u!114 &2107183187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2107183184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &2108621159
 Prefab:
   m_ObjectHideFlags: 0
@@ -67891,6 +70597,36 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!1 &2112029703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 1655429995}
+--- !u!114 &2112029706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2112029703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1 &2112777327
 GameObject:
   m_ObjectHideFlags: 0
@@ -68061,7 +70797,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -68071,7 +70807,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -68081,6 +70817,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851912927412642, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
     type: 2}
   m_PrefabInternal: {fileID: 2112817388}
+--- !u!1 &2116074970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 254067861}
+--- !u!114 &2116074973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116074970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
+--- !u!1 &2116376637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 32239760}
+--- !u!114 &2116376640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116376637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
+--- !u!1 &2118045014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 922829311}
+--- !u!114 &2118045017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2118045014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
 --- !u!1001 &2121103759
 Prefab:
   m_ObjectHideFlags: 0
@@ -68408,7 +71234,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 146.1
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
@@ -68418,7 +71244,7 @@ Prefab:
     - target: {fileID: 108605996037174664, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
         type: 2}
       propertyPath: m_Range
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f9fc3d7fb51c64a81fa2cfefce5411, type: 2}
@@ -68967,3 +71793,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4770695544194318, guid: 5ec86907ae81c594aa1fb259d92b71be,
     type: 2}
   m_PrefabInternal: {fileID: 2141805457}
+--- !u!1 &2143877046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513660904708270, guid: 31f9fc3d7fb51c64a81fa2cfefce5411,
+    type: 2}
+  m_PrefabInternal: {fileID: 898515595}
+--- !u!114 &2143877049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2143877046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
+--- !u!1 &2144630821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398133977953366, guid: f9f7f80656bc76d44b5a3ac2a41cee0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 992526193}
+--- !u!114 &2144630824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2144630821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.25
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.12
+  NoiseIntensity: 4
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 1, y: -1}
+  MaxRayLength: 40
