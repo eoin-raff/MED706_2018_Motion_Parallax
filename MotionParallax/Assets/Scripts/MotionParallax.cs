@@ -10,6 +10,8 @@ public class MotionParallax : MonoBehaviour {
 	public float aspectRatioA, aspectRatioB;
     public bool kinectOnTop, sizeInInches;
 
+    [Range(-5, 5)] public float shiftRight_control, shiftLeft_control = 0;
+
     //private float screenSizeInches;           // For use with startscreen
     //private int aspectRatioA, aspectRatioB;   // For use with startscreen
     private float aspectRatio;
@@ -23,7 +25,7 @@ public class MotionParallax : MonoBehaviour {
     private int index = 0;
     private GameObject eyes;
     private GameObject[] allEyes;
-    private Vector3 trackedEyePosition;
+    public Vector3 trackedEyePosition;
     private Vector3 verticalOffset;
     private float yOffset = 0;
     private Vector3 initialPosition = Vector3.zero;
@@ -171,9 +173,15 @@ public class MotionParallax : MonoBehaviour {
     }
 
     void GetWindowPosition(Camera cam, Vector3 perspectiveOffset)
-	{      
-        float left = cam.nearClipPlane * (-.5f * aspectRatio - perspectiveOffset.x) / Mathf.Abs(perspectiveOffset.z);
-        float right = cam.nearClipPlane * (.5f * aspectRatio - perspectiveOffset.x) / Mathf.Abs(perspectiveOffset.z);
+	{
+        float shiftLeft = -0.5f;
+        float shiftRight = .5f;
+
+        shiftLeft += shiftLeft_control;
+        shiftRight += shiftRight_control;
+
+        float left = cam.nearClipPlane * (shiftLeft * aspectRatio - perspectiveOffset.x) / Mathf.Abs(perspectiveOffset.z);
+        float right = cam.nearClipPlane * (shiftRight * aspectRatio - perspectiveOffset.x) / Mathf.Abs(perspectiveOffset.z);
         float bottom = cam.nearClipPlane * (-.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
         float top = cam.nearClipPlane * (.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
         cam.projectionMatrix = CustomProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, 100);
@@ -194,6 +202,7 @@ public class MotionParallax : MonoBehaviour {
         m[1, 0] = 0.0f; m[1, 1] = y;        m[1, 2] = b;    m[1, 3] = 0.0f;
         m[2, 0] = 0.0f; m[2, 1] = 0.0f;     m[2, 2] = c;    m[2, 3] = d;
         m[3, 0] = 0.0f; m[3, 1] = 0.0f;     m[3, 2] = e;    m[3, 3] = 0.0f;
+
         return m;
     }
 }

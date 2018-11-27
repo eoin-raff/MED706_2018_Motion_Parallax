@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour {
     [SerializeField][Range(0, 1)]
     private float _zMapFactor = 0.5f;
 
+    //For lens distortion
+    GameObject ParallaxCamera;
+    LensCAAndDistortion sDistortion;
+
     private void Awake()
     {
         //Singleton
@@ -33,6 +37,11 @@ public class GameManager : MonoBehaviour {
         //initalize variables
         _scene = 0;
         _verticalOffset = Vector3.zero;
+        Application.targetFrameRate = 30;
+
+        //For lens distortion
+        ParallaxCamera = GameObject.Find("ParallaxCamera");
+        sDistortion = ParallaxCamera.GetComponent<LensCAAndDistortion>();
     }
 
     void Update () {
@@ -55,6 +64,13 @@ public class GameManager : MonoBehaviour {
         {
             LoadNextScene();
         }
+
+        //For lens distortion
+        if (Input.GetKey(KeyCode.Keypad4)) { sDistortion.BarrelDistortion -= 0.1f; }
+        if (Input.GetKey(KeyCode.Keypad6)) { sDistortion.BarrelDistortion += 0.1f; }
+
+        if (Input.GetKey(KeyCode.Keypad8)) { sDistortion.Zoom += 0.1f; }
+        if (Input.GetKey(KeyCode.Keypad2)) { sDistortion.Zoom -= 0.1f; }
 
     }
 

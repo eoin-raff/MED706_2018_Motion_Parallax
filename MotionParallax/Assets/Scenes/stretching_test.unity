@@ -113,6 +113,35 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &106023079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106023080}
+  m_Layer: 0
+  m_Name: Camera Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &106023080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106023079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 521070153}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112583662
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +398,7 @@ GameObject:
   m_Layer: 0
   m_Name: ParallaxCamera
   m_TagString: MainCamera
-  m_Icon: {fileID: 8220585740371884164, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -579,6 +608,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &521070153 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4738266798953656, guid: d773e6a8adb2ab94899a2603dafac715,
+    type: 2}
+  m_PrefabInternal: {fileID: 2145561521}
 --- !u!1 &773928796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,3 +1459,59 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1906438802}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2145561521
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 106023080}
+    m_Modifications:
+    - target: {fileID: 4738266798953656, guid: d773e6a8adb2ab94899a2603dafac715, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738266798953656, guid: d773e6a8adb2ab94899a2603dafac715, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738266798953656, guid: d773e6a8adb2ab94899a2603dafac715, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738266798953656, guid: d773e6a8adb2ab94899a2603dafac715, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738266798953656, guid: d773e6a8adb2ab94899a2603dafac715, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738266798953656, guid: d773e6a8adb2ab94899a2603dafac715, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738266798953656, guid: d773e6a8adb2ab94899a2603dafac715, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738266798953656, guid: d773e6a8adb2ab94899a2603dafac715, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265883832072596, guid: d773e6a8adb2ab94899a2603dafac715, type: 2}
+      propertyPath: m_Name
+      value: ParallaxCamera (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114966346258478502, guid: d773e6a8adb2ab94899a2603dafac715,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954664746437256, guid: d773e6a8adb2ab94899a2603dafac715,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d773e6a8adb2ab94899a2603dafac715, type: 2}
+  m_IsPrefabAsset: 0
