@@ -135,6 +135,7 @@ public class MotionParallax : MonoBehaviour {
         trackedEyePosition = verticalOffset + (eyes.transform.position * 0.1f);
 
         float diff = trackedEyePosition.z - initialPosition.z;
+        print(GameManager.instance.ZMapFactor);
         mappedZPosition = initialPosition.z + (diff * GameManager.instance.ZMapFactor);
         //print("tracked: " + trackedEyePosition.z + " inital: " + initialPosition.z + ", diff: " + diff);
         trackedEyePosition.z = mappedZPosition;
@@ -176,7 +177,7 @@ public class MotionParallax : MonoBehaviour {
         float right = cam.nearClipPlane * (.5f * aspectRatio - perspectiveOffset.x) / Mathf.Abs(perspectiveOffset.z);
         float bottom = cam.nearClipPlane * (-.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
         float top = cam.nearClipPlane * (.5f - perspectiveOffset.y) / Mathf.Abs(perspectiveOffset.z);
-        cam.projectionMatrix = CustomProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, 100);
+        cam.projectionMatrix = CustomProjectionMatrix(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
     }
 
     static Matrix4x4 CustomProjectionMatrix(float left, float right, float bottom, float top, float near, float far)
