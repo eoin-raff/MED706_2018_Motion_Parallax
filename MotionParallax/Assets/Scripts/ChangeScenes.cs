@@ -4,48 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ChangeScenes : MonoBehaviour
+public static class ChangeScenes
 {
-    public GameObject inputA;
-    public GameObject inputB;
-    public GameObject inputD;
+    //using this script for the buttons allows us to access the GM object in all scenes, instead of just the one in which it was instantated in.
+   static GameManager GM = GameManager.instance;
 
-    public void Change()
-    {
-        SceneManager.LoadScene("SampleScene");     // Change for when implemented!  
+    public static void ChangeScene(string sceneName) {
+        GM.LoadScene(sceneName);
     }
-
-    public void ChangeSmile()
-    {
-        ApplicationModel.aspectA = 80;
-        ApplicationModel.aspectB = 9;
-        ApplicationModel.diagonal = 285.0f;
-
-        SceneManager.LoadScene("SampleScene");      // Change for when implemented!
-    }
-
-    public void ChangeAspectA()
-    {
-        string inputText = inputA.GetComponent<InputField>().text;
-        ApplicationModel.aspectA = int.Parse(inputText);
-    }
-
-    public void ChangeAspectB()
-    {
-        string inputText = inputB.GetComponent<InputField>().text;
-        ApplicationModel.aspectB = int.Parse(inputText);
-    }
-
-    public void ChangeAspectD()
-    {
-        string inputText = inputD.GetComponent<InputField>().text;
-        ApplicationModel.diagonal = float.Parse(inputText);
-    }
-}
-
-public class ApplicationModel
-{
-    static public int aspectA = 0;
-    static public int aspectB = 0;
-    static public float diagonal = 0;
 }
