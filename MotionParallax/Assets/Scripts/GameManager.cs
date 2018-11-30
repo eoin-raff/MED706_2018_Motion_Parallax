@@ -277,6 +277,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(_scene);
         StartTest();
     }
+
+    public void LoadScene(string sceneName)
+    {
+        //SceneManager.LoadScene(sceneName);
+        Debug.Log("Load Scene " + sceneName);
+    }
     #endregion
 
     #region Set/Get
