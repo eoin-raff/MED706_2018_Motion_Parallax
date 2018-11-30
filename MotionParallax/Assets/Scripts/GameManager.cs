@@ -125,6 +125,11 @@ public class GameManager : MonoBehaviour
 
         #region Level Select
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadScene("Start Screen");
+        }
+
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) &&
             (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) &&
             Input.GetKeyDown(KeyCode.L))
@@ -276,6 +281,12 @@ public class GameManager : MonoBehaviour
         _scene++;
         SceneManager.LoadScene(_scene);
         StartTest();
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+        Debug.Log("Load Scene " + sceneName);
     }
     #endregion
 
