@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     private bool _testing;
     private static int _participant = 0;
     private bool _staircaseTestA = true;
-    private float _zA = 1.0f;
+    private float _zA = 0.5f;
     private float _zB = 0.0f;
     private float _zTemp;
     private List<float> _aValues;
@@ -125,6 +125,11 @@ public class GameManager : MonoBehaviour
 
         #region Level Select
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadScene("Start Screen");
+        }
+
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) &&
             (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) &&
             Input.GetKeyDown(KeyCode.L))
@@ -183,7 +188,7 @@ public class GameManager : MonoBehaviour
         DateTime dt = DateTime.Now;
         string _date = dt.ToString("hh-dd-MM");
         _filename = "Z_Factor_" + _date + "_Participant_" + _participant + ".csv";
-        _zA = 1.0f;
+        _zA = 0.5f;
         _zB = 0.0f;
         _staircaseTestA = true;
         _testing = true;
@@ -202,7 +207,7 @@ public class GameManager : MonoBehaviour
 
     private void PrintTestData()
     {
-        string _dataA = "1.0";
+        string _dataA = "0.5";
         string _dataB = "0.0";
         for (int i = 0; i < _aValues.Count; i++)
         {
@@ -276,6 +281,12 @@ public class GameManager : MonoBehaviour
         _scene++;
         SceneManager.LoadScene(_scene);
         StartTest();
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+        Debug.Log("Load Scene " + sceneName);
     }
     #endregion
 

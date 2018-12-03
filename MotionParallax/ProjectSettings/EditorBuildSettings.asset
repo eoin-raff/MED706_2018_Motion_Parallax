@@ -5,16 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/LightingFX.unity
-    guid: e6648da0703d42148a5bbd1c6e7b71f9
   - enabled: 1
-    path: Assets/Scenes/StaticPositionScene.unity
-    guid: d19d4495928b6d444bcd99e860234295
+    path: Assets/Scenes/Start Screen.unity
+    guid: 153fc371d681a294996134f5e37e4574
   - enabled: 1
-    path: Assets/Scenes/ParallaxSplineTest.unity
-    guid: f39eb6a10cb01fe43bfa04776c7cb1ff
-  - enabled: 0
-    path: Assets/Scenes/Final Environment v.1.unity
-    guid: 7038ddda3ab550046ae27ab4f5bb1645
+    path: Assets/Scenes/Calibration.unity
+    guid: 0ee94eba2a0581d4486fd24939e9ff21
+  - enabled: 1
+    path: Assets/Scenes/A.unity
+    guid: 7094053ef7b429d41936e7938106b392
+  - enabled: 1
+    path: Assets/Scenes/B.unity
+    guid: d8566c93dfbce444eb0694529e94410f
+  - enabled: 1
+    path: Assets/Scenes/C.unity
+    guid: 3d3278ab368c69e46b914b83ab2e2a67
+  - enabled: 1
+    path: Assets/Scenes/D.unity
+    guid: 6a1119fc93e9e6a46b069f2a484c14aa
   m_configObjects: {}

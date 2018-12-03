@@ -274,6 +274,7 @@ public class VolumetricLightRenderer : MonoBehaviour
         proj = GL.GetGPUProjectionMatrix(proj, true);
 
         _viewProj = proj * _camera.worldToCameraMatrix;
+       // _viewProj = proj * _camera.projectionMatrix;
 
         _preLightPass.Clear();
 
