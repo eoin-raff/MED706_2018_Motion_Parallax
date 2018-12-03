@@ -18,13 +18,13 @@ public class LoadScene : MonoBehaviour
         if (sceneName == "A" || sceneName == "B")
         {
             //center screen
-            Camera.main.targetDisplay = 3;
+            Camera.main.targetDisplay = 1;
             Screen.SetResolution(1920, 1080, false);
         }
         else if (sceneName == "C" || sceneName == "D")
         {
             //far left screen
-            Camera.main.targetDisplay = 5;
+            Camera.main.targetDisplay = 1;
             Screen.SetResolution(9600, 1080, false);
         }
         GM.LoadScene(sceneName);
