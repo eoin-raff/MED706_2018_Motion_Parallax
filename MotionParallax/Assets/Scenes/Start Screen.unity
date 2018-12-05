@@ -888,7 +888,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 8
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 5
@@ -1496,6 +1496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61e52e1dd99a524cb521ae796a55d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _menuMusic: {fileID: 0}
+  _sceneMusic: {fileID: 0}
 --- !u!1001 &269725721
 Prefab:
   m_ObjectHideFlags: 0
@@ -3785,7 +3787,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 8
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 5
@@ -4430,7 +4432,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 8
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 5
@@ -8209,7 +8211,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 21
+  m_fontStyle: 13
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 5
@@ -9316,7 +9318,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 8
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 5
@@ -13757,9 +13759,7 @@ MonoBehaviour:
   - {fileID: 841722109}
   - {fileID: 105000400}
   - {fileID: 1451852653}
-  _zMapStep: 0.05
   _zMapFactor: 0.5
-  _checkedIterations: 3
 --- !u!4 &2111848029
 Transform:
   m_ObjectHideFlags: 0

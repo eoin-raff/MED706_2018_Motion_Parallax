@@ -12709,9 +12709,9 @@ MonoBehaviour:
   - {fileID: 841722109}
   - {fileID: 105000400}
   - {fileID: 1451852653}
-  _zMapStep: 0.05
-  _zMapFactor: 0.5
-  _checkedIterations: 3
+  _zMapFactor: 0.25
+  _menuMusic: {fileID: 8300000, guid: 10d4bb0f284b52e4b89e0964bb64cf94, type: 3}
+  _sceneMusic: {fileID: 8300000, guid: cdc858e23c6ca71488cb82b73b2fd2b2, type: 3}
 --- !u!4 &2111848029
 Transform:
   m_ObjectHideFlags: 0

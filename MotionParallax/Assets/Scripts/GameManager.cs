@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     [Range(0, 1)]
     private float _zMapFactor = 0.25f;
-
+    private AudioSource _source;
+    public AudioClip _menuMusic;
+    public AudioClip _sceneMusic;
 
 
     private void Awake()
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         //initalize variables
         _verticalOffset = Vector3.zero;
         _verticalOffset = Vector3.zero;
+        _source = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -76,7 +79,18 @@ public class GameManager : MonoBehaviour
 
         #endregion
     }
-
+    public void ChangeAudioTrack(AudioClip music)
+    {
+        if (_source.clip != music)
+        {
+            _source.clip = music;
+            _source.Play();
+        }
+        else
+        {
+            return;
+        }
+    }
     #region Calibration Methods
 
     private void SetObjectsActive(GameObject[] a, bool b)
@@ -115,6 +129,18 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        if (sceneName == "A" || sceneName == "B" || sceneName == "C" || sceneName == "D")
+        {
+            ChangeAudioTrack(_sceneMusic);
+            _source.volume = 0;
+            Cursor.visible = false;
+        }
+        else
+        {
+            ChangeAudioTrack(_menuMusic);
+            _source.volume = 1;
+            Cursor.visible = true;
+        }
         SceneManager.LoadScene(sceneName);
         Debug.Log("Load Scene " + sceneName);
     }
