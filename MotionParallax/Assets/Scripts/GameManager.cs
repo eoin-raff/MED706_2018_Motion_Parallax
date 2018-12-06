@@ -132,13 +132,13 @@ public class GameManager : MonoBehaviour
         if (sceneName == "A" || sceneName == "B" || sceneName == "C" || sceneName == "D")
         {
             ChangeAudioTrack(_sceneMusic);
-            _source.volume = 0;
+            //_source.volume = 0;
             Cursor.visible = false;
         }
         else
         {
             ChangeAudioTrack(_menuMusic);
-            _source.volume = 1;
+            //_source.volume = 1;
             Cursor.visible = true;
         }
         SceneManager.LoadScene(sceneName);
