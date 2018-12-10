@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="FileSaver.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script type="text/javascript">
+            
+        var parNum = "Default";
+            
+		var sampleNumber = 1; 
+		var data = 0;
+		var stream = false; 
+		var rec = false; 
+		var printTxt = true; 
+		
+		//ALL THE RECORDING VARIABLES FOR BOTH MOUSE AND BIOMETRICS
+		var hrTime = [];
+		var sample = [];
+		var hrState = []; 
+		var hrQuality = [];
+		var hr = []; 
+		var hrAvg = [];
+		var hrMax = [];
+		var gsr = []; 
+		
+		var rawdt = [];
+		var rawhr = []; 
+		var rawtouch = [];
+		
+		var totTime = [];
+		var totDis = [];
+		var totScroll = [];
+		var totClick = [];
+		
+		var streakT = [];
+		var streakDis = [];
+		var streakScr = [];
+		var streakClick = [];
+		
+		var speed = [];
+		var avgSpeed = [];
+		var maxSpeed = [];
+		
+		var clickRate = []; 
+		var clickRateAvg = [];
+		var clickRateMax = [];
+		
+		var scrollRate = [];
+		var scrollRateAvg = [];
+		var scrollRateMax = [];
+		
+		var triggers = [];
+		
+		//ALL THE STREAMING VARIABLES FOR BOTH MOUSE AND BIOMETRICS
+		var rtHr = 0;
+		var rtHrAvg = 0;
+		var rtHrMax = 0;
+		var rtGsr = 0; 
+		var rtHrState = 0;
+		var rtHrQuality = 0; 
+		var rtHrTime = 0;
+		var rtSample = 0; 
+		
+		var rtRawdt = 0;
+		var rtRawhr = 0; 
+		var rtRawtouch = 0;
+		
+		var rtTotTime = 0;
+		var rtTotDis = 0;
+		var rtTotScroll = 0;
+		var rtTotClick = 0;
+		
+		var rtStreakT = 0;
+		var rtStreakDis = 0;
+		var rtStreakScr = 0;
+		var rtStreakClick = 0;
+		
+		var rtSpeed = 0;
+		var rtAvgSpeed = 0;
+		var rtMaxSpeed = 0;
+		
+		var rtClickRate = 0; 
+		var rtClickRateAvg = 0;
+		var rtClickRateMax = 0;
+		
+		var rtScrollRate = 0;
+		var rtScrollRateAvg = 0;
+		var rtScrollRateMax = 0;
+		
+		function Streaming(){
+		
+		if(printTxt == true)
+		{
+		stream = true; 
+		setTimeout(StopStreaming,100); 
+		}
+		
+		}
+		
+		function Recording(){
+		rec = true; 
+		}
+		
+		function StopRecording(){
+		rec = false;
+		CreateRecordFile(parNum + ".csv");
+		hrTime = [];
+		sample = [];
+		hrState = []; 
+		hrQuality = [];
+		hr = []; 
+		hrAvg = [];
+		hrMax = [];
+		gsr = []; 
+		
+		rawdt = [];
+		rawhr = []; 
+		rawtouch = [];
+		
+		totTime = [];
+		totDis = [];
+		totScroll = [];
+		totClick = [];
+		speed = [];
+		avgSpeed = [];
+		maxSpeed = [];
+		clickRate = []; 
+		clickRateAvg = [];
+		clickRateMax = [];
+		scrollRate = [];
+		scrollRateAvg = [];
+		scrollRateMax = [];
+		
+		triggers = [];
+		}
+		
+		function StopStreaming(){
+		stream = false; 
+		CreateStreamFile("StreamMionixData.txt"); 
+		setTimeout(Streaming,100); 
+		}
+		
+		function StopStreamingBut(){
+		stream = false; 
+		printTxt = false; 
+		
+		rtHr = 0;
+		rtHrAvg = 0;
+		rtHrMax = 0;
+		rtGsr = 0; 
+		rtHrState = 0; 
+		rtHrQuality = 0; 
+		rtHrTime = 0;
+		rtSample = 0; 
+		
+		rtRawdt = 0;
+		rtRawhr = 0; 
+		rtRawtouch = 0;
+		
+		rtTotTime = 0;
+		rtTotDis = 0;
+		rtTotScroll = 0;
+		rtTotClick = 0;
+		rtSpeed = 0;
+		rtAvgSpeed = 0;
+		rtMaxSpeed = 0;
+		rtClickRate = 0; 
+		rtClickRateAvg = 0;
+		rtClickRateMax = 0;
+		rtScrollRate = 0;
+		rtScrollRateAvg = 0;
+		rtScrollRateMax = 0;
+		
+		setTimeout(enableStream,500) 
+		}
+		function enableStream()
+		{
+		printTxt = true;
+		}
+		function SetTrigger()
+		{
+		triggers.push(document.getElementById("Triggerinput").value)
+		}
+		function SetTrigger1()
+		{
+		triggers.push(1)
+		}
+		function SetTrigger2()
+		{
+		triggers.push(2)
+		}
+		function SetTrigger3()
+		{
+		triggers.push(3)
+		}
+		function SetTrigger4()
+		{
+		triggers.push(4)
+		}
+		function SetTrigger5()
+		{
+		triggers.push(5)
+		}
+		function SetTrigger6()
+		{
+		triggers.push(6)
+		}
+        function SetParNum()
+        {
+           var inputNum = document.getElementById("PartipantNuminput").value;
+           parNum = "Participant" + inputNum;
+        }
+            
+		// in case you have added another trigger button just write the new function for the trigger here. 
+		// 
+		function CreateStreamFile(name){
+		var blob = new Blob([
+		"BIOMETRICS"
+		+"\nHeart rate state:, " + rtHrState
+		+"\nTime (h:m:s:ms):, " + rtHrTime 
+		+ "\nSample Number:," + rtSample 
+		+ "\nLive Heart Rate:, " + rtHr 
+		+ "\nAverage Heart Rate:, " + rtHrAvg 
+		+ "\nMax Heart Rate:, " + rtHrMax 
+		+"\n GSR:, " + rtGsr
+		+ "\n RAW BIOMETRICS"
+		+ "\nTime since Last Sample:, " + rtRawdt
+		+ "\nRaw Heart Rate:, "+ rtRawhr
+		+ "\nRaw Touch:, " + rtRawtouch
+		+ "\nMOUSEMETRICS" 
+		+ "\nTime Since Factory Reset:, " + rtTotTime
+		+ "\nDistance Since Factory Reset:, " + rtTotDis
+		+ "\nNumber of step scrolled since fac reset:, " + rtTotScroll
+		+ "\nNumber of Clicks since Factory reset:, " + rtTotClick
+		+ "\nStreak Time:, " + rtStreakT
+		+ "\nStreak Distance:, " + rtStreakDis
+		+ "\nStreak Scrolls:, " + rtStreakScr
+		+ "\nStreak Clicks:, " + rtStreakClick
+		+ "\nMouse Move Speed:, " + rtSpeed
+		+ "\nMouse Avg Speed:, " + rtAvgSpeed
+		+ "\nMouse Max Speed:, " + rtMaxSpeed
+		+ "\nClick Rate Live:, " + rtClickRate
+		+ "\nClick Rate Avg:, " + rtClickRateAvg
+		+ "\nclick Rate Max:, " + rtClickRateMax
+		+ "\nScroll Rate Live:, " + rtScrollRate
+		+ "\nScroll Rate Avg:, " + rtScrollRateAvg
+		+ "\nScroll Rate Max:, " + rtScrollRateMax
+		], {type: "text/plain;charset=utf-8"});
+		saveAs(blob,name,true); 
+		}
+		
+		function CreateRecordFile(name){
+		var blob = new Blob([
+		"\nHeart rate state: " + hrState[hrState.length-1]
+		+"\nTime (h:m:s:ms):, " + hrTime 
+		+ "\nSample Number:," + sample 
+		+ "\nLive Heart Rate:, " + hr 
+		+ "\nAverage Heart Rate:, " + hrAvg 
+		+ "\nMax Heart Rate:, " + hrMax 
+		+"\n GSR:, " + gsr
+		+ "\n Triggers:," + triggers
+		], {type: "text/plain;charset=utf-8"});
+		saveAs(blob,name,true); 
+		}
+		
+            $(function() {
+                var WebSocket = window.WebSocket || window.MozWebSocket;
+                var mionixSocket = new WebSocket("ws://localhost:7681", "mionix-beta");
+
+                mionixSocket.onopen = function () {
+                  $("#connectLabel").addClass("label-success");
+                  $("#connectLabel").text("Connected");
+                  mionixSocket.send(JSON.stringify({ type: 'getDevices' }));
+                };
+
+                mionixSocket.onerror = function () {
+                  $("#connectLabel").addClass("label-danger");
+                  $("#connectLabel").text("Not connected");
+                };
+
+                mionixSocket.onmessage = function (message) {
+                  data = JSON.parse(message.data);
+
+                  if (data.type == "devices" || data.type == "deviceChanged")
+                    $("#devicesInfo").html(JSON.stringify(data, null, 2));
+                  else if (data.type == "mouseMetrics")
+			{
+                    $("#mouseMetrics").html(JSON.stringify(data, null, 2));
+				if(stream == true)
+					{
+					rtTotTime = data.totalTime;
+					rtTotDis = data.totalDistance; 
+					rtTotScroll = data.totalScrolls;
+					rtTotClick = data.totalClicks;
+					
+					rtStreakClick = data.streakClicks;
+					rtStreakT = data.streakTime;
+					rtStreakDis = data.streakDistance;
+					rtStreakScr = data.streakScrolls;
+
+					rtSpeed = data.speed; 
+					rtAvgSpeed = data.speedAvg;
+					rtMaxSpeed = data.speedMax;
+					
+					rtClickRate = data.clickRate;
+					rtClickRateAvg = data.clickRateAvg;
+					rtClickRateMax = data.clickRateMax; 
+
+					rtScrollRate = data.scrollRate; 
+					rtScrollRateAvg = data.scrollRateAvg; 
+					rtScrollRateMax = data.scrollRateMax;
+					}
+				if(rec == true)
+					{
+					totTime.push(data.totalTime);
+					totDis.push(data.totalDistance);
+					totScroll.push(data.totalScrolls);
+					totClick.push(data.totalClicks);
+					
+					streakT.push(data.streakTime);
+					streakDis.push(data.streakDistance);
+					streakClick.push(data.streakClicks);
+					streakScr.push(data.streakScrolls);
+					
+					speed.push(data.speed);
+					avgSpeed.push(data.speedAvg);
+					maxSpeed.push(data.speedMax);
+					
+					clickRate.push(data.clickRate); 
+					clickRateAvg.push(data.clickRateAvg);
+					clickRateMax.push(data.clickRateMax);
+					
+					scrollRate.push(data.scrollRate);
+					scrollRateAvg.push(data.scrollRateAvg);
+					scrollRateMax.push(data.scrollRateMax);
+			
+					triggers.push(0);
+					}
+
+			}
+                  else if (data.type == "bioMetrics")
+			{
+                    $("#bioMetrics").html(JSON.stringify(data, null, 2));
+			if(stream == true)
+			{
+			rtHrState = data.heartRateState;
+			rtHr = data.heartRate;
+			rtGsr = data.gsr; 
+			rtHrAvg = data.heartRateAvg;
+			rtHrMax = data.heartRateMax;
+			rtSample = sampleNumber;
+			var d = new Date();
+			rtHrTime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + ":" + d.getMilliseconds();
+			}
+			
+			
+			if(rec == true)
+			{
+			
+			hrState.push(data.heartRateState);
+			hrQuality.push(data.heartRateQuality);
+			hr.push(data.heartRate);
+			hrAvg.push(data.heartRateAvg);
+			hrMax.push(data.heartRateMax); 
+			gsr.push(data.gsr); 
+			sample.push(sampleNumber);
+			sampleNumber = sampleNumber+1; 
+			var d = new Date();
+			hrTime.push(d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + ":" + d.getMilliseconds());
+
+			}
+			}
+                  else if (data.type == "bioRaw")
+			{
+                    $("#bioRaw").html(JSON.stringify(data, null, 2));
+				if(stream == true)
+					{
+					rtRawdt = data.dt;
+					rtRawhr = data.heartRate;
+					rtRawtouch = data.touch;
+					}
+					
+					if(rec == true)
+					{
+					rawdt.push(data.dt);
+					rawhr.push(data.heartRate); 
+					rawtouch.push(data.touch);
+					}
+
+			}
+			
+                };
+		
+			
+	
+		 
+
+            });
+
+        </script>
+        </head>
+    <body >
+      <div style="max-width: 65rem; margin: auto;">
+	  
+	  
+	  <h1>Buttons for recording bio and mouse metrics</h1>
+	  
+          
+           <h3>Write paticipant number: </h3>
+	  <input id="PartipantNuminput" type="textarea" value=" "/>
+	  <input id="GetParBut" type="button" value="Add participant number" onclick="SetParNum();"/>
+      <P>  </P>
+          
+	  <input id="Start Recording Button" type="button" value="Start Recording Button" onclick="Recording();" />
+	  <input id="Stop Recording Button" type="button" value="Stop Recording Button" onclick="StopRecording();" />
+	  <h2>Marks for start of scenarios</h2>
+	  
+	  <input id="add1trig" type="button" value="A" onclick="SetTrigger1();" />
+	  <input id="add2trig" type="button" value="B" onclick="SetTrigger2();" />
+	  <input id="add3trig" type="button" value="C" onclick="SetTrigger3();" />
+	  <input id="add4trig" type="button" value="D" onclick="SetTrigger4();" />
+
+	 <h3>Live updates</h3>
+        <div class="panel panel-success">
+          <div class="panel-heading"><span class="badge">Live</span> Connection Demo </div>
+          <div class="panel-body">
+            <span id="connectLabel" class="label label-default">Connecting</span>
+          </div>
+        </div>
+
+        <div class="panel panel-success">
+          <div class="panel-heading"><span class="badge">Live</span> Mouse Metrics Demo </div>
+          <div class="panel-body">
+            <pre id="bioMetrics"></pre>
+          </div>
+        </div>
+
+      </div>
+    </body>
+</html>
