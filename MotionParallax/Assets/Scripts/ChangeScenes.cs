@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class ChangeScenes : MonoBehaviour
 {
     public GameObject inputA;
-    public GameObject inputB;
+    public
+        GameObject inputB;
     public GameObject inputD;
 
     public void Change()
